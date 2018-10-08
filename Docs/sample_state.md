@@ -1,4 +1,5 @@
-#Incomplete
+#Incomplete [ read: wrong]
+# I need some help on this...
 
 {
   entities: {
@@ -13,28 +14,19 @@
       }
     },
     playlist: {
-      11: {
+      15: {
         id: 11,
-        username: "blue_macaw",
-        authoredChirpIds: [1, 3],
-        likedChirpIds: [1],
-
+        title: "My_fav_music",
+        user: "franklin",
+        userId: 17
       },
-      25: {
-        id: 25,
-        username: "blue_toucan",
-        authoredChirpIds: [2],
-        likedChirpIds: [1, 3],
-        imgUrl: "https://cdn.pixabay.com/photo/2015/10/01/16/43/toucan-967334_960_720.jpg"
-      }
     }
   },
   ui: {
     loading: true/false
   },
   errors: {
-    login: ["Incorrect username/password combination"],
-    chirpForm: ["Chirp body cannot be blank"],
+    login: ["Please login to use Dotify"],
   },
-  session: { currentUserId: 15 }
+  session: { currentUserId: 10 }
 }
