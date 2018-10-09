@@ -17,18 +17,17 @@ Table Artist
 
 Table User
   id
-  username
-  password_digest
-  session_token
-  playlists
+  username string
+  password_digest string
+  session_token string
 
   has_many playlists
 
 Table Playlist
   id
   user_id
-  title
-  album_cove
+  title string
+  album_cover 
 
   belongs_to :user
   has_many :songs
