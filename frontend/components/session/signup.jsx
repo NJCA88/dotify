@@ -8,21 +8,25 @@ class Signup extends React.Component{
       email: '',
       password: ''
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   handleInput(type){
     return(e)=> {
-      this.setState({ [type]: e.target.vaue});
+      this.setState({ [type]: e.target.value});
     };
   }
 
   handleSubmit(e){
     e.preventDefault();
+    console.log(this);
     this.props.createNewUser(this.state)
-      .then( ()=> this.props.history.push('/songs'));
+      .then( ()=> this.props.history.push('/home'));
   }
 
   render(){
+    console.log(this.state);
       return( <div className="session-form">
       <h2>SignUp!</h2>
       <form>
