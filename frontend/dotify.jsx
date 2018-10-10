@@ -7,6 +7,7 @@ import createStore from './store/store';
 document.addEventListener("DOMContentLoaded", () =>{
   let root = document.getElementById("root");
   let preloadedState = undefined;
+
   if (window.currentUser) {
     preloadedState = {
       session: {
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     };
   }
   const store = createStore(preloadedState);
+  window.store = store;
 
 
   ReactDOM.render(<Root store = {store}/>, root);

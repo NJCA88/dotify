@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 export default () => (
 <div className="splash">
@@ -8,7 +8,7 @@ export default () => (
 <br/>
 
   <span className="testSpan">
-    <Link to="/signup" >LOGIN</Link>
+    <Link to="/login" >LOGIN</Link>
   </span>
 
 <p> --- ALREADY HAVE AN ACOUNT?--- </p>
