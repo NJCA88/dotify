@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 export default () => (
 <div className="splash">
   <h1>Splash Splash Dotify Splash splash</h1> <br/>
-    <img src="https://developer.spotify.com/assets/branding-guidelines/icon2@2x.png" />
+      <img src="https://www.iconsdb.com/icons/preview/white/spotify-xxl.png" />
+
 <br/>
 
   <span className="testSpan">

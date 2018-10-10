@@ -20,13 +20,11 @@ class Signup extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    console.log(this);
     this.props.createNewUser(this.state)
       .then( ()=> this.props.history.push('/home'));
   }
 
   render(){
-    console.log(this.state);
       return( <div className="session-form">
       <h2>SignUp!</h2>
       <form>
