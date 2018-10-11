@@ -9,6 +9,7 @@ class Signup extends React.Component{
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDummySubmit = this.handleDummySubmit.bind(this);
 
   }
 
@@ -24,33 +25,58 @@ class Signup extends React.Component{
       .then( ()=> this.props.history.push('/home'));
   }
 
+
+
+  handleDummySubmit(e){
+    e.preventDefault();
+    this.props.login({
+      username: 'dummy',
+      email: 'test2@test.com',
+      password: 'password'
+    })
+      .then( ()=> this.props.history.push('/home'));
+  }
+
+
+
   render(){
-      return( <div className="session-form">
-      <h2>Login!</h2>
-      <form>
-        <label>Username:
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={this.handleInput('username')}
-            />
-        </label>
-        <label>Email:
+      return( <div className="login-form">
+      <form className = "login-form">
+
+        <ul>
+          <li>
+            <div className="logo-with-name-black">
+              <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/spotify-512.png" />
+              <h1> Dotify </h1>
+            </div>
+        </li>
+
+        <li>
+          <button onClick={this.handleDummySubmit} id="dummy-login">DummyLogin
+          </button>
+        </li>
+
+        <li>
           <input
             type="text"
             value={this.state.email}
             onChange={this.handleInput('email')}
+            placeholder= "email"
             />
-        </label>
-        <label>password:
+        </li>
+
+        <li>
           <input
             type="password"
             value={this.state.password}
             onChange={this.handleInput('password')}
+            placeholder="password"
             />
-        </label>
+          </li>
         <button onClick={this.handleSubmit}>Login</button>
+        </ul>
       </form>
+
       </div> );
     }
   }

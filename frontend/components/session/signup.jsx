@@ -25,13 +25,25 @@ class Signup extends React.Component{
   }
 
   render(){
-      return( <div className="session-form">
-      <h2>SignUp!</h2>
+      return( <div className="signup-form">
+
+
+      <ul className="signup-form">
+      <li>
+        <div className="logo-with-name-black">
+          <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/spotify-512.png" />
+          <h1> Dotify </h1>
+        </div>
+      </li>
+
+      <li>
+        <h2>SignUp!</h2>
+        </li>
       <form>
-        <ul className="signup-form">
+
 
         <li>
-            <div>
+            <div className="email">
               <input
                 type="text"
                 value={this.state.email}
@@ -45,8 +57,7 @@ class Signup extends React.Component{
           <div>
             <input
               type="text"
-              value={this.state.email}
-              onChange={this.handleInput('email')}
+
               placeholder="Confirm email"
 
               />
@@ -109,11 +120,11 @@ class Signup extends React.Component{
 
           </div>
           </li>
-
-          <button onClick={this.handleSubmit}>Sign Up</button>
-        </ul>
+          <li>
+          <button onClick={this.handleSubmit} className="signup-button">Sign Up</button>
+          </li>
       </form>
-
+      </ul>
       </div> );
     }
   }

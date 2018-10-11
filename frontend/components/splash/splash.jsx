@@ -7,14 +7,13 @@ export default () => (
     <div className="logo-with-name">
       <img src="https://www.iconsdb.com/icons/preview/white/spotify-xxl.png" />
       <h1> Dotify </h1>
-
     </div>
 
-    <span className="splash-signup">
+    <span className="signup-button">
       <Link to="/signup" >Signup</Link>
     </span>
 
-<p> --- ALREADY HAVE AN ACOUNT?--- </p>
+<p className="spash-nav-text"> --- ALREADY HAVE AN ACOUNT?--- </p>
 
 
   <span className="splash-login">

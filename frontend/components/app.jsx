@@ -1,6 +1,7 @@
 import React from 'react';
 import SignupContainer from "./session/signup_container";
-import loginContainer from "./session/login_container";
+import LoginContainer from "./session/login_container";
+import HomeContainer from "./home/home_container";
 
 import Splash from "./splash/splash";
 import { Route } from 'react-router-dom';
@@ -11,9 +12,9 @@ export default ()=> (
 
     <Route path="/splash" component={Splash} />
     <Route path='/signup' component = {SignupContainer} />
-    <Route path='/login' component = {loginContainer} />
+    <Route path='/login' component = {LoginContainer} />
 
-    <Route path='/home' component = {Home} />
+    <Route path='/home' component = {HomeContainer} />
 
 
 

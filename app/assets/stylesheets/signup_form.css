@@ -1,0 +1,30 @@
+.logo-with-name-black {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.signup-form{
+  display: block;
+  text-align: center;
+  /* background-color: papayawhip; */
+  margin: auto;
+  align-items: center;
+  list-style-type: none
+}
+
+.signup-form li {
+
+  /* background-color: lightblue; */
+  width: 426px;
+  margin: auto;
+  height: 48px;
+}
+
+input{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+
+}
