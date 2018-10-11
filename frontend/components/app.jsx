@@ -8,7 +8,6 @@ import Home from "./home/home";
 
 export default ()=> (
   <div>
-    <Route path="/" component={Splash} />
 
     <Route path="/splash" component={Splash} />
     <Route path='/signup' component = {SignupContainer} />
