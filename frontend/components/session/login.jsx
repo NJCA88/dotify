@@ -54,13 +54,15 @@ class Signup extends React.Component{
         <hr></hr>
 
         <li>
-          <button onClick={this.handleDummySubmit} id="dummy-login">DEMO LOGIN
+          <button onClick={this.handleDummySubmit} className="dummy-login">DEMO LOGIN
           </button>
         </li>
 
+        <li>
           <div className="or-divider">
             <p>or</p>
           </div>
+        </li>
 
         <li>
           <input
@@ -79,7 +81,7 @@ class Signup extends React.Component{
             placeholder="password"
             />
           </li>
-          
+
           <li>
             <button onClick={this.handleSubmit}className="login-button">Login</button>
         </li>

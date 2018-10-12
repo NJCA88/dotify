@@ -35,6 +35,13 @@ body {
   position: absolute;
 }
 
+.logo-with-name-black {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
 .splash-nav {
   max-width: 410px;
   /* display: flex; */

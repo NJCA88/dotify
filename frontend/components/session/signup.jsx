@@ -41,6 +41,11 @@ class Signup extends React.Component{
         </li>
       <form>
 
+        <li>
+          <button className="dummy-login" id="signup-demo-login">DEMO LOGIN
+          </button>
+        </li>
+
 
         <li>
             <div className="email">
@@ -87,8 +92,9 @@ class Signup extends React.Component{
           </li>
 
           <li>
+            <li>Date of Birth</li>
           <div className="register-DOB">
-            <label>Date of Birth
+            <label>
               <select>
                   <option value="January">January</option>
                   <option value="February">February</option>
@@ -106,22 +112,25 @@ class Signup extends React.Component{
               <input type="number"
                 placeholder="Day"
                 maxLength="2"
+                id="DOBday"
               />
               <input type="number"
                 placeholder="Year"
+                id="DOByear"
               />
             </label>
-
-            <div>
-              <input type="radio" name="gender" value="male" /> Male
-              <input type="radio" name="gender" value="female" /> Female
-              <input type="radio" name="gender" value="non-binary" /> Non-Binary
-            </div>
-
           </div>
+            <li>
+              <div>
+                <input type="radio" name="gender" value="male" /> Male
+                <input type="radio" name="gender" value="female" /> Female
+                <input type="radio" name="gender" value="non-binary" /> Non-Binary
+              </div>
+            </li>
+
           </li>
           <li>
-          <button onClick={this.handleSubmit} className="signup-button">Sign Up</button>
+            <button onClick={this.handleSubmit} className="signup-button">Sign Up</button>
           </li>
       </form>
       </ul>

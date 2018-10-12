@@ -1,9 +1,4 @@
-.logo-with-name-black {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-}
+
 
 .signup-form{
   display: block;
@@ -12,6 +7,12 @@
   margin: auto;
   align-items: center;
   list-style-type: none
+}
+
+.signup-form input{
+  /* background-color: blue; */
+  /* margin-right: 220px; */
+  /* margin: 500px */
 }
 
 .signup-form li {
@@ -24,7 +25,22 @@
 
 input{
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 200px;
   padding-top: 10px;
+}
 
+#DOBday {
+  /* background-color: blue; */
+  width: 50px;
+  padding-right: 50px;
+}
+
+#DOByear {
+  /* background-color: blue; */
+  width: 50px;
+  padding-right: 50px;
+}
+
+#signup-demo-login{
+  width: 350px;
 }

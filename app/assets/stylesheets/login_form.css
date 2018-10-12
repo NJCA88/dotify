@@ -10,6 +10,11 @@ ul{
   list-style-type: none;
 }
 
+.or-divider {
+  margin-top: 0px;
+
+}
+
 .login-form input {
   padding-left: 20px;
   padding-right: 260px;
@@ -19,7 +24,7 @@ ul{
   margin-bottom: 5px;
 }
 
-#dummy-login {
+.dummy-login {
   background-color: #3b5998;
   border-radius: 25px;
 
