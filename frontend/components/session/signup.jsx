@@ -39,7 +39,7 @@ class Signup extends React.Component{
       <li>
         <h2>SignUp!</h2>
         </li>
-      <form>
+      <form className="signup-form-box">
 
         <li>
           <button className="dummy-login" id="signup-demo-login">DEMO LOGIN
@@ -81,14 +81,14 @@ class Signup extends React.Component{
           </li>
 
           <li>
-          <div>
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.handleInput('username')}
-              placeholder="What should we call you?"
-              />
-          </div>
+            <div>
+              <input
+                type="text"
+                value={this.state.username}
+                onChange={this.handleInput('username')}
+                placeholder="What should we call you?"
+                />
+            </div>
           </li>
 
           <li>
