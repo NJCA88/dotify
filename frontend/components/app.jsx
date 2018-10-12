@@ -6,18 +6,16 @@ import NavBarContainer from "./nav_bar/nav_bar_container";
 import Splash from "./splash/splash";
 import { Route } from 'react-router-dom';
 import Home from "./home/home";
+import {Redirect} from "react-router-dom";
 
 export default ()=> (
   <div>
-
+    <Route path="/" render={() => <Redirect to="/splash" />} />
     <Route path="/splash" component={Splash} />
     <Route path='/signup' component = {SignupContainer} />
     <Route path='/login' component = {LoginContainer} />
-
     <Route path='/home' component = {HomeContainer} />
     <Route path='/home' component = {NavBarContainer} />
-
-
 
 
   </div>
