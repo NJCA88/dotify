@@ -76,8 +76,8 @@ img{
   height: 56px;
   align-items: center;
   text-align: center;
-  padding 2px 15px 0;
-  font-size: 13px
+  padding: 2px 15px 0;
+  font-size: 13px;
 }
 
 .splash p {
