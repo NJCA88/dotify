@@ -17,8 +17,10 @@ export default ()=> (
       <Route path='/signup' component = {SignupContainer} />
       <Route path='/login' component = {LoginContainer} />
       <Route path='/home' component = {HomeContainer} />
-      <Route path='/home' component = {NavBarContainer} />
       <Route path="/" render={() => <Redirect to="/splash" />} />
     </Switch>
+    
+    <NavBarContainer />
+
   </div>
 );
