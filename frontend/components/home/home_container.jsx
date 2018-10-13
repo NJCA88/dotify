@@ -6,7 +6,9 @@ import {fetchSongs} from '../../actions/song';
 const mapStateToProps = state => {
   return (
     {currentUser: state.session.currentUser,
-    songs: state.songs
+    // songs: state.songs
+    songs: Object.keys(state.songs).map(id => state.songs[id])
+
     }
   );
 };
