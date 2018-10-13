@@ -1,0 +1,8 @@
+// to return all songs and display them: ajax call to return links to all the songs
+actions for how to change redux store based on it
+reducers for (add user reducer, so current user is an id that points to that slice of state)
+  songs reducer adds all songs to current state,
+    it adds all the songs I'm trying to display on the page to state, or when I'm
+    displaying albums, it'd be displaying albums, etc.
+
+    

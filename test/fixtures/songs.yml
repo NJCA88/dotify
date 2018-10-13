@@ -1,13 +1,23 @@
+# == Schema Information
+#
+# Table name: songs
+#
+#  id         :bigint(8)        not null, primary key
+#  title      :string
+#  track      :string
+#  album_id   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   title: MyString
   track: MyString
-  genre_id: 1
   album_id: 1
 
 two:
   title: MyString
   track: MyString
-  genre_id: 1
   album_id: 1

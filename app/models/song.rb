@@ -10,10 +10,8 @@
 #  updated_at :datetime         not null
 #
 
-require 'test_helper'
+class Song < ApplicationRecord
+  validates :title, :album_id, presence: true
 
-class SongTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  has_one_attached :track
 end

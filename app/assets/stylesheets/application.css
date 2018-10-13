@@ -21,6 +21,17 @@ body {
   background-size: 100%; */
 }
 
+/* video player that shoudln't be there.... */
+video {
+  display: none;
+}
+.video-player {
+  display: none
+  /* background-color: blue; */
+}
+/* video player that shoudln't be there.... */
+
+
 .splash {
   /* background-color: papayawhip; */
   background-image: url(https://www.publicdomainpictures.net/pictures/270000/velka/senior-couple-watching-sunset.jpg);

@@ -8,7 +8,8 @@ import { Route, Switch } from 'react-router-dom';
 import Home from "./home/home";
 import {Redirect} from "react-router-dom";
 
-
+// protected route below switch for nav bar
+//react player to play music
 
 export default ()=> (
   <div>
@@ -19,8 +20,8 @@ export default ()=> (
       <Route path='/home' component = {HomeContainer} />
       <Route path="/" render={() => <Redirect to="/splash" />} />
     </Switch>
-    
-    <NavBarContainer />
+
+    <Route path='/' component = {NavBarContainer} />
 
   </div>
 );

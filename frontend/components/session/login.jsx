@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactPlayer from 'react-player'
+
 
 class Signup extends React.Component{
   constructor(props){
@@ -38,9 +40,14 @@ class Signup extends React.Component{
   }
 
 
-
   render(){
       return( <div className="login-form">
+
+      <div className="video-player">
+         <ReactPlayer url='https://s3-us-west-1.amazonaws.com/dotify-song-dev/LG1nntPiAcsEa2brXeSAkTRp' playing />
+       </div>
+
+
       <form className = "login-form">
 
         <ul>
