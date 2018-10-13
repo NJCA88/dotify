@@ -5,7 +5,7 @@ import HomeContainer from "./home/home_container";
 import NavBarContainer from "./nav_bar/nav_bar_container";
 import Splash from "./splash/splash";
 import { Route, Switch } from 'react-router-dom';
-import Home from "./home/home";
+import HomeComponent from "./home/home";
 import {Redirect} from "react-router-dom";
 
 // protected route below switch for nav bar

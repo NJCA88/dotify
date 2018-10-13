@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Home from './home';
+import HomeComponent from './home';
+import {fetchSongs} from '../../actions/song';
 
 const mapStateToProps = state => {
   return (
@@ -13,8 +14,8 @@ const mapStateToProps = state => {
 //in component, use this.props.songs do stuff iteratively.
 
 
-const mapDispatchToProps = dispatch => {
-  return {};
-};
+const mapDispatchToProps = dispatch => ({
+  fetchSongs: () => dispatch(fetchSongs()),
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeComponent);
