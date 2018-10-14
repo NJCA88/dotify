@@ -3,6 +3,7 @@ import SignupContainer from "./session/signup_container";
 import LoginContainer from "./session/login_container";
 import HomeContainer from "./home/home_container";
 import NavBarContainer from "./nav_bar/nav_bar_container";
+import PlayerComponent from "./player/player";
 import Splash from "./splash/splash";
 import { Route, Switch } from 'react-router-dom';
 import HomeComponent from "./home/home";
@@ -13,6 +14,8 @@ import {Redirect} from "react-router-dom";
 
 export default ()=> (
   <div>
+    <Route path='/' component = {NavBarContainer} />
+      <Route path='/' component = {PlayerComponent} />
     <Switch>
       <Route path="/splash" component={Splash} />
       <Route path='/signup' component = {SignupContainer} />
@@ -21,7 +24,7 @@ export default ()=> (
       <Route path="/" render={() => <Redirect to="/splash" />} />
     </Switch>
 
-    <Route path='/' component = {NavBarContainer} />
+
 
   </div>
 );

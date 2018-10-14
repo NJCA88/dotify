@@ -1,40 +1,55 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-export default () => (
-<div className="splash">
-  <div className="splash-nav">
-    <div className="logo-with-name">
-      <img src="https://www.iconsdb.com/icons/preview/white/spotify-xxl.png" />
-      <h1> Dotify </h1>
+class Splash extends React.Component{
+  constructor(props){
+    super(props);
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleSignup = this.handleSignup.bind(this);
+  }
+
+  handleSignup(e){
+    this.props.history.push('/signup');
+  }
+
+  handleLogin(e){
+    this.props.history.push('/login');
+  }
+  render(){
+    return(
+    <div className="splash">
+
+      <div className="splash-nav">
+        <div className="logo-with-name">
+          <img src="https://www.iconsdb.com/icons/preview/white/spotify-xxl.png" />
+          <h1> Dotify </h1>
+        </div>
+
+        <button onClick={this.handleSignup} className="splash-signup">
+          SIGN UP
+        </button>
+
+    <p className="splash-nav-text"> --- ALREADY HAVE AN ACOUNT?--- </p>
+
+      <button onClick={this.handleLogin} className="splash-login">
+        LOGIN
+      </button>
+
+
+      </div>
+
+      <div className="splash-non-nav">
+        <h1>Get the right music right now</h1>
+        <h3>"Listen to millions of songs for free"</h3>
+        <ul>
+          <li>Search and discover music you'll love</li>
+          <li>"Create playlists of your favorite music"</li>
+        </ul>
+      </div>
+
     </div>
+  );
+}
+}
 
-    <span className="signup-button">
-      <Link to="/signup" >Signup</Link>
-    </span>
-
-<p className="spash-nav-text"> --- ALREADY HAVE AN ACOUNT?--- </p>
-
-
-  <span className="splash-login">
-    <Link to="/login" >LOGIN</Link>
-  </span>
-
-
-  </div>
-
-  <div className="splash-non-nav">
-    <h1>Get the right music right now</h1>
-    <h3>"Listen to millions of songs for free"</h3>
-    <ul>
-      <li>Search and discover music you'll love</li>
-      <li>"Create playlists of your favorite music"</li>
-    </ul>
-  </div>
-
-
-
-
-
-</div>
-);
+export default Splash;

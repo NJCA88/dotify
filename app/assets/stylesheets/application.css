@@ -15,10 +15,13 @@
  */
 
 body {
-  font-family: proxima_nova,Helvetica Neue,Helvetica,Arial,sans-serif;
-  /* background-color: gray */
-  /* background-image: url(https://www.publicdomainpictures.net/pictures/270000/velka/senior-couple-watching-sunset.jpg);
-  background-size: 100%; */
+  /* font-family: proxima_nova,Helvetica Neue,Helvetica,Arial,sans-serif; */
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: 100
+}
+
+h1 {
+  margin: 0;
 }
 
 /* video player that shoudln't be there.... */
@@ -27,87 +30,5 @@ video {
 }
 .video-player {
   display: none
-  /* background-color: blue; */
 }
 /* video player that shoudln't be there.... */
-
-
-.splash {
-  /* background-color: papayawhip; */
-  background-image: url(https://www.publicdomainpictures.net/pictures/270000/velka/senior-couple-watching-sunset.jpg);
-  background-size: 100%;
-  display: flex;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-.logo-with-name-black {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-}
-
-.splash-nav {
-  max-width: 410px;
-  /* display: flex; */
-  justify-content: center;
-  align-self: auto;
-  vertical-align: top;
-  margin: auto
-}
-.splash-non-nav{
-  margin: auto;
-}
-
-img{
-  height: 60px
-}
-
-.logo-with-name {
-  display: flex;
-  align-items: center;
-  color: white;
-}
-
-
-.signup-button{
-  display: flex;
-  background-color: #02bf33;
-  color: white;
-  border-radius: 25px;
-  display: block;
-  line-height: 1.25em;
-  width: 320px;
-  height: 56px;
-  align-items: center;
-  text-align: center;
-  padding: 2px 15px 0;
-  font-size: 13px;
-}
-
-.splash p {
-  font-family: proxima_nova,Helvetica Neue,Helvetica,Arial,sans-serif;
-  font-weight: 400;
-  /* background-color: blue; */
-}
-
-.splash-login{
-  display: flex;
-  background-color: white;
-  color: black;
-  border-radius: 25px;
-  display: block;
-  line-height: 1.25em;
-  max-width: 320px;
-  height: 56px;
-  align-items: center;
-  text-align: center;
-  padding: 2px 15px 0;
-
-}

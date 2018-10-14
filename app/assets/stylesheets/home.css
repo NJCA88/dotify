@@ -1,0 +1,8 @@
+.home {
+  margin-left: 200px;
+  height: 100vh;
+  width: 100vw;
+  background-color: blue;
+
+  background-image: linear-gradient(rgb(75,75,75), rgb(5, 5, 5)85%);
+}

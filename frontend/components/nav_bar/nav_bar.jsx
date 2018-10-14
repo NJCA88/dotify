@@ -23,10 +23,23 @@ class NavBarComponent extends React.Component{
   render(){
     return (
       <div className="nav-bar">
-        <p>NAV BAR </p>
 
-        <button onClick={this.handleSubmit} >Logout>
-        </button>
+            <div className="logo-with-name-white-small">
+              <img src="https://www.iconsdb.com/icons/preview/white/spotify-xxl.png" />
+              <h1> Dotify </h1>
+            </div>
+            <ul>
+
+          <li>
+            <button onClick={this.handleSubmit} >Logout
+            </button>
+          </li>
+
+        <li>
+          <button> DummyButton
+          </button>
+        </li>
+      </ul>
 
 
       </div>
