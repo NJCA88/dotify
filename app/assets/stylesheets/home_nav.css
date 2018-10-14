@@ -1,0 +1,18 @@
+.home-nav {
+  position: absolute;
+  background-color: red;
+  margin: auto;
+  height: 46px;
+  width: 100vw;
+  margin-top: 30px;
+  left: 220px;
+  color: white;
+  background: transparent;
+}
+.home-nav-ul{
+  display: flex;
+  margin-left: 10%;
+}
+.home-nav-ul li{
+  margin: 10px
+}
