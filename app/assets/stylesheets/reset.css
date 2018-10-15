@@ -22,21 +22,6 @@ ul {
   list-style: none;
 }
 
-/* img {
-  display: block;
-  width: 100%;
-  height: auto;
-} */
-
- {
-  /*
-  Get rid of native styling. Read more here:
-  http://css-tricks.com/almanac/properties/a/appearance/
-  */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
 button,
 input[type="submit"] {
   cursor: pointer;
