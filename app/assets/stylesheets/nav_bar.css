@@ -14,13 +14,11 @@
   position: fixed;
   margin: auto;
   top: 115px;
-  left: 25px
-  /* background-color: red; */
+  left: 25px;
 }
 
 .nav-bar div{
   margin: auto;
-  /* background-color: red; */
 }
 
 .logo-with-name-white-small {
@@ -29,6 +27,5 @@
   top: 10px;
   align-items: center;
   color: white;
-  /* margin: 50px; */
-  /* height: 10px; */
+
 }

@@ -1,11 +1,8 @@
 .home {
-  /* margin-left: 200px; */
   padding-left: 350px;
   padding-top: 100px;
-  /* position: sticky; */
   margin: auto;
   height: 100vh;
-  /* width: 100vw; */
   color: white;
 
   background-image: linear-gradient(rgb(45,49,57), rgb(5, 5, 5)85%);
