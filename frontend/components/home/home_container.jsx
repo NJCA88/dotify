@@ -4,6 +4,7 @@ import HomeComponent from './home';
 import {fetchSongs} from '../../actions/song';
 
 const mapStateToProps = state => {
+  console.log("current state is", state);
   return (
     {currentUser: state.session.currentUser,
     // songs: state.songs

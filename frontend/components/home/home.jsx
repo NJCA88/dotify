@@ -5,6 +5,7 @@ import ReactPlayer from 'react-player';
 class HomeComponent extends React.Component{
   constructor(props){
     super(props);
+    this.playToggle = this.playToggle.bind(this);
     this.updateSong = this.updateSong.bind(this);
     this.currentSong = "";
     this.state = {
@@ -29,6 +30,12 @@ class HomeComponent extends React.Component{
   });
 }
 
+playToggle() {
+  if (this.state.playing === false) this.setState({playing: true});
+  if (this.state.playing === true) this.setState({playing: false});
+  console.log(this.state.playing);
+}
+
   render(){
     const songs = this.props.songs.map(song => {
     return (
@@ -41,27 +48,16 @@ class HomeComponent extends React.Component{
     );
   });
 
-  const songPlayer = <div>
-    NO SONGS TODAY
-        <div className="video-player">
-           <ReactPlayer url= {this.currentSong} playing />;
-         </div>;
-     </div>;
-
-  // if (this.currentSong){
-  //    songPlayer =
-  //     <div className="video-player">
-  //        <ReactPlayer url='https://s3-us-west-1.amazonaws.com/dotify-song-dev/LG1nntPiAcsEa2brXeSAkTRp' playing />;
-  //      </div>;
-  // // } else{
-  //   songPlayer = <div>'no song :-('</div>;
-  // }
 
   return (
     <div className="home">
       <h1> DOTIFY HOME PAGE</h1>
         <ul>{songs}</ul>
         <h1> Hello, You're on the home screen </h1>
+
+      <button onClick={this.playToggle}>
+        play / pause
+      </button>
 
           <div className="player">
             <ReactPlayer

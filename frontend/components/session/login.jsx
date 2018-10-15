@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactPlayer from 'react-player';
 
 
 class Signup extends React.Component{
@@ -27,8 +26,6 @@ class Signup extends React.Component{
       .then( ()=> this.props.history.push('/home'));
   }
 
-
-
   handleDummySubmit(e){
     e.preventDefault();
     this.props.login({
@@ -42,11 +39,6 @@ class Signup extends React.Component{
 
   render(){
       return( <div className="login-form">
-
-      <div className="video-player">
-         <ReactPlayer url='https://s3-us-west-1.amazonaws.com/dotify-song-dev/LG1nntPiAcsEa2brXeSAkTRp' playing />;
-       </div>
-
 
       <form className = "login-form">
 
