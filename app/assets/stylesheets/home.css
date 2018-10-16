@@ -9,9 +9,20 @@
 }
 
 .album-list {
-  background-color: red;
+  /* background-color: red; */
 }
 
 .album {
-  background-color: lightblue;
+  /* background-color: lightblue; */
+  width: 144px;
+  padding-right: 25px
+}
+
+.album-list {
+  display: flex;
+}
+
+.demo-image{
+  width:144px;
+  height: 144px;
 }

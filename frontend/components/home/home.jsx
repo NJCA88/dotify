@@ -56,22 +56,28 @@ playToggle() {
   render(){
     const songs = this.props.songs.map(song => {
     return (
-      <button
-        onClick={(e) => {this.updateSong(e, song);}}
-        id={song.title}
-        >
-        {song.title}
-      </button>
+      <div>
+        <button
+          onClick={(e) => {this.updateSong(e, song);}}
+          id={song.title}
+          >
+          {song.title}
+        </button>
+      </div>
     );
   });
 
   const albums = this.props.albums.map(album => {
   return (
-    <button
-      onClick={(e) => {this.updateSongCollection(e, album);}}
-      className ="album">
-      {album.title}
-    </button>
+    <div className="album">
+        <img className="demo-image" src={album.album_cover} />
+
+      <button
+        onClick={(e) => {this.updateSongCollection(e, album);}}
+        className ="album">
+        {album.title}
+      </button>
+    </div>
   );
 });
 
@@ -79,9 +85,7 @@ playToggle() {
   return (
     <div className="home">
       <h1> DOTIFY HOME PAGE</h1>
-        <ul>{songs}</ul>
         <ul className="album-list"> {albums}</ul>
-        <h1> Hello, You're on the home screen </h1>
     </div>
     );
   }

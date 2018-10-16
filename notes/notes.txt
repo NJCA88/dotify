@@ -37,6 +37,17 @@ currentQueue will be in the player component,
         onDuration={duration => this.setState({ duration }) }
 
 
+        goals for tuesday:
+          import and display album covers
+          import only album IDS, not the entire albums
+          make AJAX request for album songs, then store that in redux
+          create
+
         CURRENT questions:
-        naming conventions singular vs plural on reducers / actions
-        syntax for dispatching from inside my component (inside home component)
+
+          What does this mean:
+          `Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/albums/show.json.jbuilder:4:in `block in _app_views_api_albums_show_json_jbuilder___2501057777023188344_70214149624120'`
+
+          How to fix having duplicate songs from some seeds failing.
+          Why is my heroku broken?
