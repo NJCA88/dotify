@@ -16,6 +16,7 @@ class HomeComponent extends React.Component{
 
   componentDidMount() {
     this.props.fetchSongs();
+    this.props.fetchAlbums();
   }
 
 
@@ -27,13 +28,29 @@ class HomeComponent extends React.Component{
       playing:  true,
       currentSong: song.track
     // console.log(this.playing);
-  });
-}
+    });
+  }
+
+  updateSongCollection(e, collection){
+    e.preventDefault();
+    //UPDATE STORE HERE
+    this.props.receiveCollection(collection);
+    console.log(collection);
+  }
+
+
 
 playToggle() {
   if (this.state.playing === false) this.setState({playing: true});
   if (this.state.playing === true) this.setState({playing: false});
   console.log(this.state.playing);
+
+  // <div className="player">
+  //   <ReactPlayer
+  //     url= {this.state.currentSong}
+  //      playing = {this.state.playing}
+  //     />
+  // </div>
 }
 
   render(){
@@ -48,24 +65,23 @@ playToggle() {
     );
   });
 
+  const albums = this.props.albums.map(album => {
+  return (
+    <button
+      onClick={(e) => {this.updateSongCollection(e, album);}}
+      className ="album">
+      {album.title}
+    </button>
+  );
+});
+
 
   return (
     <div className="home">
       <h1> DOTIFY HOME PAGE</h1>
         <ul>{songs}</ul>
+        <ul className="album-list"> {albums}</ul>
         <h1> Hello, You're on the home screen </h1>
-
-      <button onClick={this.playToggle}>
-        play / pause
-      </button>
-
-          <div className="player">
-            <ReactPlayer
-              url= {this.state.currentSong}
-               playing = {this.state.playing}
-              />
-          </div>
-
     </div>
     );
   }

@@ -1,10 +1,19 @@
 import { combineReducers } from 'redux';
 import sessionReducer from './session';
-import songReducer from './song';
-
+import collectionReducer from './collection';
+import entitiesReducer from './entities';
+import uireducer from './ui';
 
 export default combineReducers({
-  // entities: entitiesReducer
+  entities: entitiesReducer,
   session: sessionReducer,
-  songs: songReducer
+  ui: uireducer
 });
+
+
+
+// songs: songReducer,
+// albums: albumReducer,
+
+
+// collection: collectionReducer

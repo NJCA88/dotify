@@ -2,14 +2,18 @@ import React from 'react';
 import {connect} from 'react-redux';
 import HomeComponent from './home';
 import {fetchSongs} from '../../actions/song';
+import {fetchAlbums} from '../../actions/album';
+import {receiveCollection} from '../../actions/collections';
+
 
 const mapStateToProps = state => {
-  console.log("current state is", state);
+  // console.log("current state is", state);
+  // debugger
   return (
     {currentUser: state.session.currentUser,
-    // songs: state.songs
-    songs: Object.keys(state.songs).map(id => state.songs[id])
 
+    songs: Object.values(state.entities.songs),
+    albums: Object.values(state.entities.albums)
     }
   );
 };
@@ -19,6 +23,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   fetchSongs: () => dispatch(fetchSongs()),
+  fetchAlbums: () => dispatch(fetchAlbums()),
+  receiveCollection: collection => dispatch(receiveCollection(collection))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeComponent);

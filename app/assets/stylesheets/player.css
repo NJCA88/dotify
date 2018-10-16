@@ -1,9 +1,17 @@
-.player{
+
+
+.player {
   position: fixed;
+  flex-direction: row;
   background-color: rgb(40, 40, 40);
   color: white;
-  left: 0px;
-  bottom: 0px;
   width: 100vw;
-  height: 90px
+  height: 90px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.player button{
+  position: fixed;
+  margin: auto;
 }

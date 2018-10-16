@@ -5,4 +5,38 @@ reducers for (add user reducer, so current user is an id that points to that sli
     it adds all the songs I'm trying to display on the page to state, or when I'm
     displaying albums, it'd be displaying albums, etc.
 
-    
+
+notes for playlists:
+
+both home / player should be able to change the current song
+player will hold a "currentQueue" and a "songCollection"
+
+currentSong will live in redux store
+SongCollection will live in redux store
+currentQueue will be in the player component,
+  currentQueue uses the collection to generate a list of future songs to play
+
+
+    Can be album or playlist
+    player can jump to next song or prev song
+    home can change current song
+      but when it does, that updates the songCollection as well, because can't
+      change song without changing collection
+        even if its the same, just update it as if its different anyway.
+      which triggers the player to update their current-queue
+
+      some player methods to use:
+      <ReactPlayer
+        ref={ this.ref }
+        url={ currentSongUrl }
+        playing={ this.state.isPlaying }
+        volume= { this.state.volume }
+        onEnded={ this.handleNext }
+        onStart={ this.setCurrentSong }
+        onProgress={ this.setProgress }
+        onDuration={duration => this.setState({ duration }) }
+
+
+        CURRENT questions:
+        naming conventions singular vs plural on reducers / actions
+        syntax for dispatching from inside my component (inside home component)

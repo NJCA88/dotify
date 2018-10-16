@@ -11,16 +11,8 @@
 #  updated_at  :datetime         not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+class Album < ApplicationRecord
+  validates :title, :artist_id, presence: true
 
-one:
-  artist_id: 1
-  title: MyString
-  album_cover: MyString
-  genre_id: MyString
-
-two:
-  artist_id: 1
-  title: MyString
-  album_cover: MyString
-  genre_id: MyString
+  has_many :songs
+end
