@@ -9,7 +9,8 @@ class PlayerComponent extends React.Component{
     this.playToggle = this.playToggle.bind(this);
     this.generateSongQueue = this.generateSongQueue.bind(this);
     this.state = {
-      currentSong_track: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a8ae4ec9fbbdcfd2a1df1e181020810568fe588a/Whiplash.m4a',
+      // currentSong_track: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a8ae4ec9fbbdcfd2a1df1e181020810568fe588a/Whiplash.m4a',
+      currentSong_track: 'https://s3-us-west-1.amazonaws.com/dotify-song-dev/u2UcP3X1xfzTME4AfYNMRLY2',
       playing: false,
       songQueue: []
 
@@ -26,7 +27,7 @@ class PlayerComponent extends React.Component{
     if (this.state.playing === true) this.setState({playing: false});
 
     console.log("this.props.collection:", this.props.collection);
-    this.generateSongQueue();
+    // this.generateSongQueue();
 
   }
 
@@ -39,10 +40,21 @@ class PlayerComponent extends React.Component{
     });
     console.log("QUEUE IS", this.state.songQueue);
   }
-
+  //
+  // <div className="video-player">
+  //   <ReactPlayer
+  //     url= {this.state.currentSong_track}
+  //      playing = {this.state.playing}
+  //     />
+  // </div>
 
 
   render(){
+    console.log("this.props", this.props);
+    const track = this.props.currentSong.track ? this.props.currentSong.track : this.state.currentSong_track;
+    // const track = this.state.currentSong_track;
+
+
     return (
       <div className="player">
         <p>SONG PLAYER!!!!</p>
@@ -53,7 +65,7 @@ class PlayerComponent extends React.Component{
 
           <div className="video-player">
             <ReactPlayer
-              url= {this.state.currentSong_track}
+              url= {track}
                playing = {this.state.playing}
               />
           </div>

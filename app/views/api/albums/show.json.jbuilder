@@ -1,10 +1,15 @@
-json.array!(@albums) do |album|
-  json.artist_id album.artist_id
-  json.title album.title
-  json.album_cover url_for(album.album_cover)
-  # json.songs do
-  #   json.array!(album.songs) do |song|
-  #     json.extract! song, :title
-  #   end
-  # end
+
+json.album do
+  json.extract! @album, :title, :id
+  json.album_cover url_for(@album.album_cover)
+end
+
+json.songs do
+  @album.songs.each do |song|
+    json.set! song.id do
+      json.id song.id
+      json.title song.title
+      json.track url_for(song.track)
+    end
+  end
 end

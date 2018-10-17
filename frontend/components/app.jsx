@@ -10,6 +10,7 @@ import Splash from "./splash/splash";
 import { Route, Switch } from 'react-router-dom';
 import HomeComponent from "./home/home";
 import {Redirect} from "react-router-dom";
+import AlbumContainer from "./home/album_show_container";
 
 
 import { AuthRoute, ProtectedRoute } from '../utils/route_util_api';
@@ -20,15 +21,17 @@ import { AuthRoute, ProtectedRoute } from '../utils/route_util_api';
 
 export default ()=> (
   <div>
-    <Route path='/home' component = {NavBarContainer} />
-    <Route path='/home' component = {playerContainer} />
-    <Route path='/home' component = {HomeNavComponent} />
+    <ProtectedRoute path='/' component = {NavBarContainer} />
+    <ProtectedRoute path='/' component = {playerContainer} />
+    <ProtectedRoute path='/home' component = {HomeNavComponent} />
 
     <Switch>
       <AuthRoute path="/splash" component={Splash} />
       <AuthRoute path='/signup' component = {SignupContainer} />
       <AuthRoute path='/login' component = {LoginContainer} />
       <ProtectedRoute exact path="/home" component={HomeContainer} />
+      <ProtectedRoute exact path="/albums/:albumID" component={AlbumContainer} />
+
 
       <Route path="/" render={() => <Redirect to="/splash" />} />
     </Switch>

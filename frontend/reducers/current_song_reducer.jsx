@@ -6,10 +6,8 @@ export default (oldState ={}, action) => {
   // console.log(action.type);
   Object.freeze(oldState);
   switch(action.type){
-
-    case RECEIVE_ALBUM:
-      return action.payload.songs;
-
+    case UPDATE_SONG:
+      return action.song;
     default:
       return oldState;
     }

@@ -5,7 +5,8 @@ import PlayerComponent from './player';
 const mapStateToProps = state => {
   // console.log("CURRENT STATE is:", state);
   return({
-    collection: state.ui.collection
+    collection: state.ui.collection,
+    currentSong: state.ui.currentSong
   });
 };
 

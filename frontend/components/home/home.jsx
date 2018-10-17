@@ -7,6 +7,7 @@ class HomeComponent extends React.Component{
     super(props);
     this.playToggle = this.playToggle.bind(this);
     this.updateSong = this.updateSong.bind(this);
+    this.handleGoAlbum = this.handleGoAlbum.bind(this);
     this.currentSong = "";
     this.state = {
       currentSong: '',
@@ -39,35 +40,26 @@ class HomeComponent extends React.Component{
   }
 
 
+  handleGoAlbum(e, AlbumID){
+    e.preventDefault();
+
+    this.props.history.push(`/albums/${AlbumID}`);
+  }
+
+
+
 
 playToggle() {
   if (this.state.playing === false) this.setState({playing: true});
   if (this.state.playing === true) this.setState({playing: false});
   console.log(this.state.playing);
-
-  // <div className="player">
-  //   <ReactPlayer
-  //     url= {this.state.currentSong}
-  //      playing = {this.state.playing}
-  //     />
-  // </div>
 }
 
   render(){
-    const songs = this.props.songs.map(song => {
-    return (
-      <div>
-        <button
-          onClick={(e) => {this.updateSong(e, song);}}
-          id={song.title}
-          >
-          {song.title}
-        </button>
-      </div>
-    );
-  });
+
 
   const albums = this.props.albums.map(album => {
+    console.log("album info:", album.title, album.id);
   return (
     <div className="album">
         <img className="demo-image" src={album.album_cover} />
@@ -76,6 +68,11 @@ playToggle() {
         onClick={(e) => {this.updateSongCollection(e, album);}}
         className ="album">
         {album.title}
+      </button>
+      <button
+        onClick={(e) => {this.handleGoAlbum(e, album.id);}}
+        className ="album">
+        GO THERE NOW
       </button>
     </div>
   );

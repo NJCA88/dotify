@@ -1,0 +1,79 @@
+.cover-and-info{
+
+  /* background-color: blue; */
+  width: 224px;
+
+}
+
+.album-show-component {
+  /* display: flex; */
+  display: flex;
+  background-color: blue;
+  padding-left: 350px;
+  padding-top: 28px;
+  /* margin: auto; */
+  height: 100vh;
+  color: white;
+  background-image: linear-gradient(rgb(45,49,57), rgb(5, 5, 5)85%);
+
+}
+
+.album-cover {
+  height: 224px;
+  /* width: 224px; */
+  width: 100%;
+}
+
+.song {
+  /* background-color: blue; */
+  display: flex;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #fff;
+  margin-top: .7em;
+}
+
+.play-icon:hover{
+  visibility: visible;
+}
+
+.play-icon {
+  height: 20px;
+  width: 16px;
+  visibility: hidden;
+}
+
+.play-button{
+    display: flex;
+    background-color: #1db954;
+    color: white;
+    border-radius: 25px;
+    display: block;
+    line-height: 1.25em;
+    width: 130px;
+    height: 39px;
+    align-items: center;
+    text-align: center;
+    padding: 2px 15px 0;
+    font-size: 13px;
+    margin: auto;
+}
+
+
+.song:hover{
+  /* background-color: blue; */
+  cursor: pointer;
+  /* -webkit-filter: grayscale(90%); */
+  -webkit-filter: contrast(25%);
+  visibility: visible;
+
+  /* background-color: red; */
+}
+
+.album-title{
+  /* background-color: blue; */
+  font-size: 16px;
+  font-weight: 400;
+  word-wrap: break-word;
+}

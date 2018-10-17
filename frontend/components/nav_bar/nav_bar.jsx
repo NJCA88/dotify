@@ -6,6 +6,7 @@ class NavBarComponent extends React.Component{
     this.state = {
         };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGoHome = this.handleGoHome.bind(this);
 
   }
 
@@ -16,7 +17,10 @@ class NavBarComponent extends React.Component{
       .then( ()=> this.props.history.push('/splash'));
   }
 
-
+handleGoHome(e){
+  e.preventDefault();
+  this.props.history.push('/home');
+}
 
 
 
@@ -31,12 +35,20 @@ class NavBarComponent extends React.Component{
             <ul>
 
           <li>
+            <button> Search
+            </button>
+          </li>
+          <li>
             <button onClick={this.handleSubmit} >Logout
+            </button>
+          </li>
+          <li>
+            <button onClick={this.handleGoHome} >Home
             </button>
           </li>
 
         <li>
-          <button> DummyButton
+          <button> Search
           </button>
         </li>
       </ul>

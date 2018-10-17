@@ -15,7 +15,7 @@ currentSong will live in redux store
 SongCollection will live in redux store
 currentQueue will be in the player component,
   currentQueue uses the collection to generate a list of future songs to play
-
+Can also view a collection WITHOUT updating the collection
 
     Can be album or playlist
     player can jump to next song or prev song
@@ -37,17 +37,13 @@ currentQueue will be in the player component,
         onDuration={duration => this.setState({ duration }) }
 
 
-        goals for tuesday:
-          import and display album covers
-          import only album IDS, not the entire albums
-          make AJAX request for album songs, then store that in redux
-          create
+        goals for wed:
+        thoughts going on:
+          I think its broken because there are 2 albums in the store
+          there shouldn't be....
 
         CURRENT questions:
-
-          What does this mean:
-          `Module::DelegationError - to_model delegated to attachment, but attachment is nil:
-  app/views/api/albums/show.json.jbuilder:4:in `block in _app_views_api_albums_show_json_jbuilder___2501057777023188344_70214149624120'`
-
-          How to fix having duplicate songs from some seeds failing.
-          Why is my heroku broken?
+          can you have 2 onClicks in the same button?
+            or 1 clickHandler that calls both functions?
+          Getting the home to properly link
+          updating the current song from the album_show page

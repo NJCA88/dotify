@@ -15,7 +15,14 @@
 .album {
   /* background-color: lightblue; */
   width: 144px;
-  padding-right: 25px
+  padding-right: 25px;
+  /* margin: */
+}
+.album:hover{
+  /* background-color: blue; */
+  cursor: pointer;
+  /* -webkit-filter: grayscale(90%); */
+  -webkit-filter: contrast(85%)
 }
 
 .album-list {
