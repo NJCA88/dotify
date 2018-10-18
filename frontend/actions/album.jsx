@@ -18,9 +18,9 @@ const receiveAlbum = payload => {
   };
 };
 
+export const fetchAlbum = (id) => dispatch => getAlbum(id)
+.then(payload => dispatch(receiveAlbum(payload)));
+
 
 export const fetchAlbums = () => dispatch => getAlbums()
 .then(albums => dispatch(receiveAlbums(albums)));
-
-export const fetchAlbum = (id) => dispatch => getAlbum(id)
-.then(payload => dispatch(receiveAlbum(payload)));

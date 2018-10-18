@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import AlbumShowComponent from './album_show';
 import {fetchSongs, updateSong} from '../../actions/song';
 import {fetchAlbums} from '../../actions/album';
-import {receiveCollection} from '../../actions/collections';
+import {updateCollection} from '../../actions/collections';
 import {fetchAlbum} from "../../actions/album";
 
 
@@ -26,7 +26,7 @@ const mapDispatchToProps = dispatch => ({
   updateCurrentSong: song => dispatch(updateSong(song)),
   // receiveAlbum: id => dispatch(receiveAlbum(album))
   fetchAlbum: id => dispatch(fetchAlbum(id)),
-  receiveCollection: collection => dispatch(receiveCollection(collection))
+  updateCollection: payload => dispatch(updateCollection(payload))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlbumShowComponent);

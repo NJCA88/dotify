@@ -18,7 +18,7 @@ class PlayerComponent extends React.Component{
   }
 
   componentDidMount(){
-    // this.generateSongQueue();
+    this.generateSongQueue();
     console.log("componentDidMount hit");
   }
 
@@ -30,23 +30,19 @@ class PlayerComponent extends React.Component{
     // this.generateSongQueue();
   }
 
-  componentWillReceiveProps(nextProps){
-    if (this.props !== nextProps && this.props.collection !== undefined){
-      console.log("CWRP hit");
-      this.generateSongQueue();
-
-    }
-  }
+  // componentWillReceiveProps(nextProps){
+  //   if (this.props !=== nextProps){
+  //     do stuff
+  //   }
+  // }
 
   generateSongQueue(){
 
-    console.log("generating song queue");
-    console.log(this.props.collection);
-    console.log(this.props.currentSong.title);
-    console.log(this.props.collectionSongs);
+    console.log("generating song queue"
+  );
 
     this.setState({
-      songQueue: this.props.collectionSongs
+      songQueue: this.props.collection.songs
     });
     console.log("QUEUE IS", this.state.songQueue);
   }
@@ -58,19 +54,19 @@ class PlayerComponent extends React.Component{
   //     />
   // </div>
 
-  // console.log("YO SHIT IS BROKE!!!", this.props);
-  // const track = this.props.currentSong.track ? this.props.currentSong.track : this.state.currentSong_track;
-  // // const track = this.state.currentSong_track;
-  // // debugger
-  // const image_src = this.props.collection.album ? this.props.collection.album.album_cover : "https://www.iconsdb.com/icons/preview/white/spotify-xxl.png";
-  // const title = this.props.currentSong ? this.props.currentSong.title : "";
-  // const collection = this.props.collection.album.title ? this.props.collection.title : "";
-  //
-  // let player_image ="";
+  console.log("YO SHIT IS BROKE!!!", this.props);
+  const track = this.props.currentSong.track ? this.props.currentSong.track : this.state.currentSong_track;
+  // const track = this.state.currentSong_track;
+  // debugger
+  const image_src = this.props.collection.album ? this.props.collection.album.album_cover : "https://www.iconsdb.com/icons/preview/white/spotify-xxl.png";
+  const title = this.props.currentSong ? this.props.currentSong.title : "";
+  const collection = this.props.collection.album.title ? this.props.collection.title : "";
+
+  let player_image ="";
 
   render(){
 
-    // console.log("YO SHIT IS BROKE!!!", this.props);
+    console.log("YO SHIT IS BROKE!!!", this.props);
     const track = "cats";
     // const track = this.state.currentSong_track;
     // debugger

@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import HomeComponent from './home';
 import {fetchSongs} from '../../actions/song';
 import {fetchAlbums} from '../../actions/album';
-import {receiveCollection} from '../../actions/collections';
+import {receiveCollection, fetchAlbum} from '../../actions/collections';
 
 
 const mapStateToProps = state => {
@@ -11,7 +11,6 @@ const mapStateToProps = state => {
   // debugger
   return (
     {currentUser: state.session.currentUser,
-
     songs: Object.values(state.entities.songs),
     albums: Object.values(state.entities.albums)
     }
@@ -24,7 +23,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   fetchSongs: () => dispatch(fetchSongs()),
   fetchAlbums: () => dispatch(fetchAlbums()),
-  receiveCollection: collection => dispatch(receiveCollection(collection))
+  updateCollection: collection => dispatch(fetchAlbum(collection))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeComponent);

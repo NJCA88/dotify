@@ -56,7 +56,7 @@ class AlbumShowComponent extends React.Component{
 
   updateSongCollection(collection){
     //UPDATE STORE HERE
-    this.props.receiveCollection(collection);
+    this.props.updateCollection(collection);
     console.log("updating collection");
   }
 
@@ -68,11 +68,11 @@ class AlbumShowComponent extends React.Component{
 
   updateMusic(e, collection, song){
     e.preventDefault();
-    this.updateSongCollection(collection);
     this.updateCurrentSong(song);
+    this.updateSongCollection(collection);
   }
 
-
+// https://mbtskoudsalg.com/images/transparent-png-play-button.png
 
   render(){
     if (this.props.album === undefined) return <div>wrong</div>;
@@ -83,11 +83,9 @@ class AlbumShowComponent extends React.Component{
           <li className="song">
             <img className="play-icon" src="https://d2uvvge0uswb28.cloudfront.net/static/dist/v0/img/svg/icon-play.svg" />
 
-
-
             <button className="music-note-button"
-              onClick={(e) => {this.updateMusic(e, this.props.album, song);}} >
-              <img src="https://png2.kisspng.com/show/a900009bc9231e80f7eea004636b9db7/L0KzQYm3VMAzN5N4iZH0aYP2gLBuTfNwdaF6jNd7LXnmf7B6TglwfaV6etc2cHzkiX7plgR1d58ye95ycD3kgsW0kPxigV5njeZ9b36wRbLqUfQ1bGM6UaQ6ZEWxR4KAV8E2QWM2TaQ7NkW1Q4i3U8Y2OV91htk=/kisspng-computer-icons-youtube-play-button-clip-art-play-button-5ac1d4d25921d5.7177159215226523703651.png" />
+              onClick={(e) => {this.updateMusic(e, {album: this.props.album, songs: this.props.songs}, song);}} >
+              <img src="https://d2uvvge0uswb28.cloudfront.net/static/dist/v0/img/svg/icon-play.svg" />
             </button>
             {song.title}
           </li>

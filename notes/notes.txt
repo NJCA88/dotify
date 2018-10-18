@@ -43,9 +43,21 @@ Can also view a collection WITHOUT updating the collection
           CSS for onHover add play image. Either grey out the image and add play
           or change the music note to a play icon.
             HOWYADOIT?
+          !!!
+            setting default values in the redux store
+          !!!
+          managing the state's song collection without modifying entities songs
+            updating the collection's songs in 1 action? or multiple actions?
+            how to update multiple things
+          !!!
+            converting object to an array in order to generate / update my song collection songs.
+            maybe
+              currentSongIndex = Object.values(this.props.collection.songs).findIndex(this.props.currentSong)
 
 
         CURRENT issues::
+          not my play button isn't loading?  dunno why THAT is...
+          fix play button that just stopped  being on the internet :-(
           ComponentWillReceiveProps?
             or something else to generate new song list
           heroku has no albums on it
