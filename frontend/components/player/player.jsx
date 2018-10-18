@@ -71,12 +71,14 @@ class PlayerComponent extends React.Component{
   render(){
 
     // console.log("YO SHIT IS BROKE!!!", this.props);
-    const track = "cats";
+    const track = this.props.currentSong ? this.props.currentSong.track : "";
     // const track = this.state.currentSong_track;
     // debugger
-    const image_src = "cats";
-    const title = "cats";
-    const collection = "cats";
+    const image_src = this.props.collection? this.props.collection.album_cover : "https://www.iconsdb.com/icons/preview/white/spotify-xxl.png";
+    const title = this.props.currentSong ? this.props.currentSong.title : "";
+    // const collection = "cats"
+    const collection = this.props.collection ? this.props.collection.title : "";
+
 
     let player_image ="";
     if (this.state.playing === false) {
