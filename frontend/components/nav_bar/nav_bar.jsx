@@ -35,27 +35,30 @@ handleGoHome(e){
             <ul>
 
           <li>
-            <button> Search
+            <button className="nav-icon">
               <img src="http://romanovrussia.com/wp-content/uploads/search-icon.png" />
+              <p>Search</p>
             </button>
           </li>
           <li>
-            <button onClick={this.handleSubmit} >Logout
-            </button>
-          </li>
-          <li>
-            <button onClick={this.handleGoHome} >
-              Home
-              <img src="http://www.clker.com/cliparts/z/q/T/q/7/h/home-hi.png" />
+            <button onClick={this.handleGoHome} className="nav-icon">
+              <img src="https://mbtskoudsalg.com/images/home-icon-white-png-8.png" />
+              <p>Home</p>
             </button>
           </li>
 
         <li>
-          <button> Search
+          <button className="nav-icon">
+            <p>Your Library</p>
           </button>
         </li>
-      </ul>
 
+      <li>
+        <button onClick={this.handleSubmit} className="nav-icon">
+          <p>Logout</p>
+        </button>
+      </li>
+    </ul>
 
       </div>
       );

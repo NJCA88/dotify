@@ -60,8 +60,8 @@ class PlayerComponent extends React.Component{
     const track = this.props.currentSong.track ? this.props.currentSong.track : this.state.currentSong_track;
     // const track = this.state.currentSong_track;
     const image_src = this.props.collection.album_cover ? this.props.collection.album_cover : "https://www.iconsdb.com/icons/preview/white/spotify-xxl.png";
-    const title = this.props.currentSong.title ? this.props.currentSong.title : "No Current Song";
-    const collection = this.props.collection.title? this.props.collection.title : "No Current Album";
+    const title = this.props.currentSong.title ? this.props.currentSong.title : "";
+    const collection = this.props.collection.title? this.props.collection.title : "";
 
 
     return (

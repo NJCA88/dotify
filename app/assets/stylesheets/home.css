@@ -18,6 +18,8 @@
   padding-right: 25px;
   /* margin: */
 }
+
+
 .album:hover{
   /* background-color: blue; */
   cursor: pointer;
@@ -25,11 +27,27 @@
   -webkit-filter: contrast(85%)
 }
 
+.album-index-album{
+  padding: 0px;
+  /* margin: 5px; */
+  border: none;
+}
+.album button{
+  max-height: 145px;
+}
 .album-list {
   display: flex;
 }
 
 .demo-image{
-  width:144px;
-  height: 144px;
+  width:145px;
+  height: 145px;
+}
+
+.album-index-title {
+  /* background-color: blue; */
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  color: white;
 }

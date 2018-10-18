@@ -8,7 +8,7 @@
 .album-show-component {
   /* display: flex; */
   display: flex;
-  background-color: blue;
+  /* background-color: blue; */
   padding-left: 350px;
   padding-top: 28px;
   /* margin: auto; */
@@ -24,6 +24,10 @@
   width: 100%;
 }
 
+.song-list {
+  width: 70%
+}
+
 .song {
   /* background-color: blue; */
   display: flex;
@@ -32,6 +36,7 @@
   line-height: 22px;
   color: #fff;
   margin-top: .7em;
+  width: 100%;
 }
 
 .play-icon:hover{
@@ -65,8 +70,9 @@
   /* background-color: blue; */
   cursor: pointer;
   /* -webkit-filter: grayscale(90%); */
-  -webkit-filter: contrast(25%);
+  /* -webkit-filter: contrast(25%); */
   visibility: visible;
+  background-color: rgba(50, 50, 50, .5);
 
   /* background-color: red; */
 }

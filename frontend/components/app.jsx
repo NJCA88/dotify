@@ -33,8 +33,8 @@ export default ()=> (
       <ProtectedRoute exact path="/albums/:albumID" component={AlbumContainer} />
 
 
-      <Route path="/" render={() => <Redirect to="/splash" />} />
     </Switch>
+    <Route path="/" render={() => <Redirect to="/splash" />} />
 
 
 

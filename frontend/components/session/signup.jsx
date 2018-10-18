@@ -24,6 +24,12 @@ class Signup extends React.Component{
       .then( ()=> this.props.history.push('/home'));
   }
 
+  // <li className="gender-select">
+  //     <input type="radio" name="gender" value="male" /> Male
+  //     <input type="radio" name="gender" value="female" /> Female
+  //     <input type="radio" name="gender" value="non-binary" /> Non-Binary
+  // </li>
+
   render(){
       return( <div className="signup-form">
 
@@ -95,7 +101,7 @@ class Signup extends React.Component{
             <li>Date of Birth</li>
           <div className="register-DOB">
             <label>
-              <select>
+              <select className="month">
                   <option value="January">January</option>
                   <option value="February">February</option>
                   <option value="March">March</option>
@@ -120,18 +126,11 @@ class Signup extends React.Component{
               />
             </label>
           </div>
-            <li>
-              <div>
-                <input type="radio" name="gender" value="male" /> Male
-                <input type="radio" name="gender" value="female" /> Female
-                <input type="radio" name="gender" value="non-binary" /> Non-Binary
-              </div>
-            </li>
 
-          </li>
           <li>
             <button onClick={this.handleSubmit} className="signup-button">Sign Up</button>
           </li>
+        </li>
       </form>
       </ul>
       </div> );

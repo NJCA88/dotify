@@ -37,9 +37,7 @@ Can also view a collection WITHOUT updating the collection
         onDuration={duration => this.setState({ duration }) }
 
 
-        stuff to do:
-          add playing / paused? to store so it can be changed by other components
-            album pages have to be able to play / pause
+
 
         QUESTIONS:
           CSS for onHover add play image. Either grey out the image and add play
@@ -47,11 +45,7 @@ Can also view a collection WITHOUT updating the collection
             HOWYADOIT?
 
 
-
-
-        CURRENT questions:
+        CURRENT issues::
           ComponentWillReceiveProps?
             or something else to generate new song list
           heroku has no albums on it
-          my local version crashes upon reloading an album page
-            cannot read property "id" of undefined
