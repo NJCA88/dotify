@@ -77,3 +77,13 @@
   font-weight: 400;
   word-wrap: break-word;
 }
+
+.music-note-button {
+  background: transparent;
+  border: none;
+}
+.music-note-button img{
+  height: 20px;
+  width: 16px;
+
+}

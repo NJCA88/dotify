@@ -28,12 +28,18 @@ class PlayerComponent extends React.Component{
 
     console.log("this.props.collection:", this.props.collection);
     // this.generateSongQueue();
-
   }
+
+  // componentWillReceiveProps(nextProps){
+  //   if (this.props !=== nextProps){
+  //     do stuff
+  //   }
+  // }
 
   generateSongQueue(){
 
-    console.log("answer?:", this.props.collection.songs);
+    console.log("generating song queue"
+  );
 
     this.setState({
       songQueue: this.props.collection.songs
@@ -53,15 +59,38 @@ class PlayerComponent extends React.Component{
     console.log("this.props", this.props);
     const track = this.props.currentSong.track ? this.props.currentSong.track : this.state.currentSong_track;
     // const track = this.state.currentSong_track;
+    const image_src = this.props.collection.album_cover ? this.props.collection.album_cover : "https://www.iconsdb.com/icons/preview/white/spotify-xxl.png";
+    const title = this.props.currentSong.title ? this.props.currentSong.title : "No Current Song";
+    const collection = this.props.collection.title? this.props.collection.title : "No Current Album";
 
 
     return (
       <div className="player">
-        <p>SONG PLAYER!!!!</p>
+        <ul className="player-thumb-group">
+          <li>
+            <img src={image_src} className="album-thumbnail"/>
+          </li>
+          <li>
+            {title} <br />
+            {collection}
+          </li>
 
-        <button onClick={this.playToggle} className="myButton">
-          play / pause
-        </button>
+        </ul>
+
+        <ul className="player-song-nav-group">
+          <button onClick={this.playToggle} className="player-play-button"
+            placeholder= "&#xf144;" charSet="utf-8"
+            >
+            <div>
+              <img src="https://png2.kisspng.com/show/a900009bc9231e80f7eea004636b9db7/L0KzQYm3VMAzN5N4iZH0aYP2gLBuTfNwdaF6jNd7LXnmf7B6TglwfaV6etc2cHzkiX7plgR1d58ye95ycD3kgsW0kPxigV5njeZ9b36wRbLqUfQ1bGM6UaQ6ZEWxR4KAV8E2QWM2TaQ7NkW1Q4i3U8Y2OV91htk=/kisspng-computer-icons-youtube-play-button-clip-art-play-button-5ac1d4d25921d5.7177159215226523703651.png" />
+            </div>
+          </button>
+        </ul>
+
+        <ul className="player-volume-group">
+          <div>VOL</div>
+        </ul>
+
 
           <div className="video-player">
             <ReactPlayer

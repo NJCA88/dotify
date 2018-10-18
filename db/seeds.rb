@@ -5,8 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Song.destroy_all
+Album.destroy_all
 
+Album.create(title: "Whiplash_soundtrack", artist_id: 0).album_cover.attach(io: File.open("/Users/chrisatwood/Desktop/dotify_music/whiplash_cover.jpg"), filename: "whiplash_cover.jpg")
+Album.create(title: "La La Land", artist_id: 0).album_cover.attach(io: File.open("/Users/chrisatwood/Desktop/dotify_music/La_La_Land_cover.jpg"), filename: "La_La_Land_cover.jpg")
+
+
+Song.destroy_all
 
 Song.create(title: "Whiplash",album_id:1).track.attach(io: File.open("/Users/chrisatwood/Desktop/dotify_music/whiplash_soundtrack/Whiplash.m4a"), filename: "Whiplash.m4a")
 Song.create(title: "Caravan",album_id:1).track.attach(io: File.open("/Users/chrisatwood/Desktop/dotify_music/whiplash_soundtrack/Caravan.m4a"), filename: "Caravan.m4a")

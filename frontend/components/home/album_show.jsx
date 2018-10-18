@@ -7,6 +7,7 @@ class AlbumShowComponent extends React.Component{
     super(props);
 
     this.updateCurrentSong = this.updateCurrentSong.bind(this);
+    this.updateMusic = this.updateMusic.bind(this);
   }
 
   componentDidMount(){
@@ -17,23 +18,53 @@ class AlbumShowComponent extends React.Component{
     // console.log("this.props.album", this.props.album);
     //NOTE hard coded 1 to test album of whiplash_soundtrack
     // this.props.fetchAlbum(1);
-    // debugger
-    this.props.fetchAlbum(this.props.album.id);
+    this.props.fetchAlbum(this.props.match.params.albumID);
     // debugger
   }
 
-  updateSongCollection(e, collection){
-    e.preventDefault();
+  // updateSongCollection(e, collection){
+  //   e.preventDefault();
+  //   //UPDATE STORE HERE
+  //   this.props.receiveCollection(collection);
+  //   console.log(collection);
+  // }
+  // updateCurrentSong(e, song){
+  //   e.preventDefault();
+  //   //UPDATE STORE HERE
+  //   this.props.updateCurrentSong(song);
+  //   console.log("updating current song with():", song);
+  // }
+
+  // <button
+  //   onClick={(e) => {this.updateSongCollection(e, this.props.album );}}
+  //   play
+  //   >
+  //   updateCollection
+  // </button>
+  //
+  // <button
+  //   onClick={(e) => {this.updateCurrentSong(e, song );}}
+  //   >
+  //   updateSong
+  // </button>
+  //
+  //
+  updateSongCollection(collection){
     //UPDATE STORE HERE
     this.props.receiveCollection(collection);
-    console.log(collection);
+    console.log("updating collection");
   }
-/// INCOMPLETE
-  updateCurrentSong(e, song){
-    e.preventDefault();
+
+  updateCurrentSong(song){
     //UPDATE STORE HERE
     this.props.updateCurrentSong(song);
-    console.log("updating current song with():", song);
+    console.log("updating Song");
+  }
+
+  updateMusic(e, collection, song){
+    e.preventDefault();
+    this.updateSongCollection(collection);
+    this.updateCurrentSong(song);
   }
 
 
@@ -47,17 +78,11 @@ class AlbumShowComponent extends React.Component{
           <li className="song">
             <img className="play-icon" src="https://d2uvvge0uswb28.cloudfront.net/static/dist/v0/img/svg/icon-play.svg" />
 
-            <button
-              onClick={(e) => {this.updateSongCollection(e, this.props.album );}}
-              play
-              >
-              updateCollection
-            </button>
 
-            <button
-              onClick={(e) => {this.updateCurrentSong(e, song );}}
-              >
-              updateSong
+
+            <button className="music-note-button"
+              onClick={(e) => {this.updateMusic(e, this.props.album, song);}} >
+              <img src="http://www.clker.com/cliparts/a/p/f/O/d/I/eighth-note-outline-md.png" />
             </button>
 
             {song.title}

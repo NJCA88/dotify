@@ -37,13 +37,21 @@ Can also view a collection WITHOUT updating the collection
         onDuration={duration => this.setState({ duration }) }
 
 
-        goals for wed:
-        thoughts going on:
-          I think its broken because there are 2 albums in the store
-          there shouldn't be....
+        stuff to do:
+          add playing / paused? to store so it can be changed by other components
+            album pages have to be able to play / pause
+
+        QUESTIONS:
+          CSS for onHover add play image. Either grey out the image and add play
+          or change the music note to a play icon.
+            HOWYADOIT?
+
+
+
 
         CURRENT questions:
-          can you have 2 onClicks in the same button?
-            or 1 clickHandler that calls both functions?
-          Getting the home to properly link
-          updating the current song from the album_show page
+          ComponentWillReceiveProps?
+            or something else to generate new song list
+          heroku has no albums on it
+          my local version crashes upon reloading an album page
+            cannot read property "id" of undefined

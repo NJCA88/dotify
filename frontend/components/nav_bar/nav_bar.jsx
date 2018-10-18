@@ -36,6 +36,7 @@ handleGoHome(e){
 
           <li>
             <button> Search
+              <img src="http://romanovrussia.com/wp-content/uploads/search-icon.png" />
             </button>
           </li>
           <li>
@@ -43,7 +44,9 @@ handleGoHome(e){
             </button>
           </li>
           <li>
-            <button onClick={this.handleGoHome} >Home
+            <button onClick={this.handleGoHome} >
+              Home
+              <img src="http://www.clker.com/cliparts/z/q/T/q/7/h/home-hi.png" />
             </button>
           </li>
 
