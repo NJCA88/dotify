@@ -30,43 +30,42 @@ class PlayerComponent extends React.Component{
     // this.generateSongQueue();
   }
 
-  componentWillReceiveProps(nextProps){
-    if (this.props !== nextProps && this.props.collection !== undefined){
+  // componentWillReceiveProps(nextProps){
+  //   if (this.props !== nextProps && this.props.collection !== undefined){
+  //     console.log("CWRP hit");
+  //     this.generateSongQueue();
+  //   }
+  // }
+
+  componentDidUpdate(oldProps){
+    if (this.props.currentSong !== oldProps.currentSong && this.props.collection !== undefined){
       console.log("CWRP hit");
       this.generateSongQueue();
-
     }
   }
 
+
   generateSongQueue(){
 
-    console.log("generating song queue");
-    console.log(this.props.collection);
-    console.log(this.props.currentSong.title);
-    console.log(this.props.collectionSongs);
+
+    const collectionOrder = Object.values(this.props.collectionSongs);
+
+    var currentSong = this.props.currentSong
+    let currentSongIdx = collectionOrder.findIndex(function (song) {return  song.id == currentSong.id });
+    let nextSong = collectionOrder[currentSongIdx + 1];
+    let prevSong = currentSong;
+
+    // console.log("ANSWER IS", answer);
+    console.log("NEXT SONG IS",  nextSong.title);
+
 
     this.setState({
-      songQueue: this.props.collectionSongs
+      songQueue: [currentSong, currentSong, nextSong ]
     });
-    console.log("QUEUE IS", this.state.songQueue);
+    console.log("this.state.songQueue is:", this.state.songQueue);
   }
-  //
-  // <div className="video-player">
-  //   <ReactPlayer
-  //     url= {this.state.currentSong_track}
-  //      playing = {this.state.playing}
-  //     />
-  // </div>
 
-  // console.log("YO SHIT IS BROKE!!!", this.props);
-  // const track = this.props.currentSong.track ? this.props.currentSong.track : this.state.currentSong_track;
-  // // const track = this.state.currentSong_track;
-  // // debugger
-  // const image_src = this.props.collection.album ? this.props.collection.album.album_cover : "https://www.iconsdb.com/icons/preview/white/spotify-xxl.png";
-  // const title = this.props.currentSong ? this.props.currentSong.title : "";
-  // const collection = this.props.collection.album.title ? this.props.collection.title : "";
-  //
-  // let player_image ="";
+
 
   render(){
 
