@@ -22,12 +22,12 @@
 
 .splash-nav {
   max-width: 410px;
-  /* display: flex; */
   justify-content: center;
   align-self: auto;
   vertical-align: top;
   margin: auto
 }
+
 .splash-non-nav{
   margin: auto;
 }
@@ -40,7 +40,7 @@ img{
   display: flex;
   align-items: center;
   color: white;
-  margin: 50px
+  margin: 50px;
 }
 
 .splash-signup{
@@ -63,11 +63,9 @@ img{
 .splash p {
   font-family: proxima_nova,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-weight: 400;
-  /* background-color: blue; */
 }
 
 .splash-nav-text{
-  /* background-color: blue; */
   margin: 20px;
 
 }

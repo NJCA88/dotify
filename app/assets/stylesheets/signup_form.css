@@ -3,40 +3,31 @@
 .signup-form{
   display: block;
   text-align: center;
-  /* background-color: papayawhip; */
   margin: auto;
   align-items: center;
   list-style-type: none
 }
 
-/* .signup-form {
-  height: 1000px;
-} */
+
 
 .signup-form li {
-
-  /* background-color: lightblue; */
   width: 426px;
   margin: auto;
-  /* height: 48px; */
 }
 
 input{
   padding-left: 20px;
   width: 350px;
-  /* padding-right: 200px; */
   padding-top: 10px;
   margin-top: 8px;
 }
 
 #DOBday {
-  /* background-color: blue; */
   width: 50px;
   padding-right: 50px;
 }
 
 #DOByear {
-  /* background-color: blue; */
   width: 50px;
   padding-right: 50px;
 }
@@ -45,9 +36,6 @@ input{
   width: 350px;
 }
 
-/* .signup-button{
-  margin: auto;
-} */
 .signup-button{
     display: flex;
     background-color: #1ed760;
@@ -65,18 +53,15 @@ input{
 }
 
 .register-DOB{
-  /* background-color: red; */
   vertical-align: center;
 }
 
 .month{
   position: relative;
   top: -5px;
-  /* background-color: blue; */
   height: 28px;
   padding-bottom: 100px;
   width: 124px;
-  /* margin-bottom: 100px; */
 }
 
 .signup_container {
@@ -87,8 +72,6 @@ input{
 
 .gender-select{
   display: flex;
-  /* position: absolute; */
-  /* left: 20px; */
   margin: auto;
   width: 300px;
   background-color: blue;

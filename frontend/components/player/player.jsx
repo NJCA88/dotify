@@ -10,6 +10,7 @@ class PlayerComponent extends React.Component{
     this.generateSongQueue = this.generateSongQueue.bind(this);
     this.updateCurrentSong = this.updateCurrentSong.bind(this);
     this.nextSong = this.nextSong.bind(this);
+    this.handleNext = this.handleNext.bind(this);
     this.state = {
       // currentSong_track: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a8ae4ec9fbbdcfd2a1df1e181020810568fe588a/Whiplash.m4a',
       currentSong_track: 'https://s3-us-west-1.amazonaws.com/dotify-song-dev/u2UcP3X1xfzTME4AfYNMRLY2',
@@ -35,6 +36,10 @@ class PlayerComponent extends React.Component{
 
   updateCurrentSong(song){
     this.props.updateCurrentSong(song);
+  }
+
+  handleNext(){
+    this.updateCurrentSong(this.state.songQueue[2]);
   }
 
   nextSong(e, song){
@@ -148,6 +153,8 @@ class PlayerComponent extends React.Component{
             <ReactPlayer
               url= {track}
                playing = {this.state.playing}
+               onEnded= {this.handleNext}
+
               />
           </div>
 
