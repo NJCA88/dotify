@@ -35,10 +35,10 @@ Song.create(title: "Start a Fire", album_id:4).track.attach(io: Start_A_Fire, fi
 
 
 
-# Album.destroy_all
-#
-# Album.create(title: "Whiplash_soundtrack", artist_id: 0).album_cover.attach(io: File.open("/Users/chrisatwood/Desktop/dotify_music/whiplash_cover.jpg"), filename: "whiplash_cover.jpg")
-# Album.create(title: "La La Land", artist_id: 0).album_cover.attach(io: File.open("/Users/chrisatwood/Desktop/dotify_music/La_La_Land_cover.jpg"), filename: "La_La_Land_cover.jpg")
+Album.destroy_all
+
+Album.create(title: "Whiplash_soundtrack", artist_id: 0).album_cover.attach(io: File.open("/Users/chrisatwood/Desktop/dotify_music/whiplash_cover.jpg"), filename: "whiplash_cover.jpg")
+Album.create(title: "La La Land", artist_id: 0).album_cover.attach(io: File.open("/Users/chrisatwood/Desktop/dotify_music/La_La_Land_cover.jpg"), filename: "La_La_Land_cover.jpg")
 
 #
 # Song.destroy_all
