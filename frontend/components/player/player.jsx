@@ -36,6 +36,7 @@ class PlayerComponent extends React.Component{
 
   updateCurrentSong(song){
     this.props.updateCurrentSong(song);
+
   }
 
   handleNext(){
@@ -58,6 +59,11 @@ class PlayerComponent extends React.Component{
     if (this.props.currentSong !== oldProps.currentSong && this.props.collection !== undefined){
       console.log("CWRP hit");
       this.generateSongQueue();
+      console.log("setting state");
+      this.setState({
+        playing: true
+      });
+      console.log("this.state.playing is ", this.state.playing);
     }
   }
 
