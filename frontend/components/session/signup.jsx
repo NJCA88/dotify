@@ -9,6 +9,7 @@ class Signup extends React.Component{
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDummySubmit = this.handleDummySubmit.bind(this);
 
   }
 
@@ -30,6 +31,16 @@ class Signup extends React.Component{
   //     <input type="radio" name="gender" value="non-binary" /> Non-Binary
   // </li>
 
+  handleDummySubmit(e){
+    e.preventDefault();
+    this.props.login({
+      username: 'dummy',
+      email: 'test2@test.com',
+      password: 'password'
+    })
+      .then( ()=> this.props.history.push('/home'));
+  }
+
   render(){
       return( <div className="signup-form">
 
@@ -48,7 +59,7 @@ class Signup extends React.Component{
       <form className="signup-form-box">
 
         <li>
-          <button className="dummy-login" id="signup-demo-login">DEMO LOGIN
+          <button onClick={this.handleDummySubmit} className="dummy-login" id="signup-demo-login">DEMO LOGIN
           </button>
         </li>
 
