@@ -15,7 +15,7 @@ class PlayerComponent extends React.Component{
       // currentSong_track: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a8ae4ec9fbbdcfd2a1df1e181020810568fe588a/Whiplash.m4a',
       currentSong_track: 'https://s3-us-west-1.amazonaws.com/dotify-song-dev/u2UcP3X1xfzTME4AfYNMRLY2',
       playing: false,
-      songQueue: []
+      songQueue: undefined
 
     };
   }
@@ -65,22 +65,36 @@ class PlayerComponent extends React.Component{
       });
       console.log("this.state.playing is ", this.state.playing);
     }
+    //this is the part to test making new album auto play on click of artwork
+    if ( this.props.currentSong === oldProps.currentSong && this.props.collection !== oldProps.collection){
+      console.log("Play new album without knowing song!!!");
+      console.log("this.props is:", this.props);
+      const collectionOrder = Object.values(this.props.collectionSongs)
+      let currentSong = collectionOrder[0];
+      this.updateCurrentSong(collectionOrder[0]);
+      this.generateSongQueue(currentSong);
+    }
   }
 
 
-  generateSongQueue(){
+  generateSongQueue(curSong){
     const collectionOrder = Object.values(this.props.collectionSongs);
 
-    var currentSong = this.props.currentSong;
+    var currentSong = curSong ? curSong :  this.props.currentSong;
+    console.log("currentSong is", currentSong);
+    //at this point, current song is correct
     let currentSongIdx = collectionOrder.findIndex(function (song) {return  song.id == currentSong.id; });
+    console.log("currentSongIdx", currentSongIdx);
     let prevSong = currentSong;
     let nextSong = collectionOrder[currentSongIdx + 1];
     let next = "";
+
     if (currentSongIdx < (collectionOrder.length - 1) ) {
       next = collectionOrder[currentSongIdx + 1];
     } else {
       next = collectionOrder[0];
     }
+
     let prev = "";
     if (currentSongIdx === 0) {
       prev = collectionOrder[0];
@@ -88,14 +102,16 @@ class PlayerComponent extends React.Component{
       prev = collectionOrder[currentSongIdx - 1];
     }
 
-    // console.log("ANSWER IS", answer);
-    // console.log("NEXT SONG IS",  nextSong.title);
+
+    console.log("prev, cur, next", prev, currentSong, next);
 
 
     this.setState({
       songQueue: [prev, currentSong, next ]
-    });
-    console.log("this.state.songQueue is:", this.state.songQueue);
+    }, () =>(console.log("this.state.songQueue is:", this.state.songQueue)) );
+
+
+    // console.log("this.state.songQueue is:", this.state.songQueue);
   }
 
 
@@ -104,10 +120,13 @@ class PlayerComponent extends React.Component{
 
     // console.log("YO SHIT IS BROKE!!!", this.props);
     const track = this.props.currentSong ? this.props.currentSong.track : "";
+    // const track = this.state.songQueue ? this.state.songQueue[1].track : "";
+
     // const track = this.state.currentSong_track;
     // debugger
     const image_src = this.props.collection? this.props.collection.album_cover : "https://www.iconsdb.com/icons/preview/white/spotify-xxl.png";
     const title = this.props.currentSong ? this.props.currentSong.title : "";
+    // const title = this.state.songQueue ? this.state.songQueue[1].title : "";
     // const collection = "cats"
     const collection = this.props.collection ? this.props.collection.title : "";
 
