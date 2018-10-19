@@ -19,16 +19,16 @@ City_of_Stars = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-
 Someone_In_The_Crowd = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/Someone_In_The_Crowd.m4a')
 Start_A_Fire = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/Start_a_Fire.m4a')
 
-Song.create(title: "Whiplash",album_id:3).track.attach(io: Whiplash, filename: "Whiplash.m4a")
-Song.create(title: "Caravan",album_id:3).track.attach(io: Caravan, filename: 'Caravan.m4a' )
-Song.create(title: "Casey_song",album_id:3).track.attach(io:  Casey_song, filename: 'Casey_song.m4a'  )
+Song.create(title: "Whiplash",album_id:1).track.attach(io: Whiplash, filename: "Whiplash.m4a")
+Song.create(title: "Caravan",album_id:1).track.attach(io: Caravan, filename: 'Caravan.m4a' )
+Song.create(title: "Casey_song",album_id:1).track.attach(io:  Casey_song, filename: 'Casey_song.m4a'  )
 
-Song.create(title: "A Lovely Night", album_id:4).track.attach(io: A_lovely_night , filename: 'A_lovely_night.m4a'  )
-Song.create(title: "Another Day of Sun", album_id:4).track.attach(io:  Another_Day_of_Sun, filename: 'Another_Day_of_Sun.m4a' )
-Song.create(title: "Audition", album_id:4).track.attach(io: Audition , filename: 'Audition.m4a' )
-Song.create(title: "City of Stars", album_id:4).track.attach(io: City_of_Stars, filename: 'City_of_Stars.m4a' )
-Song.create(title: "Someone in The Crowd", album_id:4).track.attach(io:  Someone_In_The_Crowd, filename: 'Someone_In_The_Crowd.m4a' )
-Song.create(title: "Start a Fire", album_id:4).track.attach(io: Start_A_Fire, filename: 'Start_A_Fire.m4a' )
+Song.create(title: "A Lovely Night", album_id:2).track.attach(io: A_lovely_night , filename: 'A_lovely_night.m4a'  )
+Song.create(title: "Another Day of Sun", album_id:2).track.attach(io:  Another_Day_of_Sun, filename: 'Another_Day_of_Sun.m4a' )
+Song.create(title: "Audition", album_id:2).track.attach(io: Audition , filename: 'Audition.m4a' )
+Song.create(title: "City of Stars", album_id:2).track.attach(io: City_of_Stars, filename: 'City_of_Stars.m4a' )
+Song.create(title: "Someone in The Crowd", album_id:2).track.attach(io:  Someone_In_The_Crowd, filename: 'Someone_In_The_Crowd.m4a' )
+Song.create(title: "Start a Fire", album_id:2).track.attach(io: Start_A_Fire, filename: 'Start_A_Fire.m4a' )
 
 
 
@@ -37,8 +37,13 @@ Song.create(title: "Start a Fire", album_id:4).track.attach(io: Start_A_Fire, fi
 
 Album.destroy_all
 
-Album.create(title: "Whiplash_soundtrack", artist_id: 0).album_cover.attach(io: File.open("/Users/chrisatwood/Desktop/dotify_music/whiplash_cover.jpg"), filename: "whiplash_cover.jpg")
-Album.create(title: "La La Land", artist_id: 0).album_cover.attach(io: File.open("/Users/chrisatwood/Desktop/dotify_music/La_La_Land_cover.jpg"), filename: "La_La_Land_cover.jpg")
+Whiplash_cover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/whiplash_cover.jpg')
+La_La_Land_cover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/La_La_Land_cover.jpg')
+
+
+
+Album.create(title: "Whiplash_soundtrack", artist_id: 0).album_coverattach(io: Whiplash_cover, filename: 'Whiplash_cover.jpg' )
+Album.create(title: "La La Land", artist_id: 0).album_cover.attach(io: La_La_Land_cover, filename: 'La_La_Land_cover.jp1' )
 
 #
 # Song.destroy_all
