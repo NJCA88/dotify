@@ -42,7 +42,7 @@ La_La_Land_cover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-so
 Album.find(3).album_cover.purge
 Album.find(4).album_cover.purge
 Album.find(3).album_cover.attach(io: Whiplash_cover, filename: 'Whiplash_cover.jpg')
-Album.find(4).album_cover.attach((io: La_La_Land_cover, filename: 'La_La_Land_cover.jpg' ))
+Album.find(4).album_cover.attach(io: La_La_Land_cover, filename: 'La_La_Land_cover.jpg' ))
 
 #
 # Album.create(title: "Whiplash_soundtrack", artist_id: 0).album_cover.attach(io: Whiplash_cover, filename: 'Whiplash_cover.jpg' )
