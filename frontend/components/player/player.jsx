@@ -8,7 +8,7 @@ class PlayerComponent extends React.Component{
     super(props);
     this.playToggle = this.playToggle.bind(this);
     this.generateSongQueue = this.generateSongQueue.bind(this);
-    this.updateCurrentSong = this.updateCurrentSong.bind(this)
+    this.updateCurrentSong = this.updateCurrentSong.bind(this);
     this.nextSong = this.nextSong.bind(this);
     this.state = {
       // currentSong_track: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a8ae4ec9fbbdcfd2a1df1e181020810568fe588a/Whiplash.m4a',
@@ -61,16 +61,22 @@ class PlayerComponent extends React.Component{
     const collectionOrder = Object.values(this.props.collectionSongs);
 
     var currentSong = this.props.currentSong;
-    let currentSongIdx = collectionOrder.findIndex(function (song) {return  song.id == currentSong.id });
-    let nextSong = collectionOrder[currentSongIdx + 1];
+    let currentSongIdx = collectionOrder.findIndex(function (song) {return  song.id == currentSong.id; });
     let prevSong = currentSong;
+    let nextSong = collectionOrder[currentSongIdx + 1];
+    let next = "";
+    if (currentSongIdx < (collectionOrder.length - 1) ) {
+      next = collectionOrder[currentSongIdx + 1];
+    } else {
+      next = collectionOrder[0];
+    }
 
     // console.log("ANSWER IS", answer);
-    console.log("NEXT SONG IS",  nextSong.title);
+    // console.log("NEXT SONG IS",  nextSong.title);
 
 
     this.setState({
-      songQueue: [currentSong, currentSong, nextSong ]
+      songQueue: [currentSong, currentSong, next ]
     });
     console.log("this.state.songQueue is:", this.state.songQueue);
   }
@@ -91,7 +97,7 @@ class PlayerComponent extends React.Component{
 
     let player_image ="";
     if (this.state.playing === false) {
-       player_image = "https://mbtskoudsalg.com/images/transparent-png-play-button.png";
+       player_image = "https://mbtskoudsalg.com/images/white-play-button-png-5.png";
     } else {
        player_image = "https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/pause-icon-18-256.png";
     }
@@ -111,6 +117,12 @@ class PlayerComponent extends React.Component{
         </ul>
 
         <ul className="player-song-nav-group">
+
+          <button className="player-skip-button">
+            <img src="https://www.materialui.co/materialIcons/av/fast_rewind_grey_192x192.png" />
+          </button>
+
+
           <button onClick={this.playToggle} className="player-play-button"
             placeholder= "&#xf144;" charSet="utf-8"
             >
@@ -122,7 +134,7 @@ class PlayerComponent extends React.Component{
           <button onClick={e => this.nextSong(e, this.state.songQueue[2])} className="player-skip-button"
             >
             <div>
-                NEXT
+                <img src="https://www.materialui.co/materialIcons/av/fast_forward_grey_192x192.png" />
             </div>
           </button>
         </ul>

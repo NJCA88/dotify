@@ -47,5 +47,14 @@
 
 .player-thumb-group {
   display: flex;
+}
+.player-play-button img{
+  max-height: 32px;
+  max-width: 40px;
+}
 
+.player-skip-button  img{
+  /* background-color: blue; */
+  max-height: 24px;
+  max-width: 24px;
 }
