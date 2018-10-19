@@ -75,13 +75,19 @@ class PlayerComponent extends React.Component{
     } else {
       next = collectionOrder[0];
     }
+    let prev = "";
+    if (currentSongIdx === 0) {
+      prev = collectionOrder[0];
+    } else {
+      prev = collectionOrder[currentSongIdx - 1];
+    }
 
     // console.log("ANSWER IS", answer);
     // console.log("NEXT SONG IS",  nextSong.title);
 
 
     this.setState({
-      songQueue: [currentSong, currentSong, next ]
+      songQueue: [prev, currentSong, next ]
     });
     console.log("this.state.songQueue is:", this.state.songQueue);
   }
@@ -123,7 +129,7 @@ class PlayerComponent extends React.Component{
 
         <ul className="player-song-nav-group">
 
-          <button className="player-skip-button">
+          <button  onClick={e => this.nextSong(e, this.state.songQueue[0])} className="player-skip-button">
             <img src="https://www.materialui.co/materialIcons/av/fast_rewind_grey_192x192.png" />
           </button>
 
