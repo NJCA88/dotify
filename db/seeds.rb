@@ -23,12 +23,12 @@ Song.create(title: "Whiplash",album_id:3).track.attach(io: Whiplash, filename: "
 Song.create(title: "Caravan",album_id:3).track.attach(io: Caravan, filename: 'Caravan.m4a' )
 Song.create(title: "Casey_song",album_id:3).track.attach(io:  Casey_song, filename: 'Casey_song.m4a'  )
 
-Song.create(title: "A Lovely Night", album_id:2).track.attach(io: A_lovely_night , filename: 'A_lovely_night.m4a'  )
-Song.create(title: "Another Day of Sun", album_id:2).track.attach(io:  Another_Day_of_Sun, filename: 'Another_Day_of_Sun.m4a' )
-Song.create(title: "Audition", album_id:2).track.attach(io: Audition , filename: 'Audition.m4a' )
-Song.create(title: "City of Stars", album_id:2).track.attach(io: City_of_Stars, filename: 'City_of_Stars.m4a' )
-Song.create(title: "Someone in The Crowd", album_id:2).track.attach(io:  Someone_In_The_Crowd, filename: 'Someone_In_The_Crowd.m4a' )
-Song.create(title: "Start a Fire", album_id:2).track.attach(io: Start_A_Fire, filename: 'Start_A_Fire.m4a' )
+Song.create(title: "A Lovely Night", album_id:4).track.attach(io: A_lovely_night , filename: 'A_lovely_night.m4a'  )
+Song.create(title: "Another Day of Sun", album_id:4).track.attach(io:  Another_Day_of_Sun, filename: 'Another_Day_of_Sun.m4a' )
+Song.create(title: "Audition", album_id:4).track.attach(io: Audition , filename: 'Audition.m4a' )
+Song.create(title: "City of Stars", album_id:4).track.attach(io: City_of_Stars, filename: 'City_of_Stars.m4a' )
+Song.create(title: "Someone in The Crowd", album_id:4).track.attach(io:  Someone_In_The_Crowd, filename: 'Someone_In_The_Crowd.m4a' )
+Song.create(title: "Start a Fire", album_id:4).track.attach(io: Start_A_Fire, filename: 'Start_A_Fire.m4a' )
 
 
 
