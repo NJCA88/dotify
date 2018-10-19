@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PlayerComponent from './player';
+import { updateSong} from '../../actions/song';
+
 
 const mapStateToProps = state => {
   // console.log("CURRENT STATE is:", state);
@@ -11,4 +13,8 @@ const mapStateToProps = state => {
   });
 };
 
-export default connect(mapStateToProps, null)(PlayerComponent);
+const mapDispatchToProps = dispatch => ({
+  updateCurrentSong: song => dispatch(updateSong(song)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlayerComponent);

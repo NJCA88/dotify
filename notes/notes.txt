@@ -45,14 +45,6 @@ Can also view a collection WITHOUT updating the collection
             HOWYADOIT?
           !!!
             setting default values in the redux store
-          !!!
-          managing the state's song collection without modifying entities songs
-            updating the collection's songs in 1 action? or multiple actions?
-            how to update multiple things
-          !!!
-            converting object to an array in order to generate / update my song collection songs.
-            maybe
-              currentSongIndex = Object.values(this.props.collection.songs).findIndex(this.props.currentSong)
 
 
         CURRENT issues::

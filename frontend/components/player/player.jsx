@@ -8,6 +8,8 @@ class PlayerComponent extends React.Component{
     super(props);
     this.playToggle = this.playToggle.bind(this);
     this.generateSongQueue = this.generateSongQueue.bind(this);
+    this.updateCurrentSong = this.updateCurrentSong.bind(this)
+    this.nextSong = this.nextSong.bind(this);
     this.state = {
       // currentSong_track: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a8ae4ec9fbbdcfd2a1df1e181020810568fe588a/Whiplash.m4a',
       currentSong_track: 'https://s3-us-west-1.amazonaws.com/dotify-song-dev/u2UcP3X1xfzTME4AfYNMRLY2',
@@ -30,6 +32,16 @@ class PlayerComponent extends React.Component{
     // this.generateSongQueue();
   }
 
+
+  updateCurrentSong(song){
+    this.props.updateCurrentSong(song);
+  }
+
+  nextSong(e, song){
+    e.preventDefault();
+    this.updateCurrentSong(song);
+  }
+
   // componentWillReceiveProps(nextProps){
   //   if (this.props !== nextProps && this.props.collection !== undefined){
   //     console.log("CWRP hit");
@@ -46,11 +58,9 @@ class PlayerComponent extends React.Component{
 
 
   generateSongQueue(){
-
-
     const collectionOrder = Object.values(this.props.collectionSongs);
 
-    var currentSong = this.props.currentSong
+    var currentSong = this.props.currentSong;
     let currentSongIdx = collectionOrder.findIndex(function (song) {return  song.id == currentSong.id });
     let nextSong = collectionOrder[currentSongIdx + 1];
     let prevSong = currentSong;
@@ -106,7 +116,13 @@ class PlayerComponent extends React.Component{
             >
             <div>
                 <img src={player_image} />
+            </div>
+          </button>
 
+          <button onClick={e => this.nextSong(e, this.state.songQueue[2])} className="player-skip-button"
+            >
+            <div>
+                NEXT
             </div>
           </button>
         </ul>

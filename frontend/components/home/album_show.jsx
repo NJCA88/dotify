@@ -22,36 +22,6 @@ class AlbumShowComponent extends React.Component{
     // debugger
   }
 
-  // updateSongCollection(e, collection){
-  //   e.preventDefault();
-  //   //UPDATE STORE HERE
-  //   this.props.receiveCollection(collection);
-  //   console.log(collection);
-  // }
-  // updateCurrentSong(e, song){
-  //   e.preventDefault();
-  //   //UPDATE STORE HERE
-  //   this.props.updateCurrentSong(song);
-  //   console.log("updating current song with():", song);
-  // }
-
-  // <button
-  //   onClick={(e) => {this.updateSongCollection(e, this.props.album );}}
-  //   play
-  //   >
-  //   updateCollection
-  // </button>
-  //
-  // <button
-  //   onClick={(e) => {this.updateCurrentSong(e, song );}}
-  //   >
-  //   updateSong
-  // </button>
-  //
-  //
-  /// MUSIC ICON
-  // "http://www.clker.com/cliparts/a/p/f/O/d/I/eighth-note-outline-md.png"
-
 
 
   updateSongCollection(collection){
