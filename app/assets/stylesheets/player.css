@@ -47,7 +47,9 @@
 
 .player-thumb-group {
   display: flex;
+  width: 300px;
 }
+
 .player-play-button img{
   max-height: 32px;
   max-width: 40px;
@@ -57,4 +59,16 @@
   /* background-color: blue; */
   max-height: 24px;
   max-width: 24px;
+}
+
+.player-song-nav-group{
+  /* background-color: red; */
+  /* position: absolute; */
+}
+
+.player-volume-group {
+  width: 300px
+}
+.player-volume-group div{
+  text-align: right;
 }

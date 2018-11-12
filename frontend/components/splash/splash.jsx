@@ -21,7 +21,7 @@ class Splash extends React.Component{
 
       <div className="splash-nav">
         <div className="logo-with-name">
-          <img src="https://www.iconsdb.com/icons/preview/white/spotify-xxl.png" />
+          <img src="https://s3-us-west-1.amazonaws.com/dotify-song-dev/spotify-img.png" />
           <h1> Dotify </h1>
         </div>
 

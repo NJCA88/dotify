@@ -124,7 +124,7 @@ class PlayerComponent extends React.Component{
 
     // const track = this.state.currentSong_track;
     // debugger
-    const image_src = this.props.collection? this.props.collection.album_cover : "https://www.iconsdb.com/icons/preview/white/spotify-xxl.png";
+    const image_src = this.props.collection ? this.props.collection.album_cover : "https://s3-us-west-1.amazonaws.com/dotify-song-dev/spotify-img.png";
     const title = this.props.currentSong ? this.props.currentSong.title : "";
     // const title = this.state.songQueue ? this.state.songQueue[1].title : "";
     // const collection = "cats"
