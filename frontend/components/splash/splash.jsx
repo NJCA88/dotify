@@ -42,8 +42,8 @@ class Splash extends React.Component{
         <h1>Get the right music right now</h1>
         <h3>"Listen to millions of songs for free"</h3>
         <ul>
-          <li>Search and discover music you'll love</li>
-          <li>"Create playlists of your favorite music"</li>
+            <li><h4>Search and discover music you'll love</h4></li>
+            <li><h4>Create playlists of your favorite music"</h4></li>
         </ul>
       </div>
 
