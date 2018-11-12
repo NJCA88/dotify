@@ -57,6 +57,10 @@ class Signup extends React.Component{
           </button>
         </li>
 
+            <li><h1>ERRORS BELOW THIS</h1></li>
+            <li className="errors"><h3>{this.props.errors}</h3></li>
+
+
         <li>
           <div className="or-divider">
             <p>or</p>
