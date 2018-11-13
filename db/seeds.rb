@@ -31,18 +31,50 @@
 # Song.create(title: "Start a Fire", album_id:4).track.attach(io: Start_A_Fire, filename: 'Start_A_Fire.m4a' )
 #
 #
+# DEH_cover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/00-va-dear_evan_hansen_(original_broadway_cast_recording)-web-2017.jpg')
+# Album.create(title: "Dear Evan Hanson", artist_id: 0).album_cover.attach(io: DEH_cover, filename: 'https://s3-us-west-1.amazonaws.com/dotify-song-dev/00-va-dear_evan_hansen_(original_broadway_cast_recording)-web-2017.jpg' )
 
+
+map = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/anybody_map.mp3')
+window = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/waving.mp3')
+for_forever = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/for_forever.mp3')
+sincereley_me = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/me.mp3')
+requim = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/requim.mp3')
+tell_her = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/tell_her.mp3')
+disappear = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/disappear.mp3')
+found = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/found.mp3')
+glove = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/glove.mp3')
+only_us = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/only_us.mp3')
+good_for_you = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/good_for_you.mp3')
+words_fail = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/words_fail.mp3')
+so_small = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/so_small.mp3')
+finale = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/finale.mp3')
+
+
+Song.create(title: "Anybody have a map?", album_id:5).track.attach(io: map, filename: "anybody_map.mp3")
+Song.create(title: "Waving through a Window", album_id:5).track.attach(io: window, filename: "waving.mp3")
+Song.create(title: "For Forever", album_id:5).track.attach(io: for_forever, filename: "for_forever.mp3")
+Song.create(title: "Sincerely, Me", album_id:5).track.attach(io: sincereley_me, filename: "me.mp3")
+Song.create(title: "Requiem", album_id:5).track.attach(io: requim, filename: "requm.mp3")
+Song.create(title: "If I could Tell Her", album_id:5).track.attach(io: tell_her, filename: "tell_her")
+Song.create(title: "Disappear", album_id:5).track.attach(io: disappear, filename: "disappear.mp3")
+Song.create(title: "You Will Be Found", album_id:5).track.attach(io: found, filename: "found.mp3")
+Song.create(title: "To Break In a Glove", album_id:5).track.attach(io: glove, filename: "glove.mp3")
+Song.create(title: "Only Us", album_id:5).track.attach(io: only_us, filename: "only_us.mp3")
+Song.create(title: "Good For You", album_id:5).track.attach(io: good_for_you, filename: "good_for_you.mp3")
+Song.create(title: "Words Fail", album_id:5).track.attach(io: words_fail, filename: "words_fail.mp3")
+Song.create(title: "So Big / So Small", album_id:5).track.attach(io: so_small, filename: "so_small.mp3")
+Song.create(title: "Finale", album_id:5).track.attach(io: finale, filename: "finale.mp3")
 
 
 
 # Album.destroy_all
 #
-Whiplash_cover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/whiplash_cover.jpg')
-La_La_Land_cover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/La_La_Land_cover.jpg')
-Album.find(3).album_cover.purge
-Album.find(4).album_cover.purge
-Album.find(3).album_cover.attach(io: Whiplash_cover, filename: 'Whiplash_cover.jpg')
-Album.find(4).album_cover.attach(io: La_La_Land_cover, filename: 'La_La_Land_cover.jpg' )
+# La_La_Land_cover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/La_La_Land_cover.jpg')
+# Album.find(3).album_cover.purge
+# Album.find(4).album_cover.purge
+# Album.find(3).album_cover.attach(io: Whiplash_cover, filename: 'Whiplash_cover.jpg')
+# Album.find(4).album_cover.attach(io: La_La_Land_cover, filename: 'La_La_Land_cover.jpg' )
 
 #
 # Album.create(title: "Whiplash_soundtrack", artist_id: 0).album_cover.attach(io: Whiplash_cover, filename: 'Whiplash_cover.jpg' )
