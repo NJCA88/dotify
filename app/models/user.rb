@@ -20,6 +20,8 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   #associations will go here
 
+  has_many :playlists
+
   def self.find_by_credentials(email, password)
     p "email, password is: ", email, password
     user = User.find_by(email: email)

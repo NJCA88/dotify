@@ -11,7 +11,7 @@ const mapStateToProps = state => {
   // debugger
   return (
     {currentUser: state.session.currentUser,
-    songs: Object.values(state.entities.songs),
+    // songs: Object.values(state.entities.songs),
     albums: Object.values(state.entities.albums)
     }
   );
