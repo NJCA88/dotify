@@ -4,7 +4,6 @@ import LoginComponent from './login';
 
 const mapStateToProps = state => {
   console.log("current errors are:", state.errors);
-  debugger;
   return {
     errors: state.errors
   };

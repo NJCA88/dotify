@@ -11,6 +11,8 @@ import { Route, Switch } from 'react-router-dom';
 import HomeComponent from "./home/home";
 import {Redirect} from "react-router-dom";
 import AlbumContainer from   "./home/album_show_container";
+import PlaylistContainer from   "./playlist/playlist_container";
+import PlaylistComponent from   "./playlist/playlist";
 import LibraryContainer from "./library/library_container";
 
 
@@ -33,6 +35,7 @@ export default ()=> (
       <ProtectedRoute exact path="/home" component={HomeContainer} />
       <ProtectedRoute exact path="/library" component={LibraryContainer} />
       <ProtectedRoute exact path="/albums/:albumID" component={AlbumContainer} />
+      <ProtectedRoute exact path="/playlists/:playlistID" component={PlaylistContainer} />
 
 
     </Switch>

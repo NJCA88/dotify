@@ -36,7 +36,7 @@ class HomeComponent extends React.Component{
     e.preventDefault();
     //UPDATE STORE HERE
     this.props.updateCollection(AlbumID);
-    console.log(collection);
+    console.log("updating collection to be: ", collection);
     this.props.history.push(`/albums/${AlbumID}`);
   }
 
@@ -55,18 +55,6 @@ playToggle() {
   console.log(this.state.playing);
 }
 
-//don't think I need these?
-// <button
-//   onClick={(e) => {this.updateSongCollection(e, album);}}
-//   className ="album">
-//   {album.title}
-// </button>
-// <button
-//   onClick={(e) => {this.handleGoAlbum(e, album.id);}}
-//   className ="album">
-//   GO THERE NOW
-// </button>
-// <img className="demo-image" src={album.album_cover} />
 
   render(){
 

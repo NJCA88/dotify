@@ -7,6 +7,7 @@ class NavBarComponent extends React.Component{
         };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGoHome = this.handleGoHome.bind(this);
+    this.handleGoLib = this.handleGoLib.bind(this);
 
   }
 
@@ -21,6 +22,12 @@ handleGoHome(e){
   e.preventDefault();
   this.props.history.push('/home');
 }
+
+  handleGoLib(e) {
+    e.preventDefault();
+    console.log("going home?")
+    this.props.history.push('/library');
+  }
 
 
 
@@ -48,7 +55,7 @@ handleGoHome(e){
           </li>
 
         <li>
-          <button className="nav-icon">
+            <button onClick={this.handleGoLib} className="nav-icon">
             <p>Your Library</p>
           </button>
         </li>

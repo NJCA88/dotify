@@ -11,27 +11,18 @@ class AlbumShowComponent extends React.Component{
   }
 
   componentDidMount(){
-    //hard coded to get alumbum number 1 right now
     console.log("hitting CDM");
-    // debugger
-    // console.log("this.props.album.id is:", this.props.album.id);
-    // console.log("this.props.album", this.props.album);
-    //NOTE hard coded 1 to test album of whiplash_soundtrack
-    // this.props.fetchAlbum(1);
     this.props.fetchAlbum(this.props.match.params.albumID);
-    // debugger
   }
 
 
 
   updateSongCollection(collection){
-    //UPDATE STORE HERE
     this.props.updateCollection(collection);
     console.log("updating collection");
   }
 
   updateCurrentSong(song){
-    //UPDATE STORE HERE
     this.props.updateCurrentSong(song);
     console.log("updating Song");
   }
@@ -42,7 +33,6 @@ class AlbumShowComponent extends React.Component{
     this.updateSongCollection(collection);
   }
 
-// https://mbtskoudsalg.com/images/transparent-png-play-button.png
 
   render(){
     if (this.props.album === undefined) return <div>wrong</div>;

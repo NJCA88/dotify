@@ -5,9 +5,9 @@ export const getPlaylists = playlists => (
     })
 );
 
-// export const getAlbum = id => (
-//     $.ajax({
-//         method: "GET",
-//         url: `/api/playlists/${id}`
-//     })
-// );
+export const getPlaylist = id => (
+    $.ajax({
+        method: "GET",
+        url: `/api/playlists/${id}`
+    })
+);

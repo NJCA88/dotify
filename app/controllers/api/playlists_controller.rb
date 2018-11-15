@@ -7,8 +7,8 @@ class Api::PlaylistsController < ApplicationController
     end
 
     def show
-        @album = playlist.find(params[:id])
-        
+        @playlist = Playlist.find(params[:id])
+        # debugger
         render 'show'
     end
 
@@ -24,7 +24,7 @@ class Api::PlaylistsController < ApplicationController
 
     private
 
-    def user_params
-        params.require(:playlist).permit(:name, :user )
-    end
+    # def user_params
+    #     params.require(:playlist).permit(:name, :user )
+    # end
 end

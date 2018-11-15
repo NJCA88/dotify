@@ -37,19 +37,20 @@ class libraryComponent extends React.Component {
     }
 
     // not updated for playlists yet
-    // updateSongCollection(e, collection, playlistID) {
-    //     e.preventDefault();
-    //     //UPDATE STORE HERE
-    //     this.props.updateCollection(AlbumID);
-    //     console.log(collection);
-    //     this.props.history.push(`/albums/${AlbumID}`);
-    // }
+    updateSongCollection(e, collection, playlistID) {
+        e.preventDefault();
+        //UPDATE STORE HERE
+        this.props.updateCollection(playlistID);
+        console.log("updating collection to be: ", collection);
+        this.props.history.push(`/playlists/${playlistID}`);
+    }
 
 
-    // handleGoAlbum(e, AlbumID) {
-    //     e.preventDefault();
-    //     this.props.history.push(`/albums/${AlbumID}`);
-    // }
+    handleGoPlaylist(e, PlaylistID) {
+        e.preventDefault();
+        console.log("going to playlist's show page")
+        this.props.history.push(`/playlists/${PlaylistID}`);
+    }
 
 
 
@@ -65,19 +66,19 @@ class libraryComponent extends React.Component {
 
 
 
-        const albums = this.props.playlists.map(playlist => {
+        const playlists = this.props.playlists.map(playlist => {
             console.log("album info:", playlist.name, playlist.id);
             return (
                 <div className="album">
 
                     <button
-                        // onClick={(e) => { this.updateSongCollection(e, album, album.id); }}
+                        onClick={(e) => { this.updateSongCollection(e, playlist, playlist.id); }}
                         className="album-index-album">
                         <img className="demo-image" src={playlist.playlist_cover} />
                     </button>
 
                     <button
-                        // onClick={(e) => { this.handleGoAlbum(e, album.id); }}
+                        onClick={(e) => { this.handleGoPlaylist(e, playlist.id); }}
                         className="album-index-title" >
 
                         {playlist.title}
@@ -90,7 +91,7 @@ class libraryComponent extends React.Component {
         return (
             <div className="home">
                 <h1> Some Playlists</h1>
-                <ul className="album-list"> {albums}</ul>
+                <ul className="album-list"> {playlists}</ul>
             </div>
         );
     }

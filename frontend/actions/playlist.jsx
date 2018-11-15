@@ -21,7 +21,7 @@ const receivePlaylist = payload => {
 export const fetchPlaylists = () => dispatch => getPlaylists()
     .then(playlists => dispatch(receivePlaylists(playlists)));
 
-export const fetchAlbum = (id) => dispatch => getAlbum(id)
+export const fetchPlaylist = (id) => dispatch => getPlaylist(id)
     .then(payload => dispatch(receivePlaylist(payload)));
 
 
