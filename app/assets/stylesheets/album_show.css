@@ -20,7 +20,18 @@
 
 .song-list {
   width: 70%;
+  height: 75%;
+  overflow: scroll;
 }
+.song-list::-webkit-scrollbar {
+  /* background-color: red; */
+  background: transparent
+}
+.song-list::-webkit-scrollbar-thumb {
+  background-color: gray;
+}
+
+
 
 .song {
   display: flex;
