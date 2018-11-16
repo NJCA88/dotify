@@ -1,7 +1,11 @@
 json.playlist do
   json.extract! @playlist, :name, :id
-  json.playlist_cover url_for(@playlist.songs[0].album.album_cover)
-end
+    if @playlist.songs.length == 0
+      json.playlist_cover url_for(Playlist.find(2).songs[0].album.album_cover)
+    else
+      json.playlist_cover url_for(@playlist.songs[0].album.album_cover)
+    end
+  end
 
 json.songs do
   @playlist.songs.each do |song|

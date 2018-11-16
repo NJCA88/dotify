@@ -17,3 +17,78 @@
     justify-content: space-between;
     max-width: 500px;
 }
+
+.create-playlist-modal {
+  background-color: red;
+  background: transparent;
+  height: 250px;
+  width: 100%;
+  position: absolute;
+  top: 25%;
+  margin: auto;
+}
+.album-list{
+  overflow: scroll;
+  max-height: 500px;
+}
+
+.create-playlist-modal-content{
+  /* background-color:blue; */
+  /* color: white; */
+  /* background: transparent; */
+  /* display: flex; */
+  color: white;
+  min-height: 250px;
+  width: 33vw;
+  text-align: center;
+  left: 33%;
+  position: absolute;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.create-playlist-modal-content input{
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 30px;
+  font-weight: 600;
+  background-color: rgb(40,40,40);
+  color: white;
+  position: absolute;
+  left: -33vw;
+  width: 100vw;
+  height: 100px;
+}
+
+.x-button {
+  background: transparent;
+  color: white;
+  font-size: 30px;
+  font-weight: 400;
+  border: none;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(5,5,5,.8);
+}
+.create-button{
+  background-color: white;
+  position: relative;
+  top: 150px;
+  left: 270px;
+  /* display: flex; */
+  background-color: #02bf33;
+  color: white;
+  border-radius: 25px;
+  display: block;
+  line-height: 1.25em;
+  width: 100px;
+  height: 30px;
+  font-size: 13px;
+}

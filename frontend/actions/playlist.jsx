@@ -1,4 +1,4 @@
-import { getPlaylists, getPlaylist } from '../utils/playlist_api_util';
+import { getPlaylists, getPlaylist, createPlaylist } from '../utils/playlist_api_util';
 
 export const RECEIVE_PLAYLISTS = "RECEIVE_PLAYLISTS";
 export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
@@ -23,5 +23,8 @@ export const fetchPlaylists = () => dispatch => getPlaylists()
 
 export const fetchPlaylist = (id) => dispatch => getPlaylist(id)
     .then(payload => dispatch(receivePlaylist(payload)));
+
+export const makePlaylist = (playlist) => dispatch => createPlaylist(playlist)
+    .then(playlists => dispatch(receivePlaylists(playlists)));
 
 

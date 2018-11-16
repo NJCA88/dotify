@@ -1,6 +1,8 @@
 import React from 'react';
-import ReactPlayer from 'react-player';
+import Modal from 'react-modal';
 
+
+// Modal.setAppElement("#root");
 
 class libraryComponent extends React.Component {
     constructor(props) {
@@ -11,8 +13,15 @@ class libraryComponent extends React.Component {
         this.currentSong = "";
         this.state = {
             currentSong: '',
-            playing: false
+            playing: false,
+            modalIsOpen: false,
+            playlistName: ""
         };
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+        this.updatePlaylistName = this.updatePlaylistName.bind(this)
+        this.createPlaylist = this.createPlaylist.bind(this)
+
     }
 
     componentDidMount() {
@@ -61,6 +70,29 @@ class libraryComponent extends React.Component {
         console.log(this.state.playing);
     }
 
+    openModal() {
+        this.setState({ modalIsOpen: true });
+    }
+    closeModal() {
+        console.log("closing")
+        this.setState({ modalIsOpen: false });
+    }
+
+    updatePlaylistName(e){
+        console.log(e)
+        console.log("e.target.value: ", e.target.value)
+        this.setState({ playlistName: e.target.value });
+        // console.log(this.state.playlistName)
+    }
+
+    createPlaylist(){
+        //do stuff to send it to the backend
+        console.log("creating")
+        this.props.createPlaylist({name: this.state.playlistName})
+        console.log("did I create it?")
+        this.closeModal();
+    }
+
 
     render() {
 
@@ -91,10 +123,26 @@ class libraryComponent extends React.Component {
         return <div className="home">
             <div className="library-header">
               <h1> Your Playlists</h1>
-              <button className="newPlaylist">NEW PLAYLIST</button>
+              <button className="newPlaylist" onClick={this.openModal}>NEW PLAYLIST</button>
             </div>
 
+
             <ul className="album-list"> {playlists}</ul>
+
+
+            <Modal className="create-playlist-modal" 
+            overlayClassName="Overlay"
+             isOpen={this.state.modalIsOpen} >
+            
+                <div className="create-playlist-modal-content" 
+>
+                <button className="x-button" onClick={this.closeModal}>X</button> <br/>
+                Create new Playlist <br/>
+                <input onChange={(e) => { this.updatePlaylistName(e); } } type="text"/>
+                <button className="create-button" onClick={this.createPlaylist}>CREATE</button>
+
+            </div>
+            </Modal>
           </div>;
     }
 }

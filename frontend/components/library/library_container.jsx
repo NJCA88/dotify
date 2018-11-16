@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import libraryComponent from "./library";
 import { fetchSongs } from "../../actions/song";
-import { fetchPlaylists, fetchPlaylist } from "../../actions/playlist";
+import { fetchPlaylists, fetchPlaylist, makePlaylist } from "../../actions/playlist";
 import { receiveCollection, fetchAlbum } from "../../actions/collections";
 
 const mapStateToProps = state => {
@@ -20,7 +20,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   fetchSongs: () => dispatch(fetchSongs()),
   fetchPlaylists: () => dispatch(fetchPlaylists()),
-  updateCollection: collection => dispatch(fetchPlaylist(collection))
+  updateCollection: collection => dispatch(fetchPlaylist(collection)),
+  createPlaylist: playlist => dispatch(makePlaylist(playlist))
 });
 
 export default connect(
