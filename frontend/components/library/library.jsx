@@ -88,12 +88,14 @@ class libraryComponent extends React.Component {
         });
 
 
-        return (
-            <div className="home">
-                <h1> Some Playlists</h1>
-                <ul className="album-list"> {playlists}</ul>
+        return <div className="home">
+            <div className="library-header">
+              <h1> Your Playlists</h1>
+              <button className="newPlaylist">NEW PLAYLIST</button>
             </div>
-        );
+
+            <ul className="album-list"> {playlists}</ul>
+          </div>;
     }
 }
 

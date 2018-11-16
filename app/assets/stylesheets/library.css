@@ -1,0 +1,19 @@
+.newPlaylist{
+  display: flex;
+  background-color: #02bf33;
+  color: white;
+  border-radius: 25px;
+  display: block;
+  line-height: 1.25em;
+  width: 170px;
+  height: 30px;
+  align-items: center;
+  text-align: center;
+  font-size: 13px;
+}
+
+.library-header{
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+}
