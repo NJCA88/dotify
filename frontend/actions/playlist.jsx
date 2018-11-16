@@ -24,7 +24,8 @@ export const fetchPlaylists = () => dispatch => getPlaylists()
 export const fetchPlaylist = (id) => dispatch => getPlaylist(id)
     .then(payload => dispatch(receivePlaylist(payload)));
 
-export const makePlaylist = (playlist) => dispatch => createPlaylist(playlist)
-    .then(playlists => dispatch(receivePlaylists(playlists)));
+export const makePlaylist = playlist => dispatch => createPlaylist(playlist)
+    // .then(playlists => dispatch(receivePlaylists(playlists)));
+
 
 

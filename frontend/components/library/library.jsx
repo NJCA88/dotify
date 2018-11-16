@@ -90,6 +90,8 @@ class libraryComponent extends React.Component {
         console.log("creating")
         this.props.createPlaylist({name: this.state.playlistName})
         console.log("did I create it?")
+        this.props.fetchPlaylists().then(console.log('done'))
+
         this.closeModal();
     }
 

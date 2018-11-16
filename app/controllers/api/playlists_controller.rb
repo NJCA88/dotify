@@ -23,8 +23,8 @@ class Api::PlaylistsController < ApplicationController
     unless @playlist.save
       flash.now[:errors] = @playlist.errors.full_messages
     end
-    @playlists = Playlist.where(user_id: current_user.id)
-    render 'index'
+    # @playlists = Playlist.where(user_id: current_user.id)
+    # render 'index'
 
     end
 
