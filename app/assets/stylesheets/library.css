@@ -27,10 +27,7 @@
   top: 25%;
   margin: auto;
 }
-.album-list{
-  overflow: scroll;
-  max-height: 500px;
-}
+
 
 .create-playlist-modal-content{
   /* background-color:blue; */

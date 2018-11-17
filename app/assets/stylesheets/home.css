@@ -14,6 +14,19 @@
     max-width: 700px
 }
 
+.album-list::-webkit-scrollbar {
+    background: transparent
+}
+.album-list::-webkit-scrollbar-thumb {
+  background-color: gray;
+}
+
+.album-list::-webkit-scrollbar-corner{
+  background: transparent
+}
+
+
+
 .album {
   /* background-color: lightblue; */
   width: 144px;
@@ -21,6 +34,9 @@
   padding-bottom: 30px;
   /* margin: */
 }
+
+
+
 
 
 .album:hover{
@@ -40,6 +56,10 @@
 }
 .album-list {
   display: flex;
+  overflow: scroll;
+  max-height: 500px;
+  max-width: 800px;
+
 }
 
 .demo-image{

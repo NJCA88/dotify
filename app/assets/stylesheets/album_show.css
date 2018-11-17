@@ -30,6 +30,9 @@
 .song-list::-webkit-scrollbar-thumb {
   background-color: gray;
 }
+.song-list::-webkit-scrollbar-corner{
+  background: transparent
+}
 
 
 
