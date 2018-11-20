@@ -97,9 +97,14 @@
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-bJ = Album.find_by(title: "Greatest Hits")
-Song.where(album_id: bJ.id).destroy_all
-bJ.destroy
+Album.all.destroy_all
+Song.all.destroy_all
+
+
+#~~~~~~~~~~~~~~~~~~~`
+# bJ = Album.find_by(title: "Greatest Hits")
+# Song.where(album_id: bJ.id).destroy_all
+# bJ.destroy
 
 
 BJcover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/Billy_joel/Folder.jpg')
@@ -147,9 +152,9 @@ Song.create(title: "Allentown", album_id: BJ.id ).track.attach(io: Allentown, fi
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-b182 = Album.find_by(title: "Blink 182 Greatest Hits")
-Song.where(album_id: b182.id).destroy_all
-b182.destroy
+# b182 = Album.find_by(title: "Blink 182 Greatest Hits")
+# Song.where(album_id: b182.id).destroy_all
+# b182.destroy
 
 B18cover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/blink182/Folder.jpg')
 Album.create(title: "Blink 182 Greatest Hits", artist_id: 2).album_cover.attach(io: B18cover, filename: 'Folder.jpg' )
@@ -198,9 +203,9 @@ Song.create(title: "Another Girl Another Planet", album_id: B18.id ).track.attac
 
 #savable
 
-a1973 = Album.find_by(title: "1973")
-Song.where(album_id: a1973.id).destroy_all
-a1973.destroy
+# a1973 = Album.find_by(title: "1973")
+# Song.where(album_id: a1973.id).destroy_all
+# a1973.destroy
 
 BScover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/Bruce_Springsteen/Cover.jpg')
 Album.create(title: "1973", artist_id: 2).album_cover.attach(io: BScover, filename: 'Cover.jpg' )
@@ -248,9 +253,9 @@ Song.create(title: "Wrecking Ball", album_id: BS.id ).track.attach(io:WB , filen
 
 # ------------------------------------------------- EXIILE ON MAINE
 
-MTB = Album.find_by(title: "Exile on Mainstream")
-Song.where(album_id: MTB.id).destroy_all
-MTB.destroy
+# MTB = Album.find_by(title: "Exile on Mainstream")
+# Song.where(album_id: MTB.id).destroy_all
+# MTB.destroy
 
 MB20cover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/Matchbox+20/matchbox_twenty_exil_mainstreet_2007_retail_cd-front.jpg')
 Album.create(title: "Exile on Mainstream", artist_id: 5).album_cover.attach(io: MB20cover, filename: 'matchbox_twenty_exil_mainstreet_2007_retail_cd-front.jpg' )
@@ -293,9 +298,9 @@ MTB = Album.find_by(title: "Exile on Mainstream")
  Song.create(title: "Bright Lights", album_id: MTB.id ).track.attach(io: BL, filename: "17 - Bright Lights.mp3")
 
 
- M5= Album.find_by(title: "Red Pill Blues")
-Song.where(album_id: M5.id).destroy_all
-M5.destroy
+#  M5= Album.find_by(title: "Red Pill Blues")
+# Song.where(album_id: M5.id).destroy_all
+# M5.destroy
 
 M5cover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/Maroon5/Cover.jpg')
 Album.create(title: "Red Pill Blues", artist_id: 6).album_cover.attach(io: M5cover, filename: 'Cover.jpg' )
