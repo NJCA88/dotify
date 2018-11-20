@@ -1,6 +1,5 @@
 class Api::PlaylistsController < ApplicationController
 
-    require 'byebug'
     def index
         @playlists = Playlist.where(user_id: current_user.id)
         render 'index'
