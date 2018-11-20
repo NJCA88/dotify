@@ -55,7 +55,9 @@ handleGoHome(e){
           </li>
 
         <li>
-            <button onClick={this.handleGoLib} className="nav-icon">
+            <button 
+            // onClick={this.handleGoLib} 
+            className="nav-icon">
             <p>Your Library</p>
           </button>
         </li>
