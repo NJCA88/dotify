@@ -64,7 +64,7 @@ handleGoHome(e){
 
       <li>
         <button onClick={this.handleSubmit} className="nav-icon">
-          <p>Logout</p>
+          <p>       Logout</p>
         </button>
       </li>
     </ul>
