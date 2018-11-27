@@ -386,6 +386,3 @@ Song.create(title: "February Stars", album_id: LLL.id ).track.attach(io: m10, fi
 Song.create(title: "Everlong", album_id: LLL.id ).track.attach(io: m11, filename: "11 - Everlong.mp3")
 Song.create(title: "Walking After You", album_id: LLL.id ).track.attach(io: m12, filename: "12 - Walking After You.mp3")
 Song.create(title: "New Way Home", album_id: LLL.id ).track.attach(io: m13, filename: "13 - New Way Home.mp3")
-
-
-Album.create
