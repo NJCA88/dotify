@@ -36,21 +36,35 @@
 }
 
 .album-images{
-  background-color: lightblue
+  /* background-color: lightblue */
+  position: relative
 }
 
 .play-modal {
-  background-color: red;
+  /* background-color: red; */
+  position: absolute;
+  /* width:10%; */
+  height: 145px;
+  left: 0px;
+  opacity: 0;
+  z-index: 5;
+}
+
+.play-modal:hover {
+  visibility: visible;
+  opacity: .8;
+  /* background-color: blue; */
 }
 
 
 
 .album:hover{
-  /* background-color: blue; */
   cursor: pointer;
-  /* -webkit-filter: grayscale(90%); */
   -webkit-filter: contrast(85%);
+  /* -webkit-filter: brightness(95%); */
+
 }
+
 
 .album-index-album{
   padding: 0px;
@@ -71,7 +85,18 @@
 .demo-image{
   width:145px;
   height: 145px;
+  position: relative;
+  /* z-index: 6; */
 }
+.demo-image:hover{
+  -webkit-filter: brightness(25%);
+
+}
+
+/* .demo-image:hover{
+  opacity: .5;
+  background-image: url("https://mbtskoudsalg.com/images/white-play-button-png-5.png")
+} */
 
 .album-index-title {
   /* background-color: blue; */

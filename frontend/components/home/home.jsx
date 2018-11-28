@@ -68,7 +68,7 @@ playToggle() {
         }} className="album-index-album">
         <div className="album-images">
           <img className="demo-image" src={album.album_cover} />
-          {/* <img className="play-modal" src="https://mbtskoudsalg.com/images/white-play-button-png-5.png"></img> */}
+          <img className="play-modal" src="https://mbtskoudsalg.com/images/white-play-button-png-5.png"></img>
         </div>
       </button>
 
