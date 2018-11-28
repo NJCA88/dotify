@@ -62,23 +62,22 @@ playToggle() {
 
   const albums = this.props.albums.map(album => {
     console.log("album info:", album.title, album.id);
-  return (
-    <div className="album">
-
-        <button
-          onClick={(e) => {this.updateSongCollection(e, album, album.id);}}
-          className ="album-index-album">
+  return <div className="album">
+      <button onClick={e => {
+          this.updateSongCollection(e, album, album.id);
+        }} className="album-index-album">
+        <div className="album-images">
           <img className="demo-image" src={album.album_cover} />
-        </button>
+          {/* <img className="play-modal" src="https://mbtskoudsalg.com/images/white-play-button-png-5.png"></img> */}
+        </div>
+      </button>
 
-      <button
-        onClick={(e) => {this.handleGoAlbum(e, album.id);}}
-        className ="album-index-title" >
-
+      <button onClick={e => {
+          this.handleGoAlbum(e, album.id);
+        }} className="album-index-title">
         {album.title}
       </button>
-    </div>
-  );
+    </div>;
 });
 
 

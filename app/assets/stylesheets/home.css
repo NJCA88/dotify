@@ -35,7 +35,13 @@
   /* margin: */
 }
 
+.album-images{
+  background-color: lightblue
+}
 
+.play-modal {
+  background-color: red;
+}
 
 
 
@@ -74,3 +80,4 @@
   font-size: 14px;
   color: white;
 }
+
