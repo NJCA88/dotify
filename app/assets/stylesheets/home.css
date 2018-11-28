@@ -43,8 +43,9 @@
 .play-modal {
   /* background-color: red; */
   position: absolute;
-  /* width:10%; */
+  /* width:1px; */
   height: 145px;
+  /* margin: 15px; */
   left: 0px;
   opacity: 0;
   z-index: 5;
@@ -60,9 +61,12 @@
 
 .album:hover{
   cursor: pointer;
-  -webkit-filter: contrast(85%);
+  /* -webkit-filter: contrast(85%); */
   /* -webkit-filter: brightness(95%); */
+}
 
+.album:hover .demo-image{
+  -webkit-filter: brightness(20%);
 }
 
 
@@ -88,10 +92,10 @@
   position: relative;
   /* z-index: 6; */
 }
-.demo-image:hover{
+/* .demo-image:hover{
   -webkit-filter: brightness(25%);
 
-}
+} */
 
 /* .demo-image:hover{
   opacity: .5;
