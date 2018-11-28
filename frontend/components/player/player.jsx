@@ -11,8 +11,8 @@ class PlayerComponent extends React.Component {
     this.handleNext = this.handleNext.bind(this);
     this.setProgress = this.setProgress.bind(this)
     this.onSeekChange = this.onSeekChange.bind(this)
-    this.onSeekMouseUp = this.onSeekMouseUp.bind(this)
-    this.onSeekMouseDown = this.onSeekMouseDown.bind(this)
+    // this.onSeekMouseUp = this.onSeekMouseUp.bind(this)
+    // this.onSeekMouseDown = this.onSeekMouseDown.bind(this)
     this.ref = this.ref.bind(this)
     this.state = {
       // currentSong_track: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a8ae4ec9fbbdcfd2a1df1e181020810568fe588a/Whiplash.m4a',
@@ -60,17 +60,11 @@ class PlayerComponent extends React.Component {
     this.player = player
   }
 
-  onSeekMouseUp(e) {
-    this.setState({ seeking: false });
-    this.player.seekTo(parseFloat(e.target.value));
-  }
+
 
 
   onSeekChange(e) {
     this.setState({ played: parseFloat(e.target.value) });
-  }
-  onSeekMouseDown(e) {
-    this.setState({ seeking: true });
   }
 
   componentDidUpdate(oldProps) {
@@ -206,7 +200,6 @@ class PlayerComponent extends React.Component {
           </button>
         </ul>
 
-          {/* <div>dur: {Math.floor(this.state.playedSeconds)}</div> */}
             <input
               className="myProgress"
               type='range'
@@ -214,9 +207,7 @@ class PlayerComponent extends React.Component {
               max={1}
               step='any'
               value={this.state.played}
-              // onMouseDown={this.onSeekMouseDown}
-              // onChange={this.onSeekChange}
-              // onMouseUp={this.onSeekMouseUp}
+
             />        
             </div>
         
