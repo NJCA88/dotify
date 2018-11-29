@@ -93,3 +93,24 @@
   height: 20px;
   width: 16px;
 }
+
+.note-play-icon-group {
+  position: relative;
+}
+.small-play{
+  position: absolute;
+  opacity: 0;
+  left: 0px;
+}
+
+.music-note{
+  position:relative;
+}
+
+.note-play-icon-group:hover .small-play{
+  opacity:1
+}
+.note-play-icon-group:hover .music-note{
+  opacity:0;
+}
+

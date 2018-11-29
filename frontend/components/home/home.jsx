@@ -62,7 +62,7 @@ playToggle() {
 
   const albums = this.props.albums.map(album => {
     console.log("album info:", album.title, album.id);
-  return <div className="album">
+  return <div className="album" onHover={this.hoverEffects}>
       <button onClick={e => {
           this.updateSongCollection(e, album, album.id);
         }} className="album-index-album">

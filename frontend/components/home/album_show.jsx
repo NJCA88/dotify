@@ -38,19 +38,22 @@ class AlbumShowComponent extends React.Component{
     if (this.props.album === undefined) return <div>wrong</div>;
 
     const songs = this.props.songs.map( song => {
-      return(
-        <div >
+      return <div>
           <li className="song">
             <img className="play-icon" src="https://d2uvvge0uswb28.cloudfront.net/static/dist/v0/img/svg/icon-play.svg" />
+            {/* <img className="play-icon" src="https://cdn0.iconfinder.com/data/icons/education-vol-2-21/512/5_Eighth_eighth_note_music_note-512.png" /> */}
 
-            <button className="music-note-button"
-              onClick={(e) => {this.updateMusic(e, {album: this.props.album, songs: this.props.songs}, song);}} >
-              <img src="https://d2uvvge0uswb28.cloudfront.net/static/dist/v0/img/svg/icon-play.svg" />
+            <button className="music-note-button" onClick={e => {
+                this.updateMusic(e, { album: this.props.album, songs: this.props.songs }, song);
+              }}>
+              <div className="note-play-icon-group">
+                <img className="small-play" src="https://d2uvvge0uswb28.cloudfront.net/static/dist/v0/img/svg/icon-play.svg" />
+                <img className="music-note" src="https://www.clipartsfree.net/vector/small/79345-white-music-note-icon.png" />
+            </div>
             </button>
             {song.title}
           </li>
-        </div>
-      );
+        </div>;
     }
   );
 
