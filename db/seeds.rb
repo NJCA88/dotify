@@ -439,3 +439,13 @@ Song.create(title: "Ticket To Ride", album_id: BGH.id ).track.attach(io: m17, fi
 Song.create(title: "Eight Days a Week", album_id: BGH.id ).track.attach(io: m18, filename: "18 eight days a week.mp3")
 Song.create(title: "Love Me Do", album_id: BGH.id ).track.attach(io: m19, filename: "19 love me do.mp3")
 Song.create(title: "Straberry Fields Forever", album_id: BGH.id ).track.attach(io: m20, filename: "20 strawberry fields forever.mp3")
+
+
+PlaylistSong.create(playlist_id: Playlist.find_by(name: "New Playlist").id, song_id: Song.find_by(title: "Moneky Wrench"))
+PlaylistSong.create(playlist_id: Playlist.find_by(name: "New Playlist").id, song_id: Song.find_by(title: "I am The Walrus"))
+PlaylistSong.create(playlist_id: Playlist.find_by(name: "New Playlist").id, song_id: Song.find_by(title: "Another Day Of Sun"))
+PlaylistSong.create(playlist_id: Playlist.find_by(name: "New Playlist").id, song_id: Song.find_by(title: "The Rock Show"))
+PlaylistSong.create(playlist_id: Playlist.find_by(name: "New Playlist").id, song_id: Song.find_by(title: "You Will Be Found"))
+
+PlaylistSong.create(playlist_id: Playlist.find_by(name: "fun songs").id, song_id: Song.find_by(title: "Start a Fire").id)
+PlaylistSong.create(playlist_id: Playlist.find_by(name: "My 2nd playlist!").id, song_id: Song.find_by(title: "The Promised Land").id)
