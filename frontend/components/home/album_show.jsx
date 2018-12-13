@@ -33,6 +33,23 @@ class AlbumShowComponent extends React.Component{
     this.updateSongCollection(collection);
   }
 
+  dropdownAppear(songTitle){
+    var open = document.getElementsByClassName("add-to-playlist-button-vis")
+    if (open.length > 0) {
+      open[0].className ="add-to-playlist-button-hidden"
+    }
+
+
+    console.log("make something appear")
+    console.log(songTitle)
+    var x = document.getElementById(songTitle)
+    console.log(x)
+    // console.log(x.className)
+    x.className = "add-to-playlist-button-vis"
+    // x.classList.remove = "add-to-playlist-button-hidden"
+    console.log(x)
+  }
+
 
   render(){
     if (this.props.album === undefined) return <div>wrong</div>;
@@ -49,9 +66,21 @@ class AlbumShowComponent extends React.Component{
               <div className="note-play-icon-group">
                 <img className="small-play" src="https://d2uvvge0uswb28.cloudfront.net/static/dist/v0/img/svg/icon-play.svg" />
                 <img className="music-note" src="https://www.clipartsfree.net/vector/small/79345-white-music-note-icon.png" />
-            </div>
+              </div>
             </button>
             {song.title}
+            <div className="dropdown-click">
+              <button className="ellipsis" onClick={e => this.dropdownAppear( song.title)}>
+                <img className="dotdotdot-icon" src="https://s3-us-west-1.amazonaws.com/dotify-song-dev/icons/white+dot.png" />
+                <img className="dotdotdot-icon" src="https://s3-us-west-1.amazonaws.com/dotify-song-dev/icons/white+dot.png" />
+                <img className="dotdotdot-icon" src="https://s3-us-west-1.amazonaws.com/dotify-song-dev/icons/white+dot.png" />
+              </button>
+              <div>
+                <button id={song.title} className="add-to-playlist-button-hidden">
+                  Add to Playlist
+                </button>
+              </div>
+            </div>
           </li>
         </div>;
     }

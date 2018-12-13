@@ -113,4 +113,37 @@
 .note-play-icon-group:hover .music-note{
   opacity:0;
 }
+.ellipsis {
+  opacity: 0;
+  position: absolute;
+  right: 100px;
+  background: transparent;
+  border: none;
+}
+.song:hover .ellipsis{
+  opacity: 1;
+}
+
+.dotdotdot-icon {
+  width: 8px;
+  height: 8px;
+  padding-right: 2px;
+} 
+
+.add-to-playlist-button-hidden {
+  opacity: 0;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 15px
+}
+.add-to-playlist-button-vis {
+  opacity: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 15px;
+  position: absolute;
+  right: 200px
+}
 
