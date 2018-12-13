@@ -19,3 +19,11 @@ export const createPlaylist = playlist => (
         data: { playlist }
     })
 );
+
+export const createPlaylistSong = (playlistSong) => (
+    $.ajax({
+        url: 'api/playlists/',
+        method: 'POST',
+        data: { playlistSong}
+    })
+);

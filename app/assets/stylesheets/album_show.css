@@ -147,3 +147,37 @@
   right: 200px
 }
 
+.playlists-modal-content{
+  /* background-color:blue; */
+  /* color: white; */
+  /* background: transparent; */
+  /* display: flex; */
+  /* background-color: red; */
+  display: flex;
+  color: white;
+  min-height: 250px;
+  width: 90vw;
+  text-align: center;
+  left: 5vw;
+  position: absolute;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.add-song-modal {
+  /* background-color: red; */
+  background: transparent;
+  height: 250px;
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  margin: auto;
+}
+
+.playlists-modal-title{
+  /* background-color: blue; */
+    font-size: 40px;
+  font-weight: 800;
+  color: white;
+  text-align: center
+}
