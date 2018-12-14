@@ -1,6 +1,6 @@
 class Api::PlaylistSongsController < ApplicationController
     def create
-        debugger
+        
         @playlist_song = PlaylistSong.new(playlist_params)
 
         unless @playlist_song.save
@@ -16,7 +16,7 @@ class Api::PlaylistSongsController < ApplicationController
 
     private
     def playlist_params
-        # debugger
+        # 
         params.require(:playlistSong).permit(:song_id, :playlist_id )
     end
 end
