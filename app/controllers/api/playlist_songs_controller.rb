@@ -1,8 +1,4 @@
 class Api::PlaylistSongsController < ApplicationController
-
-
-    require 'byebug'
-
     def create
         debugger
         @playlist_song = PlaylistSong.new(playlist_params)
