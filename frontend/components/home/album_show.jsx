@@ -68,7 +68,8 @@ class AlbumShowComponent extends React.Component{
     this.setState({ modalIsOpen: false });
   }
 
-  handleAddSong(playlistId, songId){
+  handleAddSong(e, playlistId, songId){
+    // debugger
     // not yet mapped to state, so this dones't work yet.
     this.props.createPlaylistSong(playlistId, songId)
   }
