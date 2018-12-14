@@ -147,7 +147,7 @@ class AlbumShowComponent extends React.Component{
           </div>
         </div>
 
-        {/* <Modal className="add-song-modal" overlayClassName="Overlay" isOpen={this.state.modalIsOpen}>
+        <Modal className="add-song-modal" overlayClassName="Overlay" isOpen={this.state.modalIsOpen}>
           <div className="playlists-modal-title">
             <button className="x-button" onClick={this.closeModal}>
               X
@@ -158,7 +158,7 @@ class AlbumShowComponent extends React.Component{
             </button>
             </div>
             <div className="playlists-modal-content">{playlists}</div>
-        </Modal> */}
+        </Modal>
       </div>;
     }
   }
