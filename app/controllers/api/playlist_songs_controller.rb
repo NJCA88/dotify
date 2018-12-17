@@ -20,5 +20,3 @@ class Api::PlaylistSongsController < ApplicationController
         params.require(:playlistSong).permit(:song_id, :playlist_id )
     end
 end
-
-#issues with what is getting passed back to the back end... its just coming back with "playlist => 30"
