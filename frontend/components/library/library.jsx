@@ -50,7 +50,7 @@ class libraryComponent extends React.Component {
         e.preventDefault();
         //UPDATE STORE HERE
         this.props.updateCollection(playlistID);
-        console.log("updating collection to be: ", collection);
+        console.log("TESTupdating collection to be: ", collection);
         this.props.history.push(`/playlists/${playlistID}`);
     }
 
@@ -60,7 +60,6 @@ class libraryComponent extends React.Component {
         console.log("going to playlist's show page")
         this.props.history.push(`/playlists/${PlaylistID}`);
     }
-
 
 
 

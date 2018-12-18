@@ -68,6 +68,8 @@ class PlayerComponent extends React.Component {
   }
 
   componentDidUpdate(oldProps) {
+    // debugger
+    console.log("component did update")
     if (
       this.props.currentSong !== oldProps.currentSong &&
       this.props.collection !== undefined
@@ -81,14 +83,19 @@ class PlayerComponent extends React.Component {
       console.log("this.state.playing is ", this.state.playing);
     }
     //this is the part to test making new album auto play on click of artwork
+    // debugger
+    //it works for albums, but not for playlists, because for playlists currentSong 
+    // isn't getting set
     if (
       this.props.currentSong === oldProps.currentSong &&
       this.props.collection !== oldProps.collection
     ) {
+      debugger
       console.log("Play new album without knowing song!!!");
       console.log("this.props is:", this.props);
       const collectionOrder = Object.values(this.props.collectionSongs);
       let currentSong = collectionOrder[0];
+      
       this.updateCurrentSong(collectionOrder[0]);
       this.generateSongQueue(currentSong);
     }

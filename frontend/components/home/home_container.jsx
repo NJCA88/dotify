@@ -27,3 +27,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeComponent);
+
+
+
+// update collection, update song, recieve album when clicking play on new album

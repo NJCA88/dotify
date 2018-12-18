@@ -1,4 +1,5 @@
 import {getAlbum} from '../utils/album_api_util';
+import { getPlaylist } from '../utils/playlist_api_util';
 
 
 export const UPDATE_COLLECTION = "UPDATE_COLLECTION";
@@ -14,6 +15,7 @@ export const receiveCollection = collection => {
 
 
 export const updateCollection = payload => {
+  
   return {
     type: UPDATE_COLLECTION,
     payload
@@ -27,3 +29,7 @@ export const fetchAlbum = (id) => dispatch => getAlbum(id)
 
 
 // is it okay to use the same exact AJAX call?
+
+export const fetchPlaylist = (id) => dispatch => getPlaylist(id)
+.then(payload => dispatch(updateCollection(payload)));
+

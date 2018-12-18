@@ -40,7 +40,6 @@ class PlaylistShowComponent extends React.Component {
 
 
     render() {
-        console.log("into the render method")
         if (this.props.playlist === undefined){
             console.log("returning early out of the render")
             return <div>wrong</div>;
@@ -53,7 +52,7 @@ class PlaylistShowComponent extends React.Component {
                         <img className="play-icon" src="https://d2uvvge0uswb28.cloudfront.net/static/dist/v0/img/svg/icon-play.svg" />
 
                         <button className="music-note-button"
-                            onClick={(e) => { this.updateMusic(e, { album: this.props.album, songs: this.props.songs }, song); }} >
+                            onClick={(e) => { this.updateMusic(e, { album: this.props.playlist, songs: this.props.songs }, song); }} >
                             <img src="https://d2uvvge0uswb28.cloudfront.net/static/dist/v0/img/svg/icon-play.svg" />
                         </button>
                         {song.title}

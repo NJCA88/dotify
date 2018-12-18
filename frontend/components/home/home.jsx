@@ -35,8 +35,9 @@ class HomeComponent extends React.Component{
   updateSongCollection(e, collection, AlbumID){
     e.preventDefault();
     //UPDATE STORE HERE
+    // debugger
     this.props.updateCollection(AlbumID);
-    console.log("updating collection to be: ", collection);
+    console.log("IS THIS RIGHT? updating collection to be: ", collection, AlbumID);
     this.props.history.push(`/albums/${AlbumID}`);
   }
 
