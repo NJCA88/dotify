@@ -1,9 +1,5 @@
 import {getAlbum} from '../utils/album_api_util';
-<<<<<<< HEAD
-import { getPlaylist } from '../utils/playlist_api_util';
-=======
 import {getPlaylist} from '../utils/playlist_api_util';
->>>>>>> Playlists
 
 
 export const UPDATE_COLLECTION = "UPDATE_COLLECTION";

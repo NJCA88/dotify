@@ -5,12 +5,7 @@ import { updateSong} from '../../actions/song';
 
 
 const mapStateToProps = state => {
-<<<<<<< HEAD
- debugger
-=======
-  // console.log("CURRENT STATE is:", state);
-  // debugger
->>>>>>> Playlists
+
   return({
     collectionSongs: state.ui.collection.songs,
     collection: state.ui.collection.name,
