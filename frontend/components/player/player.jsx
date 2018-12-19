@@ -90,7 +90,6 @@ class PlayerComponent extends React.Component {
       this.props.currentSong === oldProps.currentSong &&
       this.props.collection !== oldProps.collection
     ) {
-      debugger
       console.log("Play new album without knowing song!!!");
       console.log("this.props is:", this.props);
       const collectionOrder = Object.values(this.props.collectionSongs);

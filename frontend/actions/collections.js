@@ -35,12 +35,8 @@ export const updateCollectionPlaylist = payload => {
 export const fetchAlbum = (id) => dispatch => getAlbum(id)
 .then(payload => dispatch(updateCollection(payload)));
 
-export const fetchPlaylist = (id) => dispatch => getPlaylist(id)
-  .then(payload => dispatch(updateCollectionPlaylist(payload)));
-
-
 // is it okay to use the same exact AJAX call?
 
 export const fetchPlaylist = (id) => dispatch => getPlaylist(id)
-.then(payload => dispatch(updateCollection(payload)));
+.then(payload => dispatch(updateCollectionPlaylist(payload)));
 
