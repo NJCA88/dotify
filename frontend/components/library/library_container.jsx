@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import libraryComponent from "./library";
 import { fetchSongs } from "../../actions/song";
-import { fetchPlaylists, fetchPlaylist, makePlaylist } from "../../actions/playlist";
-import { receiveCollection, fetchAlbum } from "../../actions/collections";
+import { fetchPlaylists, makePlaylist } from "../../actions/playlist";
+import { fetchPlaylist } from "../../actions/collections";
 
 const mapStateToProps = state => {
   // console.log("current state is", state);

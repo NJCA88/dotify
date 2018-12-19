@@ -6,9 +6,10 @@ import { updateSong} from '../../actions/song';
 
 const mapStateToProps = state => {
   // console.log("CURRENT STATE is:", state);
+  // debugger
   return({
     collectionSongs: state.ui.collection.songs,
-    collection: state.ui.collection.album,
+    collection: state.ui.collection.name,
     currentSong: state.ui.currentSong
   });
 };
