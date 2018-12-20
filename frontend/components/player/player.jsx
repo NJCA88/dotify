@@ -136,22 +136,16 @@ class PlayerComponent extends React.Component {
       () => console.log("this.state.songQueue is:", this.state.songQueue)
     );
 
-    // console.log("this.state.songQueue is:", this.state.songQueue);
   }
 
   render() {
-    // console.log("YO SHIT IS BROKE!!!", this.props);
     const track = this.props.currentSong ? this.props.currentSong.track : "";
-    // const track = this.state.songQueue ? this.state.songQueue[1].track : "";
 
-    // const track = this.state.currentSong_track;
-    // debugger
     const image_src = this.props.collection
       ? this.props.collection.album_cover
       : "https://s3-us-west-1.amazonaws.com/dotify-song-dev/spotify-img.png";
     const title = this.props.currentSong ? this.props.currentSong.title : "";
-    // const title = this.state.songQueue ? this.state.songQueue[1].title : "";
-    // const collection = "cats"
+
     const collection = this.props.collection ? this.props.collection.title : "";
 
     let player_image = "";

@@ -73,9 +73,10 @@ class PlaylistShowComponent extends React.Component {
 
                         <h1 className="album-title">{this.props.playlist.name}</h1>
 
-                        <button className="play-button">
-                            play
-                         </button>
+                        <button className="play-button"
+                            onClick={e => {
+                                this.updateMusic(e, { album: this.props.playlist, songs: this.props.songs }, this.props.songs[0]);
+                            }}>play</button>
 
                     </div>
                     <div className="song-list">
