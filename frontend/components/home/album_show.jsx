@@ -32,14 +32,15 @@ class AlbumShowComponent extends React.Component{
     console.log("updating collection");
   }
 
-  updateCurrentSong(song){
+  updateCurrentSong(e, song){
+    // debugger
     this.props.updateCurrentSong(song);
     console.log("updating Song");
   }
 
   updateMusic(e, collection, song){
     e.preventDefault();
-    this.updateCurrentSong(song);
+    this.updateCurrentSong(e, song);
     this.updateSongCollection(collection);
   }
 
@@ -140,7 +141,8 @@ class AlbumShowComponent extends React.Component{
 
             <h1 className="album-title">{this.props.album.title}</h1>
 
-            <button className="play-button">play</button>
+            <button className="play-button"
+            >play</button>
           </div>
           <div className="song-list">
             <ul>{songs}</ul>

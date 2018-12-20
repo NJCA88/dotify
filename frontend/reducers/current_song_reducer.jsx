@@ -7,6 +7,7 @@ export default (oldState ={}, action) => {
   Object.freeze(oldState);
   switch(action.type){
     case UPDATE_SONG:
+    // debugger
       return action.song;
     default:
       return oldState;
