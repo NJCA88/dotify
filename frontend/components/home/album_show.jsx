@@ -145,7 +145,7 @@ class AlbumShowComponent extends React.Component{
             <button className="play-button"
             onClick={e => {
               this.updateMusic(e, { album: this.props.album, songs: this.props.songs }, this.props.songs[0]);
-            }}>playAlbum</button>
+            }}>PLAY</button>
           </div>
           <div className="song-list">
             <ul>{songs}</ul>
