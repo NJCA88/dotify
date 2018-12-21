@@ -74,6 +74,7 @@ class AlbumShowComponent extends React.Component{
     // debugger
     // not yet mapped to state, so this dones't work yet.
     this.props.createPlaylistSong(playlistId, songId)
+    this.closeModal()
   }
 
 
