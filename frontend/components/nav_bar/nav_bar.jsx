@@ -8,25 +8,32 @@ class NavBarComponent extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGoHome = this.handleGoHome.bind(this);
     this.handleGoLib = this.handleGoLib.bind(this);
+    this.handleGoAbout = this.handleGoAbout.bind(this)
 
   }
 
 
   handleSubmit(e){
+      e.preventDefault();
+      this.props.logout()
+        .then( ()=> this.props.history.push('/splash'));
+    }
+
+  handleGoHome(e){
     e.preventDefault();
-    this.props.logout()
-      .then( ()=> this.props.history.push('/splash'));
+    this.props.history.push('/home');
   }
 
-handleGoHome(e){
-  e.preventDefault();
-  this.props.history.push('/home');
-}
-
   handleGoLib(e) {
+      e.preventDefault();
+      console.log("going home?")
+      this.props.history.push('/library');
+    }
+
+  handleGoAbout(e){
     e.preventDefault();
-    console.log("going home?")
-    this.props.history.push('/library');
+    console.log("going to about");
+    this.props.history.push('/about');
   }
 
 
@@ -64,10 +71,17 @@ handleGoHome(e){
 
       <li>
         <button onClick={this.handleSubmit} className="nav-icon">
-          <p>       Logout</p>
+          <p> Logout</p>
         </button>
       </li>
+      <li>
+        <button onClick={this.handleGoAbout} className="nav-icon">
+          <p>  About</p>
+        </button>
+      </li>
+      
     </ul>
+    
 
       </div>
       );
