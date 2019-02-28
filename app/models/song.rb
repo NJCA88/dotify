@@ -15,5 +15,6 @@ class Song < ApplicationRecord
 
   has_one_attached :track
   belongs_to :album
+  belongs_to :artist
   has_many :playlistSongs
 end
