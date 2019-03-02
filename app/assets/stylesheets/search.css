@@ -1,0 +1,24 @@
+.searchPage {
+  padding-left: 350px;
+  padding-top: 100px;
+  margin: auto;
+  height: 85vh;
+  color: white;
+  background-image: linear-gradient(rgb(45,49,57), rgb(5, 5, 5)85%);
+}
+
+.searchInput{
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 30px;
+  font-weight: 600;
+  background-color: rgb(40,40,40);
+  color: white;
+  position: absolute;
+  left: 200px;
+  top: 0vh;
+  width: 100vw;
+  height: 100px;
+
+}
