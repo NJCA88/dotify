@@ -42,7 +42,7 @@ export default ()=> (
 
 
     </Switch>
-    <Route path="/" render={() => <Redirect to="/splash" />} />
+    {/* <Route path="/" render={() => <Redirect to="/splash" />} /> */}
 
 
 
