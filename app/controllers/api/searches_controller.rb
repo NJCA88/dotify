@@ -14,23 +14,29 @@ class Api::SearchesController < ApplicationController
     @Albums = Album.all
     search_string = request.body.read
 
-    # artist = Artist.where(name: params[:search])
-    # album = Album.where(title: params[:search])
-    @Song = Song.where(title: params[:search])[0]
-    p "song? : ", @Song
-    p "url is : ", url_for(@Song.track)
+
+    # @Song = Song.where(title: params[:search])[0]
+    # p "song? : ", @Song
+    # p "url is : ", url_for(@Song.track)
+    # render json: @Song, status: 200
+
+    song = Song.where(title: "Only Us")[0]
+    album = Album.where(title: "Dear Evan Hanson")[0]
+    @search_result = SearchResult.new(song, album)
     # debugger
-    render json: @Song, status: 200
-    # debugger
+    # render SearchSerializer.new(@search_result).to_json
+    render json: @search_result
 
-    # p "artist? : ", artist
-    # p "album? : ", album
-
-
-
-    # @Albums = []
-
-
-    render 'index'
+    # render 'index'
   end
+end
+
+
+class SearchResult
+    attr_accessor :song, :album
+    def initialize(song, album)
+        @song = song
+        @album = album
+        # @album_title = album.title
+    end
 end

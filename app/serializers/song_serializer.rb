@@ -1,4 +1,4 @@
-class SongSerializer < ActiveModel::Serializer
+class SongSerializer < BaseSerializer
   attributes :id, :title, :url
 
   def url
