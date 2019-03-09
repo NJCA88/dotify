@@ -31,6 +31,7 @@ gem "aws-sdk-s3"
 
 
 gem 'ez_download'
+gem 'active_model_serializers'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

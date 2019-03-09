@@ -27,7 +27,7 @@ class SearchComponent extends React.Component{
                     return response.json();
                 })
                 .then(function (myJson) {
-                    console.log("THINGS: ", JSON.stringify(myJson));
+                    console.log("THINGS ARE: ", JSON.stringify(myJson));
                 });
     }
     render(){

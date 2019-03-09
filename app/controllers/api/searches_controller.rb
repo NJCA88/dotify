@@ -11,11 +11,21 @@ class Api::SearchesController < ApplicationController
   end
 
   def create
-    # @Albums = Album.all
+    @Albums = Album.all
     search_string = request.body.read
 
-    artist = Artist.where(name: params[:search])
-    debugger
+    # artist = Artist.where(name: params[:search])
+    # album = Album.where(title: params[:search])
+    @Song = Song.where(title: params[:search])[0]
+    p "song? : ", @Song
+    p "url is : ", url_for(@Song.track)
+    # debugger
+    render json: @Song, status: 200
+    # debugger
+
+    # p "artist? : ", artist
+    # p "album? : ", album
+
 
 
     # @Albums = []
