@@ -28,7 +28,7 @@ class AlbumShowComponent extends React.Component{
 
 
   updateSongCollection(collection){
-    debugger
+    // debugger
     this.props.updateCollection(collection);
     console.log("updating collection");
   }
