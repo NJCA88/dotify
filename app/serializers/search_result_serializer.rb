@@ -1,10 +1,43 @@
-class SearchResultSerializer < ActiveModel::Serializer
-  attributes :album, :song
-  def album
-    debugger
-    self.object.album.title
+class SearchResultSerializer < BaseSerializer
+  attributes :songs, :albums, :playlists, :artists
+  # attributes :albums
+  def songs
+    songs = {}
+    return songs if !self.object.songs 
+
+    self.object.songs.each do |song|
+      # songs[song.title] = url_for(song.track)
+      songs[song.title] = song.title, url_for(song.track), url_for(song.album.album_cover)
+    end
+    songs
   end
-  def song
-    self.object.song.title
+
+  def albums
+    albums = {}
+    return albums if !self.object.albums 
+    self.object.albums.each do |album|
+      albums[album.title] = album.title, url_for(album.album_cover)
+    end
+    albums
   end
+  
+
+  def playlists
+    playlists = {}
+    return playlists if !self.object.playlists 
+    self.object.playlists.each do |playlist|
+      playlists[playlist.name] = playlist.name, url_for(playlist.songs.first.album.album_cover)
+    end
+    playlists
+  end
+
+  def artists
+    artists = {}
+    return artists if !self.object.artists 
+      self.object.artists.each do |artist|
+        artists[artist.name] = artist.name
+    end
+    artists
+  end
+
 end
