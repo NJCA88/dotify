@@ -11,16 +11,13 @@ class Api::SearchesController < ApplicationController
   end
 
   def create
-    # @Albums = Album.all
-    # search_string = request.body.read['search']
+
     search_string = params[:search]
     
     p "searching for: ", search_string
-    # p "request.raw post is: ", request.raw_post
-    # debugger
+
     songs = Song.where(title: search_string)
     albums = Album.where(title: search_string)
-    # p "album is: ", albums
     artists = Artist.where(name: search_string)
     playlists = Playlist.where(name: search_string)
     p "PLAYLISTS ARE: ", playlists
@@ -39,10 +36,10 @@ class Api::SearchesController < ApplicationController
         albums = artists[0].albums
     elsif playlists.length > 0
         songs = [] 
-        (0..5).each do |idx|
+        len = playlists[0].songs.length
+        (0..[len - 1, 5].min).each do |idx|
             p "doing a thing"
             songs.push( playlists[0].songs[idx] )
-            break if idx+1 > playlists[0].songs.length
         end
         p "songs are now: ", songs
      elsif songs.length > 0

@@ -20,5 +20,12 @@
   top: 0vh;
   width: 100vw;
   height: 100px;
+}
 
+.leadSong {
+  color: red;
+  font-size: 200px;
+}
+.leadSong h1{
+  color:blue
 }

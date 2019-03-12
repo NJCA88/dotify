@@ -1,13 +1,16 @@
 class SearchResultSerializer < BaseSerializer
-  attributes :songs, :albums, :playlists, :artists
+  # attributes :songs, :albums, :playlists, :artists
+  attributes :songs, :albums, :playlists
+  # attributes :albums
   # attributes :albums
   def songs
-    songs = {}
+    songs = []
     return songs if !self.object.songs 
 
     self.object.songs.each do |song|
       # songs[song.title] = url_for(song.track)
-      songs[song.title] = song.title, url_for(song.track), url_for(song.album.album_cover)
+      # songs[song.title] = ["title": song.title, "track": url_for(song.track), "art": url_for(song.album.album_cover)]
+      songs.push("title": song.title, "track": url_for(song.track), "art": url_for(song.album.album_cover))
     end
     songs
   end
