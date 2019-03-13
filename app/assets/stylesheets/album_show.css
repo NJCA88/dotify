@@ -1,11 +1,12 @@
 .cover-and-info{
   width: 224px;
+  height: 265px;
 
 }
 
 .album-show-component {
   display: flex;
-  padding-left: 350px;
+  padding-left: 250px;
   padding-top: 28px;
   height: 90vh;
   color: white;
@@ -46,9 +47,15 @@
   width: 100%;
 }
 
-.play-icon:hover{
+/* .play-icon:hover{
   visibility: visible;
+} */
+/* .song:hover .music-note-button{
+  visibility: visible
 }
+.song:hover .play-icon{
+  visibility: visible
+} */
 
 .play-icon {
   height: 20px;
@@ -80,14 +87,19 @@
 }
 
 .album-title{
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   word-wrap: break-word;
+  margin-top: 0px;
 }
 
 .music-note-button {
   background: transparent;
   border: none;
+}
+.music-note-button .music-note{
+  height: 16px;
+  width: 14px;
 }
 .music-note-button img{
   height: 20px;
@@ -103,14 +115,24 @@
   left: 0px;
 }
 
-.music-note{
+.music-note img{
   position:relative;
+  opacity: 1;
+  height: 16px;
+  width: 14px;
+
 }
 
-.note-play-icon-group:hover .small-play{
+/* .note-play-icon-group:hover .small-play{
   opacity:1
 }
 .note-play-icon-group:hover .music-note{
+  opacity:0;
+} */
+.song:hover .small-play{
+  opacity:1
+}
+.song:hover .music-note{
   opacity:0;
 }
 .ellipsis {
