@@ -1,31 +1,44 @@
 .searchPage {
-  padding-left: 350px;
-  padding-top: 100px;
+  padding-left: 250px;
+  padding-top: 150px;
   margin: auto;
   height: 85vh;
   color: white;
   background-image: linear-gradient(rgb(45,49,57), rgb(5, 5, 5)85%);
 }
 
+.searchHeader{
+  position: absolute;
+  margin-left: 20vw;
+  font-size: 20px;
+  /* margin-right: auto; */
+  margin-top: -35px;
+  
+}
 .searchInput{
   background: transparent;
   outline: none;
   border: none;
   font-size: 30px;
   font-weight: 600;
-  background-color: rgb(40,40,40);
+  background-color: rgb(200,200,200);
   color: white;
   position: absolute;
   left: 200px;
   top: 0vh;
   width: 100vw;
-  height: 100px;
+  height: 80px;
 }
 
 .leadSong {
-  color: red;
+  color: white;
   font-size: 200px;
+  margin: none;
 }
 .leadSong h1{
   color:blue
+}
+
+.searchResults{
+  display: flex;
 }

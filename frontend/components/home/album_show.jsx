@@ -105,7 +105,6 @@ class AlbumShowComponent extends React.Component{
       return <div>
           <li className="song">
             <img className="play-icon" src="https://d2uvvge0uswb28.cloudfront.net/static/dist/v0/img/svg/icon-play.svg" />
-            {/* <img className="play-icon" src="https://cdn0.iconfinder.com/data/icons/education-vol-2-21/512/5_Eighth_eighth_note_music_note-512.png" /> */}
 
             <button className="music-note-button" onClick={e => {
                 this.updateMusic(e, { album: this.props.album, songs: this.props.songs }, song);
