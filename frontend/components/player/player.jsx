@@ -71,11 +71,14 @@ class PlayerComponent extends React.Component {
     // debugger
     console.log("component did update")
     if (
-      this.props.currentSong !== oldProps.currentSong &&
-      this.props.collection !== undefined
+      this.props.currentSong !== oldProps.currentSong 
+      // &&
+      // this.props.collection !== undefined
     ) {
       console.log("CWRP hit");
-      this.generateSongQueue();
+      if (this.props.collection){
+        this.generateSongQueue();
+      }
       console.log("setting state");
       this.setState({
         playing: true
@@ -93,6 +96,8 @@ class PlayerComponent extends React.Component {
       console.log("Play new album without knowing song!!!");
       console.log("this.props is:", this.props);
       const collectionOrder = Object.values(this.props.collectionSongs);
+      
+      debugger
       let currentSong = collectionOrder[0];
       
       this.updateCurrentSong(collectionOrder[0]);

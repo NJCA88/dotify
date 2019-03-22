@@ -6,14 +6,15 @@ class SearchComponent extends React.Component{
         this.state = {value: "", searchResults: {}}
 
         this.submit = this.submit.bind(this)
-        this.handleChange = this.handleChange.bind(this)
+        this.handleInputChange = this.handleInputChange.bind(this)
+        this.handleGoAlbum = this.handleGoAlbum.bind(this)
     }
 
-    handleChange(event){
+    handleInputChange(event){
         // console.log("chaning: ", this.state.value)
         this.setState({ value: event.target.value });    
     }
-    submit(e, value) {
+    submit(e) {
         console.log("submitting!");
         console.log("value is: ", this.state.value)
         fetch("/api/searches", {
@@ -34,6 +35,24 @@ class SearchComponent extends React.Component{
             }.bind(this));
     }
 
+    updateCurrentSong(e, song) {
+        // debugger
+        console.log("song to update: ", song)
+        this.props.updateCurrentSong(song);
+        console.log("updating Song");
+    }
+    updateSongCollection(e, collection, AlbumID) {
+        e.preventDefault();
+        //UPDATE STORE HERE
+        // debugger
+        this.props.updateCollection(AlbumID);
+        // console.log("IS THIS RIGHT? updating collection to be: ", collection, AlbumID);
+        this.props.history.push(`/albums/${AlbumID}`);
+    }
+    handleGoAlbum(e, AlbumID) {
+        e.preventDefault();
+        this.props.history.push(`/albums/${AlbumID}`);
+    }
 
     render(){
         let header = <div></div>
@@ -60,14 +79,13 @@ class SearchComponent extends React.Component{
 
         let songList = <div> no songs yet </div>
         if (this.state.searchResults.songs){
-            
             songList = this.state.searchResults.songs.map(song => {
                 return <div>
                     <li className="song">
                         <img className="play-icon" src="https://d2uvvge0uswb28.cloudfront.net/static/dist/v0/img/svg/icon-play.svg" />
 
                         <button className="music-note-button" onClick={e => {
-                            this.updateMusic(e, { album: this.props.album, songs: this.props.songs }, song);
+                            this.updateCurrentSong(e, { title: song.title, track: song.track });
                         }}>
                             <div className="note-play-icon-group">
                                 <img className="small-play" src="https://d2uvvge0uswb28.cloudfront.net/static/dist/v0/img/svg/icon-play.svg" />
@@ -82,11 +100,11 @@ class SearchComponent extends React.Component{
                                 <img className="dotdotdot-icon" src="https://s3-us-west-1.amazonaws.com/dotify-song-dev/icons/white+dot.png" />
                             </button>
 
-                            <div>
+                            {/* <div>
                                 <button id={song.title} className="add-to-playlist-button-hidden" onClick={this.openModal}>
                                     Add to Playlist
-                </button>
-                            </div>
+                                </button>
+                            </div> */}
                         </div>
                     </li>
                 </div>;
@@ -94,21 +112,48 @@ class SearchComponent extends React.Component{
             );
         }
 
+        let albumList = <div>no albums</div>
+        if (this.state.searchResults.albums){
+            albumList = this.state.searchResults.albums.map(album =>{
+                return <div className="album" onHover={this.hoverEffects}>
+                    
+                        <button onClick={e => {
+                            console.log("ALBUM ID IS: ", album.id)
+                            this.updateSongCollection(e, album, album.id);
+                        }} className="album-index-album">
+                            <div className="album-images">
+                                <img className="demo-image" src={album.album_cover} />
+                                <img className="play-modal" src="https://mbtskoudsalg.com/images/white-play-button-png-5.png"></img>
+                            </div>
+                        </button>
+
+                        <button onClick={e => {
+                            this.handleGoAlbum(e, album.id);
+                        }} className="album-index-title">
+                            {album.title}
+                        </button>
+                    </div>;
+                });
+        
+        }
+
         return(
             <div> 
                 <div className="searchPage">
                 <form onSubmit={this.submit}> 
-                    <input className="searchInput" type="text" value={this.state.value} onChange={this.handleChange} ></input>
+                    <input className="searchInput" type="text" value={this.state.value} onChange={this.handleInputChange} ></input>
                 </form>
 
                 {header}
 
                 <div className="searchResults">
-                {leadSong}
-                <div className ="songList">
-                {songList}
-                        </div>
-
+                    {leadSong}
+                    <div className ="songList">
+                        {songList}
+                    </div>
+                    <div className = "albumList">
+                        {albumList}
+                    </div>
                 </div>
                 </div>
             </div>

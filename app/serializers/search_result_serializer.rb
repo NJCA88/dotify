@@ -16,10 +16,11 @@ class SearchResultSerializer < BaseSerializer
   end
 
   def albums
-    albums = {}
+    albums = []
     return albums if !self.object.albums 
     self.object.albums.each do |album|
-      albums[album.title] = album.title, url_for(album.album_cover)
+      # albums[album.title] = album.title, url_for(album.album_cover)
+      albums.push("id": album.id, "title": album.title, "album_cover": url_for(album.album_cover) )
     end
     albums
   end

@@ -34,15 +34,15 @@ export default ()=> (
       <AuthRoute path="/splash" component={Splash} />
       <AuthRoute path='/signup' component = {SignupContainer} />
       <AuthRoute path='/login' component = {LoginContainer} />
+      <ProtectedRoute exact path="/search" component={SearchContainer} />
       <ProtectedRoute exact path="/home" component={HomeContainer} />
       <ProtectedRoute exact path="/library" component={LibraryContainer} />
       <ProtectedRoute exact path="/albums/:albumID" component={AlbumContainer} />
       <ProtectedRoute exact path="/playlists/:playlistID" component={PlaylistContainer} />
-      <ProtectedRoute exact path="/search" component={SearchContainer} />
 
 
     </Switch>
-    {/* <Route path="/" render={() => <Redirect to="/splash" />} /> */}
+    <Route path="/" render={() => <Redirect to="/splash" />} />
 
 
 
