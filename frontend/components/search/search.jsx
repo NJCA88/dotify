@@ -28,11 +28,10 @@ class SearchComponent extends React.Component{
         })
             .then(function (response) {
                 let jsonResponse = response.json();
-                // console.log(jsonResponse);
                 return jsonResponse;
             })
             .then(function (myJson) {
-                // console.log(myJson);
+                console.log("JSON IS: ", myJson)
                 this.setState({ searchResults: myJson }, ()=> console.log("state is: ", this.state))
             }.bind(this));
     }
@@ -44,7 +43,7 @@ class SearchComponent extends React.Component{
         console.log("updating Song");
     }
     updateSongCollection(e, collection, AlbumID) {
-        e.preventDefault();
+        event.preventDefault();
         //UPDATE STORE HERE
         this.props.updateCollection(AlbumID);
         // console.log("IS THIS RIGHT? updating collection to be: ", collection, AlbumID);
@@ -57,19 +56,42 @@ class SearchComponent extends React.Component{
 
     updateMusic(e, collection, song) {
         e.preventDefault();
-        debugger
+        // debugger
         console.log("updating song to be: ", song)
         this.updateCurrentSong(event, song);
         this.updateSongCollection(collection);
     }
 
     render(){
+        let searchResults, searchResultsBlank
         let header = <div></div>
         if (this.state.searchResults.songs){
-            header = <div className = "searchHeader"> Top Results</div>
+            if (this.state.searchResults.songs.length === 0){
+                console.log("we don't need that other shit")
+                console.log("songs length is: ", this.state.searchResults.songs.length)
+                // return (
+                //     <div>
+                //         <div className="searchPage">
+                //             <form onSubmit={this.submit}>
+                //                 <input className="searchInput" type="text" value={this.state.value} onChange={this.handleInputChange} ></input>
+                //             </form>
+
+                //             {header}
+                //             <h2> No matches found</h2>
+
+                //         </div>
+                        
+                //     </div>
+                // )
+                searchResultsBlank = <div>no search results</div>
+            }
         }
-        let leadSong = <div className = "leadSong">NO DIV</div>;
-        if (this.state.searchResults.songs ){
+        
+        if (this.state.searchResults.songs){
+            header = <div className = "searchHeader"> </div>
+        }
+        let leadSong = <div className = "leadSong"></div>;
+        if (this.state.searchResults.songs && this.state.searchResults.songs[0] ){
             // console.log(this.state)
              leadSong = 
                 <div className="cover-and-info">
@@ -86,7 +108,7 @@ class SearchComponent extends React.Component{
 
 
 
-        let songList = <div> no songs yet </div>
+        let songList = <div></div>
         if (this.state.searchResults.songs){
             songList = this.state.searchResults.songs.map(song => {
                 return <div>
@@ -121,7 +143,7 @@ class SearchComponent extends React.Component{
             );
         }
 
-        let albumList = <div>no albums</div>
+        let albumList = <div></div>
         if (this.state.searchResults.albums){
             albumList = this.state.searchResults.albums.map(album =>{
                 return <div className="album" onHover={this.hoverEffects}>
@@ -145,7 +167,29 @@ class SearchComponent extends React.Component{
                 });
         
         }
+        if (this.state.searchResults.songs){
+        searchResults = 
+            <div className="searchResults">
+                <div className="search-head-and-songs" id="dog">
+                    {leadSong}
+                    <div className="song-list">
+                        <h2>Songs</h2>
+                        {songList}
+                    </div>
+                </div>
+                    <div className="albumList">
+                        <h2>Albums</h2>
+                        {albumList}
+                </div>
+            </div>
+        }
 
+           if (this.state.searchResults.songs){
+               if (this.state.searchResults.songs.length === 0){
+
+                searchResults = <div>No matches found</div> 
+                }
+           }
         return(
             <div> 
                 <div className="searchPage">
@@ -155,22 +199,10 @@ class SearchComponent extends React.Component{
 
                 {header}
 
-                <div className="searchResults">
-                    {leadSong}
-                    <div className ="songList">
-                        {songList}
-                    </div>
-                    <div className = "albumList">
-                        {albumList}
-                    </div>
-                </div>
+                {searchResults}
                 </div>
             </div>
         )
     }
 }
 export default SearchComponent;
-
-// <button onClick={e => {
-//     this.updateSongCollection(e, album, album.id);
-// }}

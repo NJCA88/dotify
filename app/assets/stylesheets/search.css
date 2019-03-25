@@ -36,9 +36,23 @@
   margin: none;
 }
 .leadSong h1{
-  color:blue
+  color:white;
 }
+.search-head-and-songs {
+  display: flex;
+  width: 80vw;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
 
 .searchResults{
   display: flex;
+  flex-direction: column;
 }
+.song-list li{
+  margin:0px;
+}
+/* .song-list{
+  background-color:blue;
+} */

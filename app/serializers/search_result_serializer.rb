@@ -27,10 +27,10 @@ class SearchResultSerializer < BaseSerializer
   
 
   def playlists
-    playlists = {}
+    playlists = []
     return playlists if !self.object.playlists 
     self.object.playlists.each do |playlist|
-      playlists[playlist.name] = playlist.name, url_for(playlist.songs.first.album.album_cover)
+      playlists.push(playlist.name = playlist.name, url_for(playlist.songs.first.album.album_cover))
     end
     playlists
   end

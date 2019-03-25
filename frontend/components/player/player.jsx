@@ -97,7 +97,7 @@ class PlayerComponent extends React.Component {
       console.log("this.props is:", this.props);
       const collectionOrder = Object.values(this.props.collectionSongs);
       
-      debugger
+      // debugger
       let currentSong = collectionOrder[0];
       
       this.updateCurrentSong(collectionOrder[0]);

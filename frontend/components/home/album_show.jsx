@@ -41,7 +41,7 @@ class AlbumShowComponent extends React.Component{
 
   updateMusic(e, collection, song){
     e.preventDefault();
-    debugger
+    // debugger
     this.updateCurrentSong( song);
     this.updateSongCollection(collection);
   }
