@@ -12,9 +12,14 @@
 #
 
 class Album < ApplicationRecord
+  # attr_accessor :title
   validates :title, :artist_id, presence: true
 
   has_many :songs
   belongs_to :artist
   has_one_attached :album_cover
+
+  # def intitialize
+  #   @title = self.title
+  # end
 end

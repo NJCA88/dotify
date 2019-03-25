@@ -1,15 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
 
 # Album.all.destroy_all
 # Song.all.destroy_all
+
 
 
 
@@ -48,6 +40,11 @@
 # Song.create(title: "Words Fail", album_id: DEH.id).track.attach(io: words_fail, filename: "words_fail.mp3")
 # Song.create(title: "So Big / So Small", album_id: DEH.id).track.attach(io: so_small, filename: "so_small.mp3")
 # Song.create(title: "Finale", album_id: DEH.id).track.attach(io: finale, filename: "finale.mp3")
+
+# # dehCast = Artist.create(name: "Cast of Dear Evan Hanson")
+# # items = [DEH]
+# # DEH.songs.each do |
+
 
 
 
@@ -322,130 +319,197 @@
 #   Song.create(title: "Kiss", album_id: M5o.id ).track.attach(io: m15, filename: "15 Kiss.mp3 ")
 
 
-LaLaLandCover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/La_La_Land_cover.jpg')
-Album.create(title: "La La Land Soundtrack", artist_id: 1).album_cover.attach(io: LaLaLandCover, filename: 'La_La_Land_cover.jpg' )
-LLL = Album.find_by(title: "La La Land Soundtrack")
+
+# # LINE BREAK FOR HEROKU BEING STUPID AND HAVING A SHORT ATTENTION SPAN
+
+# LaLaLandCover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/La_La_Land_cover.jpg')
+# Album.create(title: "La La Land Soundtrack", artist_id: 1).album_cover.attach(io: LaLaLandCover, filename: 'La_La_Land_cover.jpg' )
+# LLL = Album.find_by(title: "La La Land Soundtrack")
 
 
-m01= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/A_Lovely_Night.m4a")
-m02= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Another_Day_of_Sun.m4a")
-m03= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Audition.m4a")
-m04= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/City+Of+Stars+(Humming).m4a")
-m05= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/City+Of+Stars+(Ryan+Gosling).m4a")
-m06= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/City_of_Stars.m4a")
-m07= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Engagement+Party.m4a")
-m08= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Epilogue.m4a")
-m09= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Herman%E2%80%99s+Habit.m4a")
-m10= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Mia+%26+Sebastian%E2%80%99s+Theme.m4a")
-m11= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Planetarium.m4a")
-m12= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Someone_In_The_Crowd.m4a")
-m13= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Start_a_Fire.m4a")
-m14= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Summer+Montage++Madeline.m4a")
-m15= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/The+End.m4a")
+# m01= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/A_Lovely_Night.m4a")
+# m02= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Another_Day_of_Sun.m4a")
+# m03= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Audition.m4a")
+# m04= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/City+Of+Stars+(Humming).m4a")
+# m05= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/City+Of+Stars+(Ryan+Gosling).m4a")
+# m06= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/City_of_Stars.m4a")
+# m07= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Engagement+Party.m4a")
+# m08= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Epilogue.m4a")
+# m09= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Herman%E2%80%99s+Habit.m4a")
+# m10= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Mia+%26+Sebastian%E2%80%99s+Theme.m4a")
+# m11= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Planetarium.m4a")
+# m12= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Someone_In_The_Crowd.m4a")
+# m13= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Start_a_Fire.m4a")
+# m14= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/Summer+Montage++Madeline.m4a")
+# m15= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/lalaLand/The+End.m4a")
 
-Song.create(title: "A Lovely Night", album_id: LLL.id ).track.attach(io: m01, filename: "A_Lovely_Night.m4a")
-Song.create(title: "Another Day Of Sun", album_id: LLL.id ).track.attach(io: m02, filename: "Another_Day_of_Sun.m4a")
-Song.create(title: "Audition", album_id: LLL.id ).track.attach(io: m03, filename: "Audition.m4a")
-Song.create(title: "City of Stars (humming)", album_id: LLL.id ).track.attach(io: m04, filename: "City Of Stars (Humming).m4a")
-Song.create(title: "City of Stars(Ryan Gosling)", album_id: LLL.id ).track.attach(io: m05, filename: "City Of Stars (Ryan Gosling).m4a")
-Song.create(title: "City of Stars", album_id: LLL.id ).track.attach(io: m06, filename: "City_of_Stars.m4a")
-Song.create(title: "Engagement Part", album_id: LLL.id ).track.attach(io: m07, filename: "Engagement Party.m4a")
-Song.create(title: "Epilogue", album_id: LLL.id ).track.attach(io: m08, filename: "Epilogue.m4a")
-Song.create(title: "Herman's Habit", album_id: LLL.id ).track.attach(io: m09, filename: "Herman’s Habit.m4a ")
-Song.create(title: "Mia & Sebastian's Theme", album_id: LLL.id ).track.attach(io: m10, filename: "Mia & Sebastian’s Theme.m4a")
-Song.create(title: "Planetarium", album_id: LLL.id ).track.attach(io: m11, filename: "Planetarium.m4a")
-Song.create(title: "Someone in the Crowd", album_id: LLL.id ).track.attach(io: m12, filename: "Someone_In_The_Crowd.m4a")
-Song.create(title: "Start a Fire", album_id: LLL.id ).track.attach(io: m13, filename: "Start_a_Fire.m4a")
-Song.create(title: "Summer Montage", album_id: LLL.id ).track.attach(io: m14, filename: "Summer Montage Madeline.m4a")
-Song.create(title: "The End", album_id: LLL.id ).track.attach(io: m15, filename: "The End.m4a")
-
-
-ColorShapeCover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/color_shape.png')
-Album.create(title: "The Color and the Shape", artist_id: 7).album_cover.attach(io: ColorShapeCover, filename: 'color_shape.png' )
-LLL = Album.find_by(title: "The Color and the Shape")
-
-m01= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/01+-+Doll.mp3")
-m02= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/02+-+Monkey+Wrench.mp3")
-m03= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/03+-+Hey%2C+Johnny+Park!.mp3")
-m04= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/04+-+My+Poor+Brain.mp3")
-m05= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/05+-+Wind+Up.mp3")
-m06= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/06+-+Up+in+Arms.mp3")
-m07= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/07+-+My+Hero.mp3")
-m08= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/08+-+See+You.mp3")
-m09= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/09+-+Enough+Space.mp3")
-m10= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/10+-+February+Stars.mp3")
-m11= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/11+-+Everlong.mp3")
-m12= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/12+-+Walking+After+You.mp3")
-m13= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/13+-+New+Way+Home.mp3")
-
-Song.create(title: "Doll", album_id: LLL.id ).track.attach(io: m01, filename: "01 - Doll.mp3")
-Song.create(title: "Moneky Wrench", album_id: LLL.id ).track.attach(io: m02, filename: "02 - Monkey Wrench.mp3")
-Song.create(title: "Hey  Jonny Park!", album_id: LLL.id ).track.attach(io: m03, filename: "03 - Hey, Johnny Park!.mp3")
-Song.create(title: "My Poor Brain", album_id: LLL.id ).track.attach(io: m04, filename: "04 - My Poor Brain.mp3 Download Copy path ")
-Song.create(title: "Wind Up", album_id: LLL.id ).track.attach(io: m05, filename: "05 - Wind Up.mp3")
-Song.create(title: "Up in Arms", album_id: LLL.id ).track.attach(io: m06, filename: "06 - Up in Arms.mp3")
-Song.create(title: "My Hero", album_id: LLL.id ).track.attach(io: m07, filename: "07 - My Hero.mp3 Download Copy path")
-Song.create(title: "See You", album_id: LLL.id ).track.attach(io: m08, filename: "08 - See You.mp3")
-Song.create(title: "Enough Space", album_id: LLL.id ).track.attach(io: m09, filename: "09 - Enough Space.mp3")
-Song.create(title: "February Stars", album_id: LLL.id ).track.attach(io: m10, filename: "10 - February Stars.mp3")
-Song.create(title: "Everlong", album_id: LLL.id ).track.attach(io: m11, filename: "11 - Everlong.mp3")
-Song.create(title: "Walking After You", album_id: LLL.id ).track.attach(io: m12, filename: "12 - Walking After You.mp3")
-Song.create(title: "New Way Home", album_id: LLL.id ).track.attach(io: m13, filename: "13 - New Way Home.mp3")
+# Song.create(title: "A Lovely Night", album_id: LLL.id ).track.attach(io: m01, filename: "A_Lovely_Night.m4a")
+# Song.create(title: "Another Day Of Sun", album_id: LLL.id ).track.attach(io: m02, filename: "Another_Day_of_Sun.m4a")
+# Song.create(title: "Audition", album_id: LLL.id ).track.attach(io: m03, filename: "Audition.m4a")
+# Song.create(title: "City of Stars (humming)", album_id: LLL.id ).track.attach(io: m04, filename: "City Of Stars (Humming).m4a")
+# Song.create(title: "City of Stars(Ryan Gosling)", album_id: LLL.id ).track.attach(io: m05, filename: "City Of Stars (Ryan Gosling).m4a")
+# Song.create(title: "City of Stars", album_id: LLL.id ).track.attach(io: m06, filename: "City_of_Stars.m4a")
+# Song.create(title: "Engagement Part", album_id: LLL.id ).track.attach(io: m07, filename: "Engagement Party.m4a")
+# Song.create(title: "Epilogue", album_id: LLL.id ).track.attach(io: m08, filename: "Epilogue.m4a")
+# Song.create(title: "Herman's Habit", album_id: LLL.id ).track.attach(io: m09, filename: "Herman’s Habit.m4a ")
+# Song.create(title: "Mia & Sebastian's Theme", album_id: LLL.id ).track.attach(io: m10, filename: "Mia & Sebastian’s Theme.m4a")
+# Song.create(title: "Planetarium", album_id: LLL.id ).track.attach(io: m11, filename: "Planetarium.m4a")
+# Song.create(title: "Someone in the Crowd", album_id: LLL.id ).track.attach(io: m12, filename: "Someone_In_The_Crowd.m4a")
+# Song.create(title: "Start a Fire", album_id: LLL.id ).track.attach(io: m13, filename: "Start_a_Fire.m4a")
+# Song.create(title: "Summer Montage", album_id: LLL.id ).track.attach(io: m14, filename: "Summer Montage Madeline.m4a")
+# Song.create(title: "The End", album_id: LLL.id ).track.attach(io: m15, filename: "The End.m4a")
 
 
+# ColorShapeCover = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/color_shape.png')
+# Album.create(title: "The Color and the Shape", artist_id: 7).album_cover.attach(io: ColorShapeCover, filename: 'color_shape.png' )
+# LLL = Album.find_by(title: "The Color and the Shape")
 
-BGHC = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/beatlesCover.jpg')
-Album.create(title: "Beatles Greatest Hits", artist_id: 8).album_cover.attach(io: BGHC, filename: 'beatlesCover.jpg' )
-BGH = Album.find_by(title: "Beatles Greatest Hits")
+# m01= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/01+-+Doll.mp3")
+# m02= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/02+-+Monkey+Wrench.mp3")
+# m03= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/03+-+Hey%2C+Johnny+Park!.mp3")
+# m04= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/04+-+My+Poor+Brain.mp3")
+# m05= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/05+-+Wind+Up.mp3")
+# m06= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/06+-+Up+in+Arms.mp3")
+# m07= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/07+-+My+Hero.mp3")
+# m08= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/08+-+See+You.mp3")
+# m09= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/09+-+Enough+Space.mp3")
+# m10= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/10+-+February+Stars.mp3")
+# m11= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/11+-+Everlong.mp3")
+# m12= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/12+-+Walking+After+You.mp3")
+# m13= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/foo+fighters/13+-+New+Way+Home.mp3")
 
-m01= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/01+come+together.mp3")
-m02= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/02+drive+my+car.mp3")
-m03= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/03+help!.mp3")
-m04= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/04+i+saw+her+standing+there.mp3")
-m05= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/05+magical+mystery+tour.mp3")
-m06= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/06+no+reply.mp3")
-m07= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/07+all+my+loving.mp3")
-m08= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/08+rock+and+roll+music.mp3")
-m09= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/09+and+i+love+her.mp3")
-m10= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/10+all+you+need+is+love.mp3")
-m11= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/11+i+am+the+walrus.mp3")
-m12= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/12+yellow+subarine.mp3")
-m13= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/13+your+going+to+lose+that+girl.mp3")
-m14= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/14+can't+buy+me+love.mp3")
-m15= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/15+hello+goodbye.mp3")
-m16= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/17+ticket+to+ride.mp3")
-m17= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/18+eight+days+a+week.mp3")
-m18= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/18+eight+days+a+week.mp3")
-m19= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/19+love+me+do.mp3")
-m20= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/20+strawberry+fields+forever.mp3")
-
-Song.create(title: "Come Together", album_id: BGH.id ).track.attach(io: m01, filename: "01 come together.mp3")
-Song.create(title: "Drive My Car", album_id: BGH.id ).track.attach(io: m02, filename: "02 drive my car.mp3")
-Song.create(title: "Help!", album_id: BGH.id ).track.attach(io: m03, filename: "03 help!.mp3")
-Song.create(title: "I saw her Standing There", album_id: BGH.id ).track.attach(io: m04, filename: "04 i saw her standing there.mp3")
-Song.create(title: "magical ,mystery tour", album_id: BGH.id ).track.attach(io: m05, filename: "05 magical mystery tour.mp3")
-Song.create(title: "No Reply", album_id: BGH.id ).track.attach(io: m06, filename: "06 no reply.mp3")
-Song.create(title: "All My Love", album_id: BGH.id ).track.attach(io: m07, filename: "07 all my loving.mp3")
-Song.create(title: "Rock and Roll Music", album_id: BGH.id ).track.attach(io: m08, filename: "08 rock and roll music.mp3")
-Song.create(title: "And I Love Her", album_id: BGH.id ).track.attach(io: m09, filename: "09 and i love her.mp3")
-Song.create(title: "All You Need is Love", album_id: BGH.id ).track.attach(io: m10, filename: "10 all you need is love.mp3")
-Song.create(title: "I am The Walrus", album_id: BGH.id ).track.attach(io: m11, filename: "11 i am the walrus.mp3")
-Song.create(title: "Yellow Submarine", album_id: BGH.id ).track.attach(io: m12, filename: "12 yellow subarine.mp3")
-Song.create(title: "You're Going to Lose That Girl", album_id: BGH.id ).track.attach(io: m13, filename: "13 your going to lose that girl.mp3")
-Song.create(title: "Cant Buy Me Love", album_id: BGH.id ).track.attach(io: m14, filename: "14 can't buy me love.mp3")
-Song.create(title: "Hello Goodbye", album_id: BGH.id ).track.attach(io: m15, filename: "15 hello goodbye.mp3")
-Song.create(title: "Here Comes The Sun", album_id: BGH.id ).track.attach(io: m16, filename: "16 here comes the sun.mp3")
-Song.create(title: "Ticket To Ride", album_id: BGH.id ).track.attach(io: m17, filename: "17 ticket to ride.mp3")
-Song.create(title: "Eight Days a Week", album_id: BGH.id ).track.attach(io: m18, filename: "18 eight days a week.mp3")
-Song.create(title: "Love Me Do", album_id: BGH.id ).track.attach(io: m19, filename: "19 love me do.mp3")
-Song.create(title: "Straberry Fields Forever", album_id: BGH.id ).track.attach(io: m20, filename: "20 strawberry fields forever.mp3")
+# Song.create(title: "Doll", album_id: LLL.id ).track.attach(io: m01, filename: "01 - Doll.mp3")
+# Song.create(title: "Moneky Wrench", album_id: LLL.id ).track.attach(io: m02, filename: "02 - Monkey Wrench.mp3")
+# Song.create(title: "Hey  Jonny Park!", album_id: LLL.id ).track.attach(io: m03, filename: "03 - Hey, Johnny Park!.mp3")
+# Song.create(title: "My Poor Brain", album_id: LLL.id ).track.attach(io: m04, filename: "04 - My Poor Brain.mp3 Download Copy path ")
+# Song.create(title: "Wind Up", album_id: LLL.id ).track.attach(io: m05, filename: "05 - Wind Up.mp3")
+# Song.create(title: "Up in Arms", album_id: LLL.id ).track.attach(io: m06, filename: "06 - Up in Arms.mp3")
+# Song.create(title: "My Hero", album_id: LLL.id ).track.attach(io: m07, filename: "07 - My Hero.mp3 Download Copy path")
+# Song.create(title: "See You", album_id: LLL.id ).track.attach(io: m08, filename: "08 - See You.mp3")
+# Song.create(title: "Enough Space", album_id: LLL.id ).track.attach(io: m09, filename: "09 - Enough Space.mp3")
+# Song.create(title: "February Stars", album_id: LLL.id ).track.attach(io: m10, filename: "10 - February Stars.mp3")
+# Song.create(title: "Everlong", album_id: LLL.id ).track.attach(io: m11, filename: "11 - Everlong.mp3")
+# Song.create(title: "Walking After You", album_id: LLL.id ).track.attach(io: m12, filename: "12 - Walking After You.mp3")
+# Song.create(title: "New Way Home", album_id: LLL.id ).track.attach(io: m13, filename: "13 - New Way Home.mp3")
 
 
-PlaylistSong.create(playlist_id: Playlist.find_by(name: "New Playlist").id, song_id: Song.find_by(title: "Moneky Wrench"))
-PlaylistSong.create(playlist_id: Playlist.find_by(name: "New Playlist").id, song_id: Song.find_by(title: "I am The Walrus"))
-PlaylistSong.create(playlist_id: Playlist.find_by(name: "New Playlist").id, song_id: Song.find_by(title: "Another Day Of Sun"))
-PlaylistSong.create(playlist_id: Playlist.find_by(name: "New Playlist").id, song_id: Song.find_by(title: "The Rock Show"))
-PlaylistSong.create(playlist_id: Playlist.find_by(name: "New Playlist").id, song_id: Song.find_by(title: "You Will Be Found"))
 
-PlaylistSong.create(playlist_id: Playlist.find_by(name: "fun songs").id, song_id: Song.find_by(title: "Start a Fire").id)
-PlaylistSong.create(playlist_id: Playlist.find_by(name: "My 2nd playlist!").id, song_id: Song.find_by(title: "The Promised Land").id)
+# BGHC = EzDownload.open('https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/beatlesCover.jpg')
+# Album.create(title: "Beatles Greatest Hits", artist_id: 8).album_cover.attach(io: BGHC, filename: 'beatlesCover.jpg' )
+# BGH = Album.find_by(title: "Beatles Greatest Hits")
+
+# m01= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/01+come+together.mp3")
+# m02= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/02+drive+my+car.mp3")
+# m03= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/03+help!.mp3")
+# m04= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/04+i+saw+her+standing+there.mp3")
+# m05= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/05+magical+mystery+tour.mp3")
+# m06= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/06+no+reply.mp3")
+# m07= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/07+all+my+loving.mp3")
+# m08= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/08+rock+and+roll+music.mp3")
+# m09= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/09+and+i+love+her.mp3")
+# m10= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/10+all+you+need+is+love.mp3")
+# m11= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/11+i+am+the+walrus.mp3")
+# m12= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/12+yellow+subarine.mp3")
+# m13= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/13+your+going+to+lose+that+girl.mp3")
+# m14= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/14+can't+buy+me+love.mp3")
+# m15= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/15+hello+goodbye.mp3")
+# m16= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/17+ticket+to+ride.mp3")
+# m17= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/18+eight+days+a+week.mp3")
+# m18= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/18+eight+days+a+week.mp3")
+# m19= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/19+love+me+do.mp3")
+# m20= EzDownload.open("https://s3-us-west-1.amazonaws.com/dotify-song-dev/Beatles/20+strawberry+fields+forever.mp3")
+
+# Song.create(title: "Come Together", album_id: BGH.id ).track.attach(io: m01, filename: "01 come together.mp3")
+# Song.create(title: "Drive My Car", album_id: BGH.id ).track.attach(io: m02, filename: "02 drive my car.mp3")
+# Song.create(title: "Help!", album_id: BGH.id ).track.attach(io: m03, filename: "03 help!.mp3")
+# Song.create(title: "I saw her Standing There", album_id: BGH.id ).track.attach(io: m04, filename: "04 i saw her standing there.mp3")
+# Song.create(title: "magical ,mystery tour", album_id: BGH.id ).track.attach(io: m05, filename: "05 magical mystery tour.mp3")
+# Song.create(title: "No Reply", album_id: BGH.id ).track.attach(io: m06, filename: "06 no reply.mp3")
+# Song.create(title: "All My Love", album_id: BGH.id ).track.attach(io: m07, filename: "07 all my loving.mp3")
+# Song.create(title: "Rock and Roll Music", album_id: BGH.id ).track.attach(io: m08, filename: "08 rock and roll music.mp3")
+# Song.create(title: "And I Love Her", album_id: BGH.id ).track.attach(io: m09, filename: "09 and i love her.mp3")
+# Song.create(title: "All You Need is Love", album_id: BGH.id ).track.attach(io: m10, filename: "10 all you need is love.mp3")
+# Song.create(title: "I am The Walrus", album_id: BGH.id ).track.attach(io: m11, filename: "11 i am the walrus.mp3")
+# Song.create(title: "Yellow Submarine", album_id: BGH.id ).track.attach(io: m12, filename: "12 yellow subarine.mp3")
+# Song.create(title: "You're Going to Lose That Girl", album_id: BGH.id ).track.attach(io: m13, filename: "13 your going to lose that girl.mp3")
+# Song.create(title: "Cant Buy Me Love", album_id: BGH.id ).track.attach(io: m14, filename: "14 can't buy me love.mp3")
+# Song.create(title: "Hello Goodbye", album_id: BGH.id ).track.attach(io: m15, filename: "15 hello goodbye.mp3")
+# Song.create(title: "Here Comes The Sun", album_id: BGH.id ).track.attach(io: m16, filename: "16 here comes the sun.mp3")
+# Song.create(title: "Ticket To Ride", album_id: BGH.id ).track.attach(io: m17, filename: "17 ticket to ride.mp3")
+# Song.create(title: "Eight Days a Week", album_id: BGH.id ).track.attach(io: m18, filename: "18 eight days a week.mp3")
+# Song.create(title: "Love Me Do", album_id: BGH.id ).track.attach(io: m19, filename: "19 love me do.mp3")
+# Song.create(title: "Straberry Fields Forever", album_id: BGH.id ).track.attach(io: m20, filename: "20 strawberry fields forever.mp3")
+
+
+# PlaylistSong.create(playlist_id: Playlist.find_by(name: "New Playlist").id, song_id: Song.find_by(title: "Moneky Wrench"))
+# PlaylistSong.create(playlist_id: Playlist.find_by(name: "New Playlist").id, song_id: Song.find_by(title: "I am The Walrus"))
+# PlaylistSong.create(playlist_id: Playlist.find_by(name: "New Playlist").id, song_id: Song.find_by(title: "Another Day Of Sun"))
+# PlaylistSong.create(playlist_id: Playlist.find_by(name: "New Playlist").id, song_id: Song.find_by(title: "The Rock Show"))
+# PlaylistSong.create(playlist_id: Playlist.find_by(name: "New Playlist").id, song_id: Song.find_by(title: "You Will Be Found"))
+
+# PlaylistSong.create(playlist_id: Playlist.find_by(name: "fun songs").id, song_id: Song.find_by(title: "Start a Fire").id)
+# PlaylistSong.create(playlist_id: Playlist.find_by(name: "My 2nd playlist!").id, song_id: Song.find_by(title: "The Promised Land").id)
+
+# Artist.create(name: "Billy Joel")
+
+
+Artist.create(name: "Blink 182")
+Artist.create(name: "Cast of Dear Evan Hanson")
+Artist.create(name: "Bruce Springsteen")
+Artist.create(name: "Matchbox Twenty")
+Artist.create(name: "Maroon 5")
+Artist.create(name: "Cast of La La Land")
+Artist.create(name: "Foo Fighters")
+Artist.create(name: "The Beatles")
+
+album = Album.where(title: "Dear Evan Hanson").first
+artist = Artist.where(name: "Cast of Dear Evan Hanson").first
+album.artist_id = artist.id
+album.save!
+
+album = Album.where(title: "Greatest Hits").first
+artist = Artist.where(name: "Billy Joel").first
+album.artist_id = artist.id
+album.save!
+
+album = Album.where(title: "Blink 182 Greatest Hits").first
+artist = Artist.where(name: "Blink 182").first
+album.artist_id = artist.id
+album.save!
+
+
+album = Album.where(title: "1973").first
+artist = Artist.where(name: "Bruce Springsteen").first
+album.artist_id = artist.id
+album.save!
+
+album = Album.where(title: "Exile on Mainstream").first
+artist = Artist.where(name: "Matchbox Twenty").first
+album.artist_id = artist.id
+album.save!
+
+album = Album.where(title: "Red Pill Blues").first
+artist = Artist.where(name: "Maroon 5").first
+album.artist_id = artist.id
+album.save!
+
+album = Album.where(title: "Overexposed").first
+artist = Artist.where(name: "Maroon 5").first
+album.artist_id = artist.id
+album.save!
+
+album = Album.where(title: "La La Land Soundtrack").first
+artist = Artist.where(name: "Cast of La La Land").first
+album.artist_id = artist.id
+album.save!
+
+album = Album.where(title: "The Color and the Shape").first
+artist = Artist.where(name: "Foo Fighters").first
+album.artist_id = artist.id
+album.save!
+
+album = Album.where(title: "Beatles Greatest Hits").first
+artist = Artist.where(name: "The Beatles").first
+album.artist_id = artist.id
+album.save!
+
