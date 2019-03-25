@@ -10,7 +10,7 @@ class SearchResultSerializer < BaseSerializer
     self.object.songs.each do |song|
       # songs[song.title] = url_for(song.track)
       # songs[song.title] = ["title": song.title, "track": url_for(song.track), "art": url_for(song.album.album_cover)]
-      songs.push("title": song.title, "track": url_for(song.track), "art": url_for(song.album.album_cover))
+      songs.push("id": song.id, "title": song.title, "track": url_for(song.track), "art": url_for(song.album.album_cover), "album": { "title": song.album.title, "id": song.album.id, "album_cover": url_for(song.album.album_cover)})
     end
     songs
   end

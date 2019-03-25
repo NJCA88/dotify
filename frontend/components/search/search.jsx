@@ -8,6 +8,8 @@ class SearchComponent extends React.Component{
         this.submit = this.submit.bind(this)
         this.handleInputChange = this.handleInputChange.bind(this)
         this.handleGoAlbum = this.handleGoAlbum.bind(this)
+        this.updateCurrentSong = this.updateCurrentSong.bind(this)
+        this.updateMusic = this.updateMusic.bind(this)
     }
 
     handleInputChange(event){
@@ -44,7 +46,6 @@ class SearchComponent extends React.Component{
     updateSongCollection(e, collection, AlbumID) {
         e.preventDefault();
         //UPDATE STORE HERE
-        // debugger
         this.props.updateCollection(AlbumID);
         // console.log("IS THIS RIGHT? updating collection to be: ", collection, AlbumID);
         this.props.history.push(`/albums/${AlbumID}`);
@@ -52,6 +53,14 @@ class SearchComponent extends React.Component{
     handleGoAlbum(e, AlbumID) {
         e.preventDefault();
         this.props.history.push(`/albums/${AlbumID}`);
+    }
+
+    updateMusic(e, collection, song) {
+        e.preventDefault();
+        debugger
+        console.log("updating song to be: ", song)
+        this.updateCurrentSong(event, song);
+        this.updateSongCollection(collection);
     }
 
     render(){
@@ -67,9 +76,9 @@ class SearchComponent extends React.Component{
                     <img className="album-cover" src={this.state.searchResults.songs[0].art} />
                     <h1 className="album-title">{this.state.searchResults.songs[0].title}</h1>
                     <button className="play-button"
-                    // onClick={e => {
-                    //    this.updateMusic(e, { album: this.props.album, songs: this.props.songs }, this.props.songs[0]);
-                    // }}
+                    onClick={e => {
+                       this.updateMusic(e, { album: this.state.searchResults.songs[0].album, songs: this.state.searchResults.songs }, this.state.searchResults.songs[0]);
+                    }}
                     >
                     PLAY</button>
                 </div>
