@@ -139,7 +139,7 @@ class libraryComponent extends React.Component {
 >
                 <button className="x-button" onClick={this.closeModal}>X</button> <br/>
                 Create new Playlist <br/>
-                <input onChange={(e) => { this.updatePlaylistName(e); } } type="text"/>
+                    <input onChange={(e) => { this.updatePlaylistName(e); }} type="text" placeholder="Start Typing..."/>
                 <button className="create-button" onClick={this.createPlaylist}>CREATE</button>
 
             </div>

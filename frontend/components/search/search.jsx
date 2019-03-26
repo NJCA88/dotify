@@ -65,6 +65,15 @@ class SearchComponent extends React.Component{
     render(){
         let searchResults, searchResultsBlank
         let header = <div></div>
+        searchResults = <div>
+            <h2>Search Dotify</h2>
+            <h4>
+              Find your favorite songs, artists, albums, podcasts and
+              playlists.
+            </h4>
+          </div>
+        
+
         if (this.state.searchResults.songs){
             if (this.state.searchResults.songs.length === 0){
                 console.log("we don't need that other shit")
@@ -194,7 +203,7 @@ class SearchComponent extends React.Component{
             <div> 
                 <div className="searchPage">
                 <form onSubmit={this.submit}> 
-                    <input className="searchInput" type="text" value={this.state.value} onChange={this.handleInputChange} ></input>
+                        <input className="searchInput" type="text" value={this.state.value} onChange={this.handleInputChange} placeholder="Start Typing..." ></input>
                 </form>
 
                 {header}
