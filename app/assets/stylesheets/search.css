@@ -51,7 +51,10 @@
   flex-direction: column;
 }
 .song-list li{
-  margin:0px;
+  margin-left:0px;
+}
+.song-list h2{
+  margin-left: 40px;
 }
 /* .song-list{
   background-color:blue;
