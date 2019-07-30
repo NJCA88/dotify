@@ -11,8 +11,6 @@ class PlayerComponent extends React.Component {
     this.handleNext = this.handleNext.bind(this);
     this.setProgress = this.setProgress.bind(this)
     this.onSeekChange = this.onSeekChange.bind(this)
-    // this.onSeekMouseUp = this.onSeekMouseUp.bind(this)
-    // this.onSeekMouseDown = this.onSeekMouseDown.bind(this)
     this.ref = this.ref.bind(this)
     this.state = {
       // currentSong_track: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a8ae4ec9fbbdcfd2a1df1e181020810568fe588a/Whiplash.m4a',
@@ -23,17 +21,9 @@ class PlayerComponent extends React.Component {
     };
   }
 
-  componentDidMount() {
-    // this.generateSongQueue();
-    console.log("componentDidMount hit");
-  }
-
   playToggle() {
     if (this.state.playing === false) this.setState({ playing: true });
     if (this.state.playing === true) this.setState({ playing: false });
-
-    console.log("this.props.collection:", this.props.collection);
-    // this.generateSongQueue();
   }
 
   updateCurrentSong(song) {
@@ -69,21 +59,17 @@ class PlayerComponent extends React.Component {
 
   componentDidUpdate(oldProps) {
     // debugger
-    console.log("component did update")
     if (
       this.props.currentSong !== oldProps.currentSong 
       // &&
       // this.props.collection !== undefined
     ) {
-      console.log("CWRP hit");
       if (this.props.collection){
         this.generateSongQueue();
       }
-      console.log("setting state");
       this.setState({
         playing: true
       });
-      console.log("this.state.playing is ", this.state.playing);
     }
     //this is the part to test making new album auto play on click of artwork
     // debugger
@@ -93,8 +79,6 @@ class PlayerComponent extends React.Component {
       this.props.currentSong === oldProps.currentSong &&
       this.props.collection !== oldProps.collection
     ) {
-      console.log("Play new album without knowing song!!!");
-      console.log("this.props is:", this.props);
       const collectionOrder = Object.values(this.props.collectionSongs);
       
       // debugger
@@ -109,7 +93,6 @@ class PlayerComponent extends React.Component {
     const collectionOrder = Object.values(this.props.collectionSongs);
 
     var currentSong = curSong ? curSong : this.props.currentSong;
-    console.log("currentSong is", currentSong);
     //at this point, current song is correct
     let currentSongIdx = collectionOrder.findIndex(function(song) {
       return song.id == currentSong.id;
@@ -132,7 +115,6 @@ class PlayerComponent extends React.Component {
       prev = collectionOrder[currentSongIdx - 1];
     }
 
-    console.log("prev, cur, next", prev, currentSong, next);
 
     this.setState(
       {
@@ -168,7 +150,7 @@ class PlayerComponent extends React.Component {
           <li>
             <img src={image_src} className="album-thumbnail" />
           </li>
-          <li>
+          <li className="player-song-info">
             {title} <br />
             {collection}
           </li>

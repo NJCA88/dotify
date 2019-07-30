@@ -12,6 +12,7 @@ button{
   left: 0;
   right: 0;
   width: 100vw;
+  min-width:1000px;
   height: 100vh;
   /* padding: 45px; */
   position: absolute;
