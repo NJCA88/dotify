@@ -5,15 +5,26 @@ export default (oldState = {}, action) => {
 
     // the correct playlists are making it here
     Object.freeze(oldState);
-    // console.log("MY ACTION TYPE IS:", action.type);
     switch (action.type) {
       case RECEIVE_PLAYLISTS:
-        console.log("in the correct case");
         return merge({}, oldState, action.playlists);
-      case RECEIVE_PLAYLIST:
-        return { [action.payload.playlist.id]: action.payload.playlist };
+        // return Object.assign({}, {playlists: action.playlists})
+      // case RECEIVE_PLAYLIST:
+      //   return { [action.payload.playlist.id]: action.payload.playlist };
       default:
-      console.log("")
         return oldState;
     }
 };
+// export default (oldState = {}, action) => {
+
+//     // the correct playlists are making it here
+//     Object.freeze(oldState);
+//     switch (action.type) {
+//       case RECEIVE_PLAYLISTS:
+//         return merge({}, oldState, action.playlists);
+//       case RECEIVE_PLAYLIST:
+//         return { [action.payload.playlist.id]: action.payload.playlist };
+//       default:
+//         return oldState;
+//     }
+// };

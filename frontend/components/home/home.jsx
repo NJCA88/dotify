@@ -23,21 +23,16 @@ class HomeComponent extends React.Component{
 
   updateSong(e, song){
     e.preventDefault();
-    console.log(this.state);
-    // console.log(song.title);
     this.setState( {
       playing:  true,
       currentSong: song.track
-    // console.log(this.playing);
     });
   }
 
   updateSongCollection(e, collection, AlbumID){
     e.preventDefault();
     //UPDATE STORE HERE
-    // debugger
     this.props.updateCollection(AlbumID);
-    console.log("IS THIS RIGHT? updating collection to be: ", collection, AlbumID);
     this.props.history.push(`/albums/${AlbumID}`);
   }
 
@@ -53,7 +48,6 @@ class HomeComponent extends React.Component{
 playToggle() {
   if (this.state.playing === false) this.setState({playing: true});
   if (this.state.playing === true) this.setState({playing: false});
-  console.log(this.state.playing);
 }
 
 
@@ -62,7 +56,6 @@ playToggle() {
 
 
   const albums = this.props.albums.map(album => {
-    console.log("album info:", album.title, album.id);
   return <div className="album" onHover={this.hoverEffects}>
       <button onClick={e => {
           this.updateSongCollection(e, album, album.id);

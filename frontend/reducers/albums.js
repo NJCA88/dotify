@@ -3,7 +3,6 @@ import {merge} from 'lodash';
 
 export default (oldState ={}, action) => {
   Object.freeze(oldState);
-  // console.log("MY ACTION TYPE IS:", action.type);
   switch(action.type){
     case GET_ALBUMS:
       return merge({}, oldState, action.albums);

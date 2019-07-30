@@ -97,7 +97,6 @@ class PlayerComponent extends React.Component {
     let currentSongIdx = collectionOrder.findIndex(function(song) {
       return song.id == currentSong.id;
     });
-    console.log("currentSongIdx", currentSongIdx);
     let prevSong = currentSong;
     let nextSong = collectionOrder[currentSongIdx + 1];
     let next = "";
@@ -119,8 +118,7 @@ class PlayerComponent extends React.Component {
     this.setState(
       {
         songQueue: [prev, currentSong, next]
-      },
-      () => console.log("this.state.songQueue is:", this.state.songQueue)
+      }
     );
 
   }

@@ -3,7 +3,6 @@ import { createNewUser, login} from '../../actions/session';
 import Signup from './signup';
 
 const mapStateToProps = state => {
-  console.log("current errors are:", state.errors);
   return {
     errors: state.errors
   };

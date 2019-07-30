@@ -15,7 +15,6 @@ import {fetchAlbum} from "../../actions/album";
 
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("current state is", state);
   // debugger
   return (
     {currentUser: state.session.currentUser,

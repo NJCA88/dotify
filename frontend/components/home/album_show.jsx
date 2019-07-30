@@ -19,7 +19,6 @@ class AlbumShowComponent extends React.Component{
   }
 
   componentDidMount(){
-    console.log("hitting CDM");
     this.props.fetchAlbum(this.props.match.params.albumID);
     this.props.fetchPlaylists()
 
@@ -30,13 +29,11 @@ class AlbumShowComponent extends React.Component{
   updateSongCollection(collection){
     // debugger
     this.props.updateCollection(collection);
-    console.log("updating collection");
   }
 
   updateCurrentSong( song){
     // debugger
     this.props.updateCurrentSong(song);
-    console.log("updating Song");
   }
 
   updateMusic(e, collection, song){
@@ -54,14 +51,9 @@ class AlbumShowComponent extends React.Component{
     }
 
 
-    console.log("make something appear")
-    console.log(song.title)
     var x = document.getElementById(song.title)
-    console.log(x)
-    // console.log(x.className)
     x.className = "add-to-playlist-button-vis"
     // x.classList.remove = "add-to-playlist-button-hidden"
-    console.log(x)
   }
 
   openModal() {
@@ -83,7 +75,6 @@ class AlbumShowComponent extends React.Component{
     if (this.props.album === undefined) return <div>wrong</div>;
     
     const playlists = this.props.playlists.map(playlist => {
-      console.log("album info:", playlist.name, playlist.id);
       return <div className="album">
           <button onClick={e => {
               this.handleAddSong(e, playlist.id, this.state.songToAdd.id);

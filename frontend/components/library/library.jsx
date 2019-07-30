@@ -27,21 +27,15 @@ class libraryComponent extends React.Component {
     componentDidMount() {
         // this.props.fetchSongs();
         // this.props.fetchAlbums();
-        console.log("yep, we're on the library")
         this.props.fetchPlaylists()
-        console.log("this.props.playlists is: ", this.props.playlists)
-        console.log("we fetched them, we think.")
     }
 
 
     updateSong(e, song) {
         e.preventDefault();
-        console.log(this.state);
-        // console.log(song.title);
         this.setState({
             playing: true,
             currentSong: song.track
-            // console.log(this.playing);
         });
     }
 
@@ -50,14 +44,12 @@ class libraryComponent extends React.Component {
         e.preventDefault();
         //UPDATE STORE HERE
         this.props.updateCollection(playlistID);
-        console.log("TESTupdating collection to be: ", collection);
         this.props.history.push(`/playlists/${playlistID}`);
     }
 
 
     handleGoPlaylist(e, PlaylistID) {
         e.preventDefault();
-        console.log("going to playlist's show page")
         this.props.history.push(`/playlists/${PlaylistID}`);
     }
 
@@ -66,30 +58,23 @@ class libraryComponent extends React.Component {
     playToggle() {
         if (this.state.playing === false) this.setState({ playing: true });
         if (this.state.playing === true) this.setState({ playing: false });
-        console.log(this.state.playing);
     }
 
     openModal() {
         this.setState({ modalIsOpen: true });
     }
     closeModal() {
-        console.log("closing")
         this.setState({ modalIsOpen: false });
     }
 
     updatePlaylistName(e){
-        console.log(e)
-        console.log("e.target.value: ", e.target.value)
         this.setState({ playlistName: e.target.value });
-        // console.log(this.state.playlistName)
     }
 
     createPlaylist(){
         //do stuff to send it to the backend
-        console.log("creating")
         this.props.createPlaylist({name: this.state.playlistName})
-        console.log("did I create it?")
-        this.props.fetchPlaylists().then(console.log('done'))
+        this.props.fetchPlaylists()
 
         this.closeModal();
     }
@@ -100,7 +85,6 @@ class libraryComponent extends React.Component {
 
 
         const playlists = this.props.playlists.map(playlist => {
-            console.log("album info:", playlist.name, playlist.id);
             return (
                 <div className="album">
 

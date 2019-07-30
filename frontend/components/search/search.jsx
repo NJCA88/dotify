@@ -13,12 +13,9 @@ class SearchComponent extends React.Component{
     }
 
     handleInputChange(event){
-        // console.log("chaning: ", this.state.value)
         this.setState({ value: event.target.value });    
     }
     submit(e) {
-        console.log("submitting!");
-        console.log("value is: ", this.state.value)
         fetch("/api/searches", {
             method: "POST",
             body: JSON.stringify({ search: this.state.value }), // data can be `string` or {object}!
@@ -31,22 +28,17 @@ class SearchComponent extends React.Component{
                 return jsonResponse;
             })
             .then(function (myJson) {
-                console.log("JSON IS: ", myJson)
-                this.setState({ searchResults: myJson }, ()=> console.log("state is: ", this.state))
+                this.setState({ searchResults: myJson }, ()=> console.log())
             }.bind(this));
     }
 
     updateCurrentSong(e, song) {
         // debugger
-        console.log("song to update: ", song)
-        this.props.updateCurrentSong(song);
-        console.log("updating Song");
     }
     updateSongCollection(e, collection, AlbumID) {
         event.preventDefault();
         //UPDATE STORE HERE
         this.props.updateCollection(AlbumID);
-        // console.log("IS THIS RIGHT? updating collection to be: ", collection, AlbumID);
         this.props.history.push(`/albums/${AlbumID}`);
     }
     handleGoAlbum(e, AlbumID) {
@@ -57,7 +49,6 @@ class SearchComponent extends React.Component{
     updateMusic(e, collection, song) {
         e.preventDefault();
         // debugger
-        console.log("updating song to be: ", song)
         this.updateCurrentSong(event, song);
         this.updateSongCollection(collection);
     }
@@ -76,8 +67,6 @@ class SearchComponent extends React.Component{
 
         if (this.state.searchResults.songs){
             if (this.state.searchResults.songs.length === 0){
-                console.log("we don't need that other shit")
-                console.log("songs length is: ", this.state.searchResults.songs.length)
                 // return (
                 //     <div>
                 //         <div className="searchPage">
@@ -101,7 +90,6 @@ class SearchComponent extends React.Component{
         }
         let leadSong = <div className = "leadSong"></div>;
         if (this.state.searchResults.songs && this.state.searchResults.songs[0] ){
-            // console.log(this.state)
              leadSong = 
                 <div className="cover-and-info">
                     <img className="album-cover" src={this.state.searchResults.songs[0].art} />
@@ -158,7 +146,6 @@ class SearchComponent extends React.Component{
                 return <div className="album" onHover={this.hoverEffects}>
                     
                         <button onClick={e => {
-                            console.log("ALBUM ID IS: ", album.id)
                             this.updateSongCollection(e, album, album.id);
                         }} className="album-index-album">
                             <div className="album-images">

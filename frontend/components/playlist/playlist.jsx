@@ -11,12 +11,6 @@ class PlaylistShowComponent extends React.Component {
     }
 
     componentDidMount() {
-        //hard coded to get alumbum number 1 right now
-        // console.log("Did we make it?");
-        
-        // console.log("Did we really just skip the debugger?");
-
-
         this.props.fetchPlaylist(this.props.match.params.playlistID);
     }
 
@@ -24,12 +18,10 @@ class PlaylistShowComponent extends React.Component {
 
     updateSongCollection(collection) {
         this.props.updateCollection(collection);
-        console.log("updating collection");
     }
 
     updateCurrentSong(song) {
         this.props.updateCurrentSong(song);
-        console.log("updating Song");
     }
 
     updateMusic(e, collection, song) {
@@ -41,7 +33,6 @@ class PlaylistShowComponent extends React.Component {
 
     render() {
         if (this.props.playlist === undefined){
-            console.log("returning early out of the render")
             return <div>wrong</div>;
         }
 
@@ -61,9 +52,6 @@ class PlaylistShowComponent extends React.Component {
             );
         }
         );
-
-        console.log('songs are : ', songs)
-
 
         return (
             <div>

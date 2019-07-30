@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 import songReducer from './song';
 import albumReducer from './albums';
-import playlistReducer from './playlists';
+import playlistsReducer from './playlists';
 
 export default combineReducers({
 
   songs: songReducer,
   albums: albumReducer,
-  playlists: playlistReducer,
+  playlists: playlistsReducer,
 
 });
 

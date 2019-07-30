@@ -4,7 +4,6 @@ import {RECEIVE_PLAYLIST} from "../actions/playlist"
 import {merge} from 'lodash';
 
 export default (oldState ={}, action) => {
-  // console.log(action.type);
   Object.freeze(oldState);
   switch(action.type){
 

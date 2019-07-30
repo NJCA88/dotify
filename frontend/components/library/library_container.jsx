@@ -6,7 +6,6 @@ import { fetchPlaylists, makePlaylist } from "../../actions/playlist";
 import { fetchPlaylist } from "../../actions/collections";
 
 const mapStateToProps = state => {
-  // console.log("current state is", state);
   // debugger
   return {
     currentUser: state.session.currentUser,

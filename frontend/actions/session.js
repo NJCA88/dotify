@@ -22,14 +22,12 @@ const receiveErrors = err => ({
 export const createNewUser = formUser => dispatch => postUser(formUser)
   .then(user => dispatch(receiveCurrentUser(user)), 
     err => {
-    // console.log("NEW error is: ", err.responseText)
     dispatch(receiveErrors(err.responseText))
   })
 
 export const login = formUser => dispatch => postSession(formUser)
   .then(user => dispatch(receiveCurrentUser(user)),
     err => {
-    console.log("login fail error is: ", err.responseText)
     dispatch(receiveErrors(err.responseText))
   })
 

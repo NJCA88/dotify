@@ -3,7 +3,6 @@ import { login} from '../../actions/session';
 import LoginComponent from './login';
 
 const mapStateToProps = state => {
-  console.log("current errors are:", state.errors);
   return {
     errors: state.errors
   };

@@ -27,19 +27,24 @@ class NavBarComponent extends React.Component {
 
   handleGoLib(e) {
     e.preventDefault();
-    console.log('going home?');
     this.props.history.push('/library');
+  }
+  handleGoPlaylist(e, PlaylistID) {
+    e.preventDefault();
+    this.props.history.push(`/playlists/${PlaylistID}`);
   }
 
   render() {
-    console.log('props are: ', this.props);
-    console.log('playlists: ', this.props.playlists);
     const playlists = this.props.playlists.map((playlist) => {
       return (
-        <div className='nav-playlist-group-playlist'>{playlist.title}</div>
+        <div
+          className='nav-playlist-group-playlist'
+          onClick={(e) => this.handleGoPlaylist(e, playlist.id)}
+        >
+          {playlist.title}
+        </div>
       );
     });
-    console.log('playlist divs: ', playlists);
     return (
       <div className='nav-bar'>
         <div className='logo-with-name-white-small'>
@@ -80,9 +85,7 @@ class NavBarComponent extends React.Component {
                 <h2 id='create-playlist-img'>+</h2>
                 <h2> Create Playlist</h2>
               </div>
-              <div className='nav-playlist-group'>
-                {playlists}
-              </div>
+              <div className='nav-playlist-group'>{playlists}</div>
             </div>
           </li>
         </ul>
