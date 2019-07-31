@@ -13,6 +13,7 @@ class PlayerComponent extends React.Component {
     this.onSeekChange = this.onSeekChange.bind(this);
     this.handleVolChange = this.handleVolChange.bind(this)
     this.ref = this.ref.bind(this);
+    this.player =""
     this.state = {
       // currentSong_track: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a8ae4ec9fbbdcfd2a1df1e181020810568fe588a/Whiplash.m4a',
       currentSong_track:
@@ -119,7 +120,6 @@ class PlayerComponent extends React.Component {
   }
 
   handleVolChange(e){
-    console.log((e.target.value))
     this.setState({vol: e.target.value})
   }
 
@@ -192,6 +192,7 @@ class PlayerComponent extends React.Component {
             step='any'
             value={this.state.played}
           />
+          {/* <div id='song-length'>{this.ref.getDuration()} LENGTH</div> */}
         </div>
 
         <ul className='player-volume-group'>
@@ -212,6 +213,7 @@ class PlayerComponent extends React.Component {
 
         <div className='video-player'>
           <ReactPlayer
+            ref = {this.ref}
             url={track}
             playing={this.state.playing}
             onEnded={this.handleNext}

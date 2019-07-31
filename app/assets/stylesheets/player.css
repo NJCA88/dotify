@@ -103,7 +103,7 @@
 } */
 .vol-container {
   width: 150px;
-  right: 50px;
+  right: 25px;
   top: 15px;
   position: absolute;
 }
@@ -141,4 +141,10 @@ input[type=range]::-webkit-slider-thumb {
   background: #ffffff;
   cursor: pointer; */
   margin-top:-5px;
+}
+#song-length{
+  color:white;
+  height:100px;
+  background-color:red;
+  margin-top:-100px;
 }
