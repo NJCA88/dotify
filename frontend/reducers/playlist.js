@@ -9,6 +9,8 @@ export default (oldState = {}, action) => {
         // case RECEIVE_PLAYLISTS:
         //     return merge({}, oldState, action.playlists);
         case RECEIVE_PLAYLIST:
+        console.log('debuggered')
+        // debugger
           return { [action.payload.playlist.id]: action.payload.playlist };
         default:
             return oldState;

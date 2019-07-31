@@ -10,7 +10,6 @@ const mapStateToProps = (state, ownProps) => {
     return (
         {
             currentUser: state.session.currentUser,
-
             songs: Object.values(state.entities.songs),
             playlist: state.entities.playlists[ownProps.match.params.playlistID]
         }

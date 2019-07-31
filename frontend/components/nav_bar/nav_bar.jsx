@@ -72,11 +72,7 @@ class NavBarComponent extends React.Component {
             </button>
           </li>
 
-          <li>
-            {/* <button onClick={this.handleSubmit} className='nav-icon'>
-              <p> Logout</p>
-            </button> */}
-          </li>
+          <li />
           <li>
             <div className='nav-bar-playlist-container'>
               {/* <h1>PLAYLISTS</h1> */}
@@ -88,6 +84,18 @@ class NavBarComponent extends React.Component {
               <div className='nav-playlist-group'>{playlists}</div>
             </div>
           </li>
+          <button
+            onClick={this.handleSubmit}
+            className='nav-icon'
+            id='logout-button'
+          >
+            <p> Logout</p>
+          </button>
+          <li>___________________________</li>
+          <button className='nav-icon' id='chris-logo'>
+            <img src='chrisRound.png' />
+            <p> Chris Atwood</p>
+          </button>
         </ul>
       </div>
     );

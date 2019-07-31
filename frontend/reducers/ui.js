@@ -3,7 +3,7 @@ import albumReducer from "./albums";
 import songReducer from "./song";
 import currentSongReducer from "./current_song_reducer";
 import collectionReducer from './collection';
-import playlistReducer from './playlists'
+import playlistReducer from './playlist'
 
 
 export default combineReducers({

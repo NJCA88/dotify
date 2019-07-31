@@ -1,28 +1,28 @@
-.nav-bar *{
+.nav-bar * {
   font-family: Roboto;
 }
 
 .nav-bar {
   position: fixed;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  background-color: rgba(7,5,5,.9);
+  background-color: rgba(7, 5, 5, 0.9);
   width: 200px;
   height: 100vh;
-  top:0px;
+  top: 0px;
   left: 0px;
   padding: 0px;
   margin: 0px;
 }
 
-.nav-bar ul{
+.nav-bar ul {
   position: fixed;
   margin: auto;
-  top: 85px;
+  top: 50px;
   left: 25px;
 }
 
-.nav-bar div{
+.nav-bar div {
   /* margin: auto; */
 }
 
@@ -32,63 +32,74 @@
   top: 10px;
   align-items: center;
   color: white;
+  font-size: 15px;
+  margin-left: 25px;
+}
+.logo-with-name-white-small img {
+  height: 30px;
+  width: 30px;
+}
+.logo-with-name-white-small h1 {
+  margin-left: 10px;
 }
 
-
-.nav-bar button{
+.nav-bar button {
   background: transparent;
   border: none;
   color: white;
+  padding: 0px;
 }
-.nav-bar li{
-  padding-top: 25px;
+.nav-bar li {
+  padding-top: 12px;
 }
 
 .nav-icon {
   display: flex;
   /* -webkit-filter: brightness(75%) */
-  filter: brightness(75%)
+  filter: brightness(75%);
 }
-.nav-icon:hover{
-  filter: brightness(100%)
+.nav-icon:hover {
+  filter: brightness(100%);
 }
-.nav-icon img{
+.nav-icon img {
   height: 30px;
   width: 30px;
 }
 
-.nav-icon p{
+.nav-icon p {
   font-size: 15px;
   font-weight: 400;
   margin-left: 10px;
-  margin-top:5px;
+  margin-top: 5px;
 }
 
-.player-song-info{
-  margin-left:10px;
+.player-song-info {
+  margin-left: 10px;
   font-size: 14px;
   margin-top: 10px;
-  font-family:Roboto;
-  font-weight:300;
+  font-family: Roboto;
+  font-weight: 300;
 }
-.nav-bar-playlist-container{
+.nav-bar-playlist-container {
   /* background-color:red */
-  width:100%;
+  width: 100%;
   color: white;
-  margin-top:-15px;
+  margin-top: -15px;
   filter: brightness(85%);
 }
-.nav-bar-playlist-container h3{
-  font-size: 13px;
-  left:10px
+.nav-bar-playlist-container h3 {
+  left: 10px;
+  font-size: 11px;
+  letter-spacing: 1.76px;
+  font-weight: 300;
 }
-.nav-bar-playlist-container h2{
+.nav-bar-playlist-container h2 {
   /* display:block; */
   font-size: 13px;
-  left:30px;
-  margin:none;
+  left: 30px;
+  margin: none;
 }
-#create-playlist-img{
+#create-playlist-img {
   background-color: white;
   width: 25px;
   height: 25px;
@@ -100,29 +111,42 @@
   margin: 5px;
   margin-right: 20px;
 }
-.navbar-playlist-container{
-  display:flex;
-  left:30px;
+.navbar-playlist-container {
+  display: flex;
+  left: 30px;
 }
-.navbar-playlist-item{
-    display:flex;
-  left:30px;
-  filter: brightness(85%)
-
+.navbar-playlist-item {
+  display: flex;
+  left: 30px;
+  filter: brightness(85%);
 }
-.navbar-playlist-item:hover{
-  filter: brightness(100%)
+.navbar-playlist-item:hover {
+  filter: brightness(100%);
 }
-.nav-playlist-group{
+.nav-playlist-group {
   position: relative;
 }
-.nav-playlist-group-playlist{
+.nav-playlist-group-playlist {
   /* background-color:red; */
-  height:35px;
-  font-size:14px;
-  line-height:35px;
-  filter: brightness(75%)
+  height: 35px;
+  font-size: 14px;
+  line-height: 35px;
+  filter: brightness(75%);
 }
-.nav-playlist-group-playlist:hover{
-  filter: brightness(100%)
+.nav-playlist-group-playlist:hover {
+  filter: brightness(100%);
+}
+.nav-playlist-group-playlist:hover {
+  filter: brightness(100%);
+  cursor: pointer;
+}
+
+#logout-button{
+  bottom:150px;
+  position: fixed
+}
+
+#chris-logo{
+  bottom: 100px;
+  position:fixed;
 }
