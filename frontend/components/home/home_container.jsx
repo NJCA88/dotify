@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import HomeComponent from './home';
 import {fetchSongs} from '../../actions/song';
 import {fetchAlbums} from '../../actions/album';
+import { fetchPlaylists, makePlaylist } from '../../actions/playlist';
 import {receiveCollection, fetchAlbum} from '../../actions/collections';
 
 
@@ -19,10 +20,11 @@ const mapStateToProps = state => {
 //in component, use this.props.songs do stuff iteratively.
 
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   fetchSongs: () => dispatch(fetchSongs()),
   fetchAlbums: () => dispatch(fetchAlbums()),
-  updateCollection: collection => dispatch(fetchAlbum(collection))
+  fetchPlaylists: () => dispatch(fetchPlaylists()),
+  updateCollection: (collection) => dispatch(fetchAlbum(collection))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeComponent);

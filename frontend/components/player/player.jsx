@@ -9,15 +9,17 @@ class PlayerComponent extends React.Component {
     this.updateCurrentSong = this.updateCurrentSong.bind(this);
     this.nextSong = this.nextSong.bind(this);
     this.handleNext = this.handleNext.bind(this);
-    this.setProgress = this.setProgress.bind(this)
-    this.onSeekChange = this.onSeekChange.bind(this)
-    this.ref = this.ref.bind(this)
+    this.setProgress = this.setProgress.bind(this);
+    this.onSeekChange = this.onSeekChange.bind(this);
+    this.handleVolChange = this.handleVolChange.bind(this)
+    this.ref = this.ref.bind(this);
     this.state = {
       // currentSong_track: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a8ae4ec9fbbdcfd2a1df1e181020810568fe588a/Whiplash.m4a',
       currentSong_track:
-        "https://s3-us-west-1.amazonaws.com/dotify-song-dev/u2UcP3X1xfzTME4AfYNMRLY2",
+        'https://s3-us-west-1.amazonaws.com/dotify-song-dev/u2UcP3X1xfzTME4AfYNMRLY2',
       playing: false,
-      songQueue: undefined
+      songQueue: undefined,
+      vol: 1
     };
   }
 
@@ -46,12 +48,9 @@ class PlayerComponent extends React.Component {
     });
   }
 
-  ref(player){
-    this.player = player
+  ref(player) {
+    this.player = player;
   }
-
-
-
 
   onSeekChange(e) {
     this.setState({ played: parseFloat(e.target.value) });
@@ -60,11 +59,11 @@ class PlayerComponent extends React.Component {
   componentDidUpdate(oldProps) {
     // debugger
     if (
-      this.props.currentSong !== oldProps.currentSong 
+      this.props.currentSong !== oldProps.currentSong
       // &&
       // this.props.collection !== undefined
     ) {
-      if (this.props.collection){
+      if (this.props.collection) {
         this.generateSongQueue();
       }
       this.setState({
@@ -73,17 +72,17 @@ class PlayerComponent extends React.Component {
     }
     //this is the part to test making new album auto play on click of artwork
     // debugger
-    //it works for albums, but not for playlists, because for playlists currentSong 
+    //it works for albums, but not for playlists, because for playlists currentSong
     // isn't getting set
     if (
       this.props.currentSong === oldProps.currentSong &&
       this.props.collection !== oldProps.collection
     ) {
       const collectionOrder = Object.values(this.props.collectionSongs);
-      
+
       // debugger
       let currentSong = collectionOrder[0];
-      
+
       this.updateCurrentSong(collectionOrder[0]);
       this.generateSongQueue(currentSong);
     }
@@ -99,7 +98,7 @@ class PlayerComponent extends React.Component {
     });
     let prevSong = currentSong;
     let nextSong = collectionOrder[currentSongIdx + 1];
-    let next = "";
+    let next = '';
 
     if (currentSongIdx < collectionOrder.length - 1) {
       next = collectionOrder[currentSongIdx + 1];
@@ -107,111 +106,122 @@ class PlayerComponent extends React.Component {
       next = collectionOrder[0];
     }
 
-    let prev = "";
+    let prev = '';
     if (currentSongIdx === 0) {
       prev = collectionOrder[0];
     } else {
       prev = collectionOrder[currentSongIdx - 1];
     }
 
+    this.setState({
+      songQueue: [prev, currentSong, next]
+    });
+  }
 
-    this.setState(
-      {
-        songQueue: [prev, currentSong, next]
-      }
-    );
-
+  handleVolChange(e){
+    console.log((e.target.value))
+    this.setState({vol: e.target.value})
   }
 
   render() {
-    const track = this.props.currentSong ? this.props.currentSong.track : "";
+    const track = this.props.currentSong ? this.props.currentSong.track : '';
 
     const image_src = this.props.collection
       ? this.props.collection.album_cover
-      : "https://s3-us-west-1.amazonaws.com/dotify-song-dev/spotify-img.png";
-    const title = this.props.currentSong ? this.props.currentSong.title : "";
+      : 'https://s3-us-west-1.amazonaws.com/dotify-song-dev/spotify-img.png';
+    const title = this.props.currentSong ? this.props.currentSong.title : '';
 
-    const collection = this.props.collection ? this.props.collection.title : "";
+    const collection = this.props.collection ? this.props.collection.title : '';
 
-    let player_image = "";
+    let player_image = '';
     if (this.state.playing === false) {
       player_image =
-        "https://mbtskoudsalg.com/images/white-play-button-png-5.png";
+        'https://mbtskoudsalg.com/images/white-play-button-png-5.png';
     } else {
       player_image =
-        "https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/pause-icon-18-256.png";
+        'https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/pause-icon-18-256.png';
     }
 
     return (
-      <div className="player">
-        <ul className="player-thumb-group">
+      <div className='player'>
+        <ul className='player-thumb-group'>
           <li>
-            <img src={image_src} className="album-thumbnail" />
+            <img src={image_src} className='album-thumbnail' />
           </li>
-          <li className="player-song-info">
+          <li className='player-song-info'>
             {title} <br />
             {collection}
           </li>
         </ul>
 
+        <div className='buttons-and-bar'>
+          <ul className='player-song-nav-group'>
+            <button
+              onClick={(e) => this.nextSong(e, this.state.songQueue[0])}
+              className='player-skip-button'
+            >
+              <img src='https://www.materialui.co/materialIcons/av/fast_rewind_grey_192x192.png' />
+            </button>
 
-        <div className="buttons-and-bar">
-        <ul className="player-song-nav-group">
-          <button
-            onClick={e => this.nextSong(e, this.state.songQueue[0])}
-            className="player-skip-button"
-          >
-            <img src="https://www.materialui.co/materialIcons/av/fast_rewind_grey_192x192.png" />
-          </button>
+            <button
+              onClick={this.playToggle}
+              className='player-play-button'
+              placeholder='&#xf144;'
+              charSet='utf-8'
+            >
+              <div>
+                <img src={player_image} />
+              </div>
+            </button>
 
-          <button
-            onClick={this.playToggle}
-            className="player-play-button"
-            placeholder="&#xf144;"
-            charSet="utf-8"
-          >
-            <div>
-              <img src={player_image} />
-            </div>
-          </button>
+            <button
+              onClick={(e) => this.nextSong(e, this.state.songQueue[2])}
+              className='player-skip-button'
+            >
+              <div>
+                <img src='https://www.materialui.co/materialIcons/av/fast_forward_grey_192x192.png' />
+              </div>
+            </button>
+          </ul>
 
-          <button
-            onClick={e => this.nextSong(e, this.state.songQueue[2])}
-            className="player-skip-button"
-          >
-            <div>
-              <img src="https://www.materialui.co/materialIcons/av/fast_forward_grey_192x192.png" />
-            </div>
-          </button>
-        </ul>
+          <input
+            className='myProgress'
+            type='range'
+            min={0}
+            max={1}
+            step='any'
+            value={this.state.played}
+          />
+        </div>
 
+        <ul className='player-volume-group'>
+          <div className='vol-container'>
+            <img src='speaker.png' alt='' />
             <input
-              className="myProgress"
               type='range'
-              min={0}
-              max={1}
-              step='any'
-              value={this.state.played}
-
-            />        
-            </div>
-        
-
-        <ul className="player-volume-group">
-          <div>VOL</div>
+              min='0'
+              max='1'
+              step='.01'
+              name='vol'
+              value={this.state.vol}
+              onChange={this.handleVolChange}
+              id='volume-range'
+            />
+          </div>
         </ul>
 
-        <div className="video-player">
+        <div className='video-player'>
           <ReactPlayer
             url={track}
             playing={this.state.playing}
             onEnded={this.handleNext}
-            onDuration={duration => this.setState({ duration })}
+            onDuration={(duration) => this.setState({ duration })}
             onProgress={this.setProgress}
+            volume={this.state.vol}
           />
         </div>
       </div>
     );
   }
 }
-  export default PlayerComponent;
+export default PlayerComponent;

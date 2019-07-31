@@ -14,12 +14,6 @@ class PlaylistShowComponent extends React.Component {
         // debugger
         this.props.fetchPlaylist(this.props.match.params.playlistID);
     }
-    componentDidUpdate(){
-        this.props.fetchPlaylist(this.props.match.params.playlistID);
-
-    }
-
-
 
     updateSongCollection(collection) {
         this.props.updateCollection(collection);

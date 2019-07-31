@@ -91,7 +91,7 @@ class NavBarComponent extends React.Component {
           >
             <p> Logout</p>
           </button>
-          <li>___________________________</li>
+          {/* <li id='nav-divider'/> */}
           <button className='nav-icon' id='chris-logo'>
             <img src='chrisRound.png' />
             <p> Chris Atwood</p>

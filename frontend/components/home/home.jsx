@@ -18,6 +18,7 @@ class HomeComponent extends React.Component{
   componentDidMount() {
     this.props.fetchSongs();
     this.props.fetchAlbums();
+    this.props.fetchPlaylists()
   }
 
 

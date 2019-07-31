@@ -14,6 +14,7 @@ import AlbumContainer from   "./home/album_show_container";
 import PlaylistContainer from   "./playlist/playlist_container";
 import PlaylistComponent from   "./playlist/playlist";
 import LibraryContainer from "./library/library_container";
+import DevInfoComponent from './devinfo/devinfo'
 
 import SearchContainer from './search/search_container';
 
@@ -34,6 +35,7 @@ export default ()=> (
       <AuthRoute path="/splash" component={Splash} />
       <AuthRoute path='/signup' component = {SignupContainer} />
       <AuthRoute path='/login' component = {LoginContainer} />
+      <ProtectedRoute exact path="/devInfo" component={DevInfoComponent} />
       <ProtectedRoute exact path="/search" component={SearchContainer} />
       <ProtectedRoute exact path="/home" component={HomeContainer} />
       <ProtectedRoute exact path="/library" component={LibraryContainer} />

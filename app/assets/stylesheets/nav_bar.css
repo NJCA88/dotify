@@ -62,8 +62,8 @@
   filter: brightness(100%);
 }
 .nav-icon img {
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
 }
 
 .nav-icon p {
@@ -147,6 +147,13 @@
 }
 
 #chris-logo{
-  bottom: 100px;
-  position:fixed;
+    bottom: 100px;
+    position: fixed;
+    border-top: 1px solid white;
+    padding-top: 10px;
+    width: 150px;
+}
+#nav-divider{
+  width:100px;
+  border-bottom:2px solid white;
 }
