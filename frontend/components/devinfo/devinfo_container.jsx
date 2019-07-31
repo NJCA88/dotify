@@ -6,6 +6,8 @@ import { fetchSongs, updateSong } from '../../actions/song';
 import { fetchAlbums } from '../../actions/album';
 import { updateCollection } from '../../actions/collections';
 import { fetchAlbum } from "../../actions/album";
+import { logout } from '../../actions/session';
+
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -26,13 +28,7 @@ const mapStateToProps = (state, ownProps) => {
 
 // add functionality to update currentSong
 const mapDispatchToProps = dispatch => ({
-    updateCurrentSong: song => dispatch(updateSong(song)),
-    // receiveAlbum: id => dispatch(receiveAlbum(album))
-    fetchAlbum: id => dispatch(fetchAlbum(id)),
-    updateCollection: payload => dispatch(updateCollection(payload)),
-    fetchPlaylists: () => dispatch(fetchPlaylists()),
-    createPlaylistSong: (playlistId, songId) => dispatch(makePlaylistSong(playlistId, songId))
-
+    logout: () => dispatch(logout())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AlbumShowComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(DevInfoComponent);
