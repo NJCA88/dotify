@@ -3,10 +3,23 @@ import Modal from 'react-modal';
 
 class CreatePlaylistComponent extends React.Component{
     constructor(props){
-        super(props)
+        super(props);
+        this.createPlaylist = this.createPlaylist.bind(this)
+        this.state={playlistName: ''}
+        // this.createPlaylist = this.createPlaylist.bind(this)
     }
     componentDidMount(){
         console.log('mounted')
+    }
+    updatePlaylistName(e) {
+        this.setState({ playlistName: e.target.value });
+    }
+
+    createPlaylist() {
+        //do stuff to send it to the backend
+        this.props.createPlaylist({ name: this.state.playlistName })
+            .then(()=>this.props.fetchPlaylists())
+                .then(()=>this.closeModal() )
     }
     render(){
         return(
@@ -26,6 +39,7 @@ class CreatePlaylistComponent extends React.Component{
                             this.updatePlaylistName(e);
                         }}
                         type='text'
+                        value={this.state.playlistName}
                         placeholder='Start Typing...'
                     />
                     <button className='create-button' onClick={this.createPlaylist}>

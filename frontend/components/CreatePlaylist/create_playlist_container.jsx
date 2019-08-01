@@ -15,7 +15,9 @@ const mapStateToProps = state => {
 //in component, use this.props.songs do stuff iteratively.
 
 const mapDispatchToProps = dispatch => ({
-    createPlaylist: playlist => dispatch(makePlaylist(playlist))
+    createPlaylist: playlist => dispatch(makePlaylist(playlist)),
+    fetchPlaylists: () => dispatch(fetchPlaylists()),
+
 });
 
 export default connect(
