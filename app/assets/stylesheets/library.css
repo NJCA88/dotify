@@ -21,11 +21,12 @@
 .create-playlist-modal {
   background-color: red;
   background: transparent;
-  height: 250px;
+  height: 750px;
   width: 100%;
   position: absolute;
   top: 25%;
   margin: auto;
+  /* z-index:10; */
 }
 
 
@@ -73,6 +74,7 @@
   right: 0;
   bottom: 0;
   background-color: rgba(5,5,5,.8);
+  z-index: 100;
 }
 .create-button{
   background-color: white;

@@ -1,4 +1,6 @@
 import React from 'react';
+import CreatePlaylistContainer from '../CreatePlaylist/create_playlist_container'
+// import CreatePlaylistComponent from '../CreatePlaylist/CreatePlaylistComponent';
 
 class NavBarComponent extends React.Component {
   constructor(props) {
@@ -8,6 +10,8 @@ class NavBarComponent extends React.Component {
     this.handleGoHome = this.handleGoHome.bind(this);
     this.handleGoLib = this.handleGoLib.bind(this);
     this.handleGoSearch = this.handleGoSearch.bind(this);
+    this.openModal = this.openModal.bind(this)
+    this.closeModal = this.closeModal.bind(this)
   }
 
   handleSubmit(e) {
@@ -34,6 +38,12 @@ class NavBarComponent extends React.Component {
     this.props.history.push(`/playlists/${PlaylistID}`);
   }
 
+  openModal(){
+    this.setState({modalIsOpen:true})
+  }
+  closeModal(){
+    this.setState({modalIsOpen:false})
+  }
   render() {
     const playlists = this.props.playlists.map((playlist) => {
       return (
@@ -77,7 +87,7 @@ class NavBarComponent extends React.Component {
             <div className='nav-bar-playlist-container'>
               {/* <h1>PLAYLISTS</h1> */}
               <h3>PLAYLISTS</h3>
-              <div className='navbar-playlist-item'>
+              <div className='navbar-playlist-item' onClick={this.openModal}>
                 <h2 id='create-playlist-img'>+</h2>
                 <h2> Create Playlist</h2>
               </div>
@@ -97,6 +107,8 @@ class NavBarComponent extends React.Component {
             <p> Chris Atwood</p>
           </button>
         </ul>
+        <CreatePlaylistContainer modalIsOpen={this.state.modalIsOpen} closeModal={this.closeModal}/>
+
       </div>
     );
   }
