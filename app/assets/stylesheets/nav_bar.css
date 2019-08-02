@@ -160,3 +160,11 @@
 .navbar-playlist-item:hover{
   cursor: pointer;
 }
+.nav-playlist-group{
+  display:none;
+}
+@media screen and (min-height: 700px) {
+  .nav-playlist-group{
+    display:block;
+  }
+}
