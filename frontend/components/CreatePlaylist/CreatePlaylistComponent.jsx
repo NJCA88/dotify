@@ -8,9 +8,8 @@ class CreatePlaylistComponent extends React.Component{
         this.state={playlistName: ''}
         // this.createPlaylist = this.createPlaylist.bind(this)
     }
-    componentDidMount(){
-        console.log('mounted')
-    }
+    // componentDidMount(){
+    // }
     updatePlaylistName(e) {
         this.setState({ playlistName: e.target.value });
     }

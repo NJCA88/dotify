@@ -7,8 +7,6 @@ import { updateCollection } from '../../actions/collections';
 
 
 const mapStateToProps = (state, ownProps) => {
-    console.log('mapped')
-    console.log('state.entities.songs: ', state.entities.songs)
     return (
         {
             currentUser: state.session.currentUser,

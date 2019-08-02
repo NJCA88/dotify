@@ -13,21 +13,16 @@ class PlaylistShowComponent extends React.Component {
 
     componentDidMount() {
         // debugger
-        console.log('updating')
         this.props.fetchPlaylist(this.props.match.params.playlistID);
     }
     componentDidUpdate(prevProps){
-        console.log(prevProps.history.location.pathname)
-        console.log(this.props.history.location.pathname)
         if (prevProps.history.location.pathname !== this.props.history.location.pathname){
-            console.log('were doing the thing')
             this.props.fetchPlaylist(this.props.match.params.playlistID);
         }
     }
     testFetch(){
         // this works as expected, so issue is I'm not calling this fetch every time I go to a differnet
         // playlist route, coming FROM a playlsit.
-        console.log('fetching')
         this.props.fetchPlaylist(this.props.match.params.playlistID);
 
     }
