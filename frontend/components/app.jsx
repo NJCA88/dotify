@@ -14,7 +14,7 @@ import AlbumContainer from   "./home/album_show_container";
 import PlaylistContainer from   "./playlist/playlist_container";
 import PlaylistComponent from   "./playlist/playlist";
 import LibraryContainer from "./library/library_container";
-import DevInfoComponent from './devinfo/devinfo'
+import DevInfoComponent from './devinfo/DevInfo'
 
 import SearchContainer from './search/search_container';
 
