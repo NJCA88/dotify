@@ -16,6 +16,7 @@ class HomeComponent extends React.Component{
   }
 
   componentDidMount() {
+    console.log("ENVIRONMENT TEST: ", process.env.NODE_ENV)
     this.props.fetchSongs();
     this.props.fetchAlbums();
     this.props.fetchPlaylists()
