@@ -5,7 +5,7 @@ import logger from 'redux-logger';
 import rootReducer from '../reducers/root';
 import thunk from '../thunk/thunk';
 
-// const middlewares = [thunk, logger];
+const middlewares = [thunk];
 
 // if (process.env.NODE_ENV !== 'production') {
 if (process.env.NODE_ENV === 'development') {
