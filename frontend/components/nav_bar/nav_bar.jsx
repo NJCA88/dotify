@@ -12,6 +12,7 @@ class NavBarComponent extends React.Component {
     this.handleGoSearch = this.handleGoSearch.bind(this);
     this.openModal = this.openModal.bind(this)
     this.closeModal = this.closeModal.bind(this)
+    this.goDevInfo = this.goDevInfo.bind(this)
   }
 
   handleSubmit(e) {
@@ -32,6 +33,10 @@ class NavBarComponent extends React.Component {
   handleGoLib(e) {
     e.preventDefault();
     this.props.history.push('/library');
+  }
+  goDevInfo(e) {
+    e.preventDefault();
+    this.props.history.push('/devInfo');
   }
   handleGoPlaylist(e, PlaylistID) {
     e.preventDefault();
@@ -105,7 +110,7 @@ class NavBarComponent extends React.Component {
             <p> Logout</p>
           </button>
           {/* <li id='nav-divider'/> */}
-          <button className='nav-icon' id='chris-logo'>
+          <button className='nav-icon' id='chris-logo' onClick={this.goDevInfo}>
             <img src='chrisRound.png' />
             <p> Chris Atwood</p>
           </button>

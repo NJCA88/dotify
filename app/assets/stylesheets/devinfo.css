@@ -1,6 +1,41 @@
 .dev-info-container{
-    width:85vw;
-    background-color:red;
+    /* width:84vw; */
+    height:95vh;
+    background-color:rgb(9, 9, 9);
     margin-left:200px;
     text-align: center;
+}
+.devinfo-block img{
+    margin-top:25px;
+    width:225px;
+    height: 225px;
+    border-radius:50px;
+}
+.devinfo-block{
+    display:block;
+    width:400px;
+    margin-top:25px;
+    margin:auto;
+    color: white;
+}
+.devinfo-block p{
+    padding:10px;
+}
+.devinfo-block h1{
+    padding-top:15px;]
+}
+.devinfo-block button{
+    width: 240px;
+    height: 30px;
+    margin-top:15px;
+    background: transparent;
+    color: white;
+    border-radius:33px;
+    border: 2px solid white;
+    filter: brightness(85%)
+}
+.devinfo-block button:hover{
+    filter: brightness(95%);
+    width:243px;
+    height: 31px;
 }
