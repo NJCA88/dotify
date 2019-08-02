@@ -35,7 +35,10 @@ class NavBarComponent extends React.Component {
   }
   handleGoPlaylist(e, PlaylistID) {
     e.preventDefault();
-    this.props.history.push(`/playlists/${PlaylistID}`);
+    this.props.fetchPlaylist(PlaylistID)
+    .then( ()=>
+    this.props.history.push(`/playlists/${PlaylistID}`)
+    )
   }
 
   openModal(){

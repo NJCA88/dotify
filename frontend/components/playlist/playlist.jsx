@@ -8,11 +8,28 @@ class PlaylistShowComponent extends React.Component {
 
         this.updateCurrentSong = this.updateCurrentSong.bind(this);
         this.updateMusic = this.updateMusic.bind(this);
+        this.testFetch = this.testFetch.bind(this)
     }
 
     componentDidMount() {
         // debugger
+        console.log('updating')
         this.props.fetchPlaylist(this.props.match.params.playlistID);
+    }
+    componentDidUpdate(prevProps){
+        console.log(prevProps.history.location.pathname)
+        console.log(this.props.history.location.pathname)
+        if (prevProps.history.location.pathname !== this.props.history.location.pathname){
+            console.log('were doing the thing')
+            this.props.fetchPlaylist(this.props.match.params.playlistID);
+        }
+    }
+    testFetch(){
+        // this works as expected, so issue is I'm not calling this fetch every time I go to a differnet
+        // playlist route, coming FROM a playlsit.
+        console.log('fetching')
+        this.props.fetchPlaylist(this.props.match.params.playlistID);
+
     }
 
     updateSongCollection(collection) {
@@ -38,7 +55,7 @@ class PlaylistShowComponent extends React.Component {
         const songs = this.props.songs.map(song => {
             return (
                 <div >
-                    <li className="song">
+                    <li className="song" key={song.id}>
                         <img className="play-icon" src="https://d2uvvge0uswb28.cloudfront.net/static/dist/v0/img/svg/icon-play.svg" />
 
                         <button className="music-note-button"
