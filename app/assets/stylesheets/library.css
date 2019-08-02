@@ -1,3 +1,7 @@
+body *{
+  font-family:roboto;
+}
+
 .newPlaylist{
   display: flex;
   background-color: #02bf33;

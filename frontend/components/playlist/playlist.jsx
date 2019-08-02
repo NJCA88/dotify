@@ -58,7 +58,7 @@ class PlaylistShowComponent extends React.Component {
                     <div className="cover-and-info">
                         <img className="album-cover" src={this.props.playlist.playlist_cover} />
 
-                        <h1 className="album-title">{this.props.playlist.name}</h1>
+                        <h1 className="album-title">{this.props.playlist.title}</h1>
 
                         <button className="play-button"
                             onClick={e => {

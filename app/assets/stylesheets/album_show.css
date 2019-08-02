@@ -66,6 +66,7 @@
 .play-button{
     display: flex;
     background-color: #1db954;
+    /* filter: brightness(85%); */
     color: white;
     border-radius: 25px;
     display: block;
@@ -78,6 +79,14 @@
     font-size: 13px;
     margin: auto;
 }
+.play-button:hover{
+  width:135px;
+  height: 41px;
+  background-color: #56cc7f;
+
+  /* filter: brightness(100%); */
+
+}
 
 
 .song:hover{
@@ -87,10 +96,13 @@
 }
 
 .album-title{
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 400;
   word-wrap: break-word;
-  margin-top: 0px;
+  margin-top: 15px;
+  margin-bottom:25px;
+  /* margin-left:25px; */
+  text-align: center;
 }
 
 .music-note-button {
